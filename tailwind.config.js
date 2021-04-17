@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require("tailwindcss");
 
 module.exports = {
     purge: [
@@ -11,9 +12,32 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                'josefin': ['Josefin Sans']
             },
+            borderWidth: {
+                '5': '5px'
+            }
         },
+        /*Disable default colors*/
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            white: colors.white,
+            gray: colors.trueGray,
+            indigo: colors.indigo,
+            yellow: colors.amber,
+            'black': {
+                DEFAULT: '#444243'
+            },
+            'brown': {
+                light: 'rgba(130,85,80,0.57)',
+                DEFAULT: '#825550'
+            },
+            'red': {
+                light: 'rgba(247,89,71,0.57)',
+                DEFAULT: '#F75947'
+            }
+        }
     },
 
     variants: {

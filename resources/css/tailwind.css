@@ -1,3 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Default font */
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+    font-size: 18px;
+}
+
+.holder {
+    @apply flex justify-center items-center h-screen;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.holder.holder-dashboard-outside {
+    /* Temporary image */
+    background-image: url("https://picsum.photos/seed/test1/1920/1080");
+}
+
+form {
+    /* Use rgba for opacity to prevent child elements getting opacity too */
+    background-color: rgba(237,230,224,0.83);
+}
+
+.form-group {
+    @apply flex flex-col;
+}
+
+.form-group label {
+    @apply text-brown text-2xl font-semibold;
+}
+
+.form-has-errors .form-group label {
+    @apply text-red;
+}
+
+.form-group input {
+    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none text-lg;
+}
+
+.form-has-errors .form-group input {
+    @apply placeholder-red-light border-red;
+}
