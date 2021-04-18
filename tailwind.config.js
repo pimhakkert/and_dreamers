@@ -18,10 +18,14 @@ module.exports = {
                 '5': '5px'
             },
             margin: {
-                '-6.5': '-1.625rem'
+                '-6.5': '-1.625rem',
+                '-380px': '-21rem',
+                '500px': '30rem',
+                '-750px': '-42rem'
             },
-            maxWidth: {
-
+            spacing: {
+                'big': '68rem',
+                'small': '27rem'
             }
         },
         /*Disable default colors*/

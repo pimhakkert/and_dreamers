@@ -15,7 +15,7 @@ class HatStoryController extends Controller
     public function index()
     {
         $hatstory = HatStory::all();
-        return view('hatstories.index', ['hatstories'=>$hatstory]);
+        return view('dashboard.hatstories.index', ['hatstory'=>$hatstory]);
     }
 
     /**
@@ -25,7 +25,7 @@ class HatStoryController extends Controller
      */
     public function create()
     {
-        return view('hatstories.create');
+        return view('dashboard.hatstories.create');
     }
 
     /**
@@ -46,32 +46,26 @@ class HatStoryController extends Controller
         $hatStory = new HatStory;
 
         if($request->file('hat_cover_image') && $request->file('hat_pageone_image') && $request->file('hat_pagetwo_image')) {
-            $hatStory->hat_name = $request->hat_name;
             $hatStory->hat_cover_title = $request->hat_cover_title;
-            $hatStory->hat_pageone_title = $request->hat_pageone_title;
-            $hatStory->hat_pagetwo_title = $request->hat_pagetwo_title;
-            $hatStory->hat_contact_title = $request->hat_contact_title;
             $hatStory->hat_cover_text = $request->hat_cover_text;
-            $hatStory->hat_pageone_text= $request->hat_pageone_text;
-            $hatStory->hat_pagetwo_text = $request->hat_pagetwo_text;
-            $hatStory->hat_contact_text = $request->hat_contact_text;
-            $hatStory->hat_pageone_heading = $request->hat_pageone_heading;
-            $hatStory->hat_pagetwo_heading = $request->hat_pagetwo_heading;
-            $hatStory->hat_contact_name = $request->hat_contact_name;
-            $hatStory->hat_contact_phone = $request->hat_contact_phone;
-            $hatStory->hat_contact_email = $request->hat_contact_email;
-
-            $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_contact_image')->extension();
+            $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_cover_image')->extension();
             $request->file('hat_cover_image')->storeAs('hatimage', $hat_cover_image, 'public');
-            $hatStory->hat_pageone_image = $hat_cover_image;
+            $hatStory->hat_cover_image = $hat_cover_image;
 
+            $hatStory->hat_pageone_title = $request->hat_pageone_title;
+            $hatStory->hat_pageone_heading = $request->hat_pageone_heading;
+            $hatStory->hat_pageone_text= $request->hat_pageone_text;
             $hat_pageone_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
             $request->file('hat_pageone_image')->storeAs('hatimage', $hat_pageone_image, 'public');
             $hatStory->hat_pageone_image = $hat_pageone_image;
 
+            $hatStory->hat_pagetwo_title = $request->hat_pagetwo_title;
+            $hatStory->hat_pagetwo_heading = $request->hat_pagetwo_heading;
+            $hatStory->hat_pagetwo_text = $request->hat_pagetwo_text;
             $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
             $request->file('hat_cover_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
-            $hatStory->hat_pageone_image = $hat_pagetwo_image;
+            $hatStory->hat_pagetwo_image = $hat_pagetwo_image;
+
             $hatStory->save();
         }
 
@@ -97,7 +91,7 @@ class HatStoryController extends Controller
      */
     public function edit(HatStory $hatStory)
     {
-        return view('hatstories.edit');
+        return view('dashboard.hatstories.edit');
     }
 
     /**
@@ -121,6 +115,6 @@ class HatStoryController extends Controller
     public function destroy(HatStory $hatStory)
     {
         $hatStory->delete();
-        return redirect()->route('hatstories.index');
+        return redirect()->route('dashboard.hatstories.index');
     }
 }
