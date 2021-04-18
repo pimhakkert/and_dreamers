@@ -37,10 +37,10 @@ html {
     @apply text-red;
 }
 
-.form-group input {
-    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none;
+.form-group input, .form-group textarea {
+    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none resize-none;
 }
 
-.form-has-errors .form-group input {
+.form-has-errors .form-group input, .form-has-errors .form-group textarea {
     @apply placeholder-red-light border-red;
 }

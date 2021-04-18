@@ -20263,7 +20263,7 @@ html {
   color: rgba(247, 89, 71, var(--tw-text-opacity));
 }
 
-.form-group input {
+.form-group input, .form-group textarea {
   background-color: transparent;
   --tw-border-opacity: 1;
   border-color: rgba(130, 85, 80, var(--tw-border-opacity));
@@ -20271,41 +20271,42 @@ html {
   border-bottom-width: 4px;
 }
 
-.form-group input:focus{
+.form-group input:focus, .form-group textarea:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-.form-group input::-moz-placeholder{
+.form-group input::-moz-placeholder, .form-group textarea::-moz-placeholder{
   color: rgba(130,85,80,0.57);
 }
 
-.form-group input:-ms-input-placeholder{
+.form-group input:-ms-input-placeholder, .form-group textarea:-ms-input-placeholder{
   color: rgba(130,85,80,0.57);
 }
 
-.form-group input::placeholder{
+.form-group input::placeholder, .form-group textarea::placeholder{
   color: rgba(130,85,80,0.57);
 }
 
-.form-group input{
+.form-group input, .form-group textarea{
+  resize: none;
   color: rgba(130,85,80,0.57);
 }
 
-.form-has-errors .form-group input {
+.form-has-errors .form-group input, .form-has-errors .form-group textarea {
   --tw-border-opacity: 1;
   border-color: rgba(247, 89, 71, var(--tw-border-opacity));
 }
 
-.form-has-errors .form-group input::-moz-placeholder{
+.form-has-errors .form-group input::-moz-placeholder, .form-has-errors .form-group textarea::-moz-placeholder{
   color: rgba(247,89,71,0.57);
 }
 
-.form-has-errors .form-group input:-ms-input-placeholder{
+.form-has-errors .form-group input:-ms-input-placeholder, .form-has-errors .form-group textarea:-ms-input-placeholder{
   color: rgba(247,89,71,0.57);
 }
 
-.form-has-errors .form-group input::placeholder{
+.form-has-errors .form-group input::placeholder, .form-has-errors .form-group textarea::placeholder{
   color: rgba(247,89,71,0.57);
 }
 

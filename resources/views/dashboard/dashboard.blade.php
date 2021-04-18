@@ -4,8 +4,9 @@
     <!-- Background Images -->
     <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
+
     <!-- Logout -->
-    <form method="POST" action="{{ route('logout') }}" class="absolute text-brown pt-8 right-0 pr-10">
+    <form method="POST" action="{{ route('logout') }}" class="absolute text-brown pt-8 right-0 pr-10 z-50">
         @csrf
         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
             <span class="pr-6">Log out</span>
