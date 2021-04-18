@@ -16,7 +16,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+{{--    <script src="{{ mix('js/app.js') }}" defer></script>--}}
 </head>
 <div class="ml-3 relative" align="right" width="48">
     <div class="relative flex items-top justify-center min-h-screen bg-white-100 dark:bg-white-900 sm:items-center sm:pt-0">
