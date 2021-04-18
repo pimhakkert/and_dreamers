@@ -14,7 +14,10 @@ const mix = require('laravel-mix');
 mix.postCss('resources/css/tailwind.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
-]);
+])
+    .options({
+        "processCssUrls": false
+    })
 
 if (mix.inProduction()) {
     mix.version();
