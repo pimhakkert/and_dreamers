@@ -26,11 +26,11 @@ html {
 }
 
 .form-group {
-    @apply flex flex-col;
+    @apply flex flex-col mt-10 lg:mt-14;
 }
 
 .form-group label {
-    @apply text-brown font-semibold;
+    @apply text-brown font-semibold text-lg lg:text-2xl;
 }
 
 .form-has-errors .form-group label {
@@ -38,7 +38,7 @@ html {
 }
 
 .form-group input, .form-group textarea {
-    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none resize-none;
+    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none text-xs lg:text-lg resize-none;
 }
 
 .form-has-errors .form-group input, .form-has-errors .form-group textarea {

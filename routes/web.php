@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\HatStoryController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
+    Route::get('/profile', [Controller::class, 'show'])
+        ->name('dashboard.profile.show');
 });
+
