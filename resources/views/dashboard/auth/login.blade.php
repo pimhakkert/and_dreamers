@@ -24,10 +24,10 @@
                         <div class="flex cursor-pointer mt-4 remember-me">
                             <img src="" alt="N" class="mr-2">
                             <input type="checkbox" name="remember" id="remember" class="opacity-0 w-0 h-0">
-                            <label for="remember" class="text-brown cursor-pointer select-none text-sm lg:text-md">Remind me</label>
+                            <label for="remember" class="text-brown cursor-pointer select-none text-sm lg:text-lg">Remind me</label>
                         </div>
                     </div>
-                    <a class="mr-5 lg:mr-0 self-end lg:self-center text-xs lg:text-md text-brown lg:text-brown-light mt-10 lg:mt-5" href="{{ route('password.request') }}">I forgot my password!</a>
+                    <a class="mr-5 lg:mr-0 self-end lg:self-center text-xs lg:text-lg text-brown lg:text-brown-light mt-10 lg:mt-5" href="{{ route('password.request') }}">I forgot my password!</a>
                 </div>
                 <button class="mt-6 lg:mt-3 w-full border-5 border-brown leading-none p-3 lg:p-5 pb-2 lg:pb-3 text-md lg:text-2xl text-brown font-semibold hover:text-white-light hover:bg-brown ">LOGIN</button>
             </form>
