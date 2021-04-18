@@ -16,13 +16,18 @@ module.exports = {
             },
             borderWidth: {
                 '5': '5px'
+            },
+            margin: {
+                '-6.5': '-1.625rem'
             }
         },
         /*Disable default colors*/
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
-            white: colors.white,
+            white: {
+                light: 'rgba(237,230,224,0.83)'
+            },
             gray: colors.trueGray,
             indigo: colors.indigo,
             yellow: colors.amber,

@@ -22,12 +22,7 @@ html {
 
 .holder.holder-dashboard-outside {
     /* Temporary image */
-    background-image: url("https://picsum.photos/seed/test1/1920/1080");
-}
-
-form {
-    /* Use rgba for opacity to prevent child elements getting opacity too */
-    background-color: rgba(237,230,224,0.83);
+    background-image: url("../images/dashboard_outside_desktop.jpg");
 }
 
 .form-group {
@@ -35,7 +30,7 @@ form {
 }
 
 .form-group label {
-    @apply text-brown text-2xl font-semibold;
+    @apply text-brown font-semibold;
 }
 
 .form-has-errors .form-group label {
@@ -43,7 +38,7 @@ form {
 }
 
 .form-group input {
-    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none text-lg;
+    @apply placeholder-brown-light text-brown-light bg-transparent border-0 border-b-4 border-brown focus:outline-none;
 }
 
 .form-has-errors .form-group input {
