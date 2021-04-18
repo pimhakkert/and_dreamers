@@ -19654,12 +19654,28 @@ html {
 .form-group {
   display: flex;
   flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px){
+  .form-group{
+    margin-top: 3.5rem;
+  }
 }
 
 .form-group label {
   font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgba(130, 85, 80, var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px){
+  .form-group label{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 .form-has-errors .form-group label {
@@ -19673,6 +19689,8 @@ html {
   border-color: rgba(130, 85, 80, var(--tw-border-opacity));
   border-width: 0px;
   border-bottom-width: 4px;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .form-group input:focus{
@@ -19694,6 +19712,13 @@ html {
 
 .form-group input{
   color: rgba(130,85,80,0.57);
+}
+
+@media (min-width: 1024px){
+  .form-group input{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .form-has-errors .form-group input {

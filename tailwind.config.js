@@ -19,6 +19,9 @@ module.exports = {
             },
             margin: {
                 '-6.5': '-1.625rem'
+            },
+            maxWidth: {
+
             }
         },
         /*Disable default colors*/
