@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         @yield('css')
     </head>
-    <body>
+    <body style="overflow-x: hidden;">
         @yield('content')
         @yield('js')
     </body>
