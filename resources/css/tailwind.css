@@ -9,7 +9,25 @@
 }
 
 html {
-    font-size: 18px;
+    font-size: 100%;
+}
+
+@media only screen and (min-width: 2000px) {
+    html {
+        font-size: 125%;
+    }
+}
+
+@media only screen and (min-width: 3000px) {
+    html {
+        font-size: 165%;
+    }
+}
+
+@media only screen and (min-width: 4000px) {
+    html {
+        font-size: 200%;
+    }
 }
 
 .holder {
@@ -26,11 +44,16 @@ html {
 }
 
 .form-group {
-    @apply flex flex-col mt-10 lg:mt-14;
+    @apply flex flex-col mt-10 lg:mt-12 2xl:mt-14;
 }
 
 .form-group label {
-    @apply text-brown font-semibold text-lg lg:text-2xl;
+    @apply text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl;
+}
+
+.remember-me input {
+    width: 20px;
+    height: 20px;
 }
 
 .form-has-errors .form-group label {
@@ -43,4 +66,8 @@ html {
 
 .form-has-errors .form-group input, .form-has-errors .form-group textarea {
     @apply placeholder-red-light border-red;
+}
+
+#view-password {
+    transform: translateY(-50%);
 }
