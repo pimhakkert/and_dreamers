@@ -68,6 +68,6 @@ html {
     @apply placeholder-red-light border-red;
 }
 
-#view-password {
+#view-password, .view-password {
     transform: translateY(-50%);
 }
