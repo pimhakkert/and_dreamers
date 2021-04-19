@@ -51,6 +51,8 @@ class HatStoryController extends Controller
             $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_cover_image')->extension();
             $request->file('hat_cover_image')->storeAs('hatimage', $hat_cover_image, 'public');
             $hatStory->hat_cover_image = $hat_cover_image;
+            $hatStory->hat_cover_hover = $request->hat_cover_hover;
+            $hatStory->hat_cover_opacity = $request->hat_cover_opacity;
 
             $hatStory->hat_pageone_title = $request->hat_pageone_title;
             $hatStory->hat_pageone_heading = $request->hat_pageone_heading;
@@ -58,6 +60,8 @@ class HatStoryController extends Controller
             $hat_pageone_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
             $request->file('hat_pageone_image')->storeAs('hatimage', $hat_pageone_image, 'public');
             $hatStory->hat_pageone_image = $hat_pageone_image;
+            $hatStory->hat_pageone_hover = $request->hat_pageone_hover;
+            $hatStory->hat_pageone_opacity = $request->hat_pageone_opacity;
 
             $hatStory->hat_pagetwo_title = $request->hat_pagetwo_title;
             $hatStory->hat_pagetwo_heading = $request->hat_pagetwo_heading;
@@ -65,6 +69,8 @@ class HatStoryController extends Controller
             $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
             $request->file('hat_cover_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
             $hatStory->hat_pagetwo_image = $hat_pagetwo_image;
+            $hatStory->hat_pagetwo_hover = $request->hat_pagetwo_hover;
+            $hatStory->hat_pagetwo_opacity = $request->hat_pagetwo_opacity;
 
             $hatStory->save();
         }

@@ -25,7 +25,8 @@ module.exports = {
             },
             spacing: {
                 'big': '68rem',
-                'small': '27rem'
+                'small': '27rem',
+                'block': '26rem',
             }
         },
         /*Disable default colors*/
@@ -48,6 +49,10 @@ module.exports = {
             'red': {
                 light: 'rgba(247,89,71,0.57)',
                 DEFAULT: '#F75947'
+            },
+            'lightbrown': {
+                light: 'rgba(237, 230, 224, 0.26)',
+                DEFAULT: '#EDE6E0'
             }
         }
     },
