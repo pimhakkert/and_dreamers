@@ -25,13 +25,12 @@
                         @if($errors->any())
                             <p class="text-red-light mt-2 text-sm lg:text-md">The specified password and email do not match. Try again</p>
                         @endif
-                        <div class="flex cursor-pointer mt-4 remember-me">
-                            <img src="" alt="N" class="mr-2">
-                            <input type="checkbox" name="remember" id="remember" class="opacity-0 w-0 h-0">
-                            <label for="remember" class="text-brown cursor-pointer select-none text-sm lg:text-lg">Remind me</label>
+                        <div class="flex items-center cursor-pointer mt-4 remember-me">
+                            <input type="checkbox" name="remember" id="remember" class="border-brown rounded-md border-2 mr-5">
+                            <label for="remember" class="text-brown cursor-pointer select-none text-sm lg:text-lg">Remember me</label>
                         </div>
                     </div>
-                    <a class="mr-5 lg:mr-0 self-end lg:self-center text-xs lg:text-lg text-brown lg:text-brown-light mt-10 lg:mt-5" href="{{ route('password.request') }}">I forgot my password!</a>
+                    <a class="mr-5 lg:mr-0 self-end lg:self-center text-xs lg:text-lg text-brown lg:text-brown-light mt-10" href="{{ route('password.request') }}">I forgot my password!</a>
                 </div>
                 <button class="mt-6 lg:mt-3 w-full border-5 border-brown leading-none p-3 lg:p-4 2xl:p-5 pb-2 lg:pb-2 text-md lg:text-lg 2xl:text-2xl text-brown font-semibold hover:text-white-light hover:bg-brown ">LOGIN</button>
             </form>
@@ -45,24 +44,7 @@
 
 @section('js')
 <script>
-    let remindMeCheckbox;
-
     window.addEventListener('load', () => {
-
-        remindMeCheckbox = document.querySelector('#remember');
-
-        document.querySelector('.remember-me').addEventListener('click', () => {
-            toggleCheckbox();
-        });
-
-        //Stop the actual input from working.
-        remindMeCheckbox.addEventListener('change', (e) => {
-            e.preventDefault();
-        });
-
-        //Run toggleCheckbox with firstUse being true so the checkbox always stays/goes to false on page load
-        toggleCheckbox(true);
-
         //View password code
         document.querySelector('#view-password').addEventListener('click', () => {
             let passwordEl = document.querySelector('#password');
@@ -76,27 +58,5 @@
             }
         });
     });
-
-    function toggleCheckbox(firstUse = false)
-    {
-        if(firstUse || remindMeCheckbox.checked)
-        {
-            remindMeCheckbox.checked = false;
-
-            //TODO add filled hat image to assets and remove alt code
-            document.querySelector('.remember-me img').setAttribute('alt', 'N');
-
-            //document.querySelector('.remind-me img').src = 'EMPTY HAT';
-        }
-        else
-        {
-            remindMeCheckbox.checked = true;
-
-            //TODO add empty hat image to assets and remove alt code
-            document.querySelector('.remember-me img').setAttribute('alt', 'Y');
-
-            //document.querySelector('.remind-me img').src = 'FILLED HAT';
-        }
-    }
 </script>
 @endsection

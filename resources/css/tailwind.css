@@ -44,11 +44,16 @@ html {
 }
 
 .form-group {
-    @apply flex flex-col mt-10 lg:mt-14;
+    @apply flex flex-col mt-10 lg:mt-12 2xl:mt-14;
 }
 
 .form-group label {
-    @apply text-brown font-semibold text-lg lg:text-2xl;
+    @apply text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl;
+}
+
+.remember-me input {
+    width: 20px;
+    height: 20px;
 }
 
 .form-has-errors .form-group label {

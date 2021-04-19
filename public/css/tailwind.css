@@ -20273,6 +20273,12 @@ html {
 
 @media (min-width: 1024px){
   .form-group{
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 1536px){
+  .form-group{
     margin-top: 3.5rem;
   }
 }
@@ -20287,9 +20293,21 @@ html {
 
 @media (min-width: 1024px){
   .form-group label{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px){
+  .form-group label{
     font-size: 1.5rem;
     line-height: 2rem;
   }
+}
+
+.remember-me input {
+  width: 20px;
+  height: 20px;
 }
 
 .form-has-errors .form-group label {
