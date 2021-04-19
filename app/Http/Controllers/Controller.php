@@ -12,16 +12,16 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    /**
-     * Show the user profile screen.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     */
-    public function show(Request $request)
-    {
-        return view('dashboard.profile.show', [
-            'request' => $request,
-            'user' => $request->user(),
-        ]);
-    }
+//    /**
+//     * Show the user profile screen.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     */
+//    public function show(Request $request)
+//    {
+//        return view('dashboard.profile.show', [
+//            'request' => $request,
+//            'user' => $request->user(),
+//        ]);
+//    }
 }

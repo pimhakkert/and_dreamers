@@ -22,7 +22,7 @@
         <!-- Grid -->
         <div class="grid xl:grid-cols-2 grid-cols-1 xl:grid-rows-2 grid-rows-4 lg:gap-y-8 md:gap-y-7 gap-y-6 gap-x-12">
             <!-- View Profile -->
-            <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="{{ route('profile.show') }}">
+            <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="{{ route('dashboard.profile.show') }}">
                 <div class="flex">
                     <i class="far fa-user text-8xl lg:pr-9 pr-6 flex-none"></i>
                     <div class="lg:pr-9 pr-6">
