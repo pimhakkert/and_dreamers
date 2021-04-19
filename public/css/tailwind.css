@@ -20231,7 +20231,25 @@ select{
 }
 
 html {
-  font-size: 18px;
+  font-size: 100%;
+}
+
+@media only screen and (min-width: 2000px) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  html {
+    font-size: 165%;
+  }
+}
+
+@media only screen and (min-width: 4000px) {
+  html {
+    font-size: 200%;
+  }
 }
 
 .holder {
@@ -20333,6 +20351,10 @@ html {
 
 .form-has-errors .form-group input::placeholder, .form-has-errors .form-group textarea::placeholder{
   color: rgba(247,89,71,0.57);
+}
+
+#view-password {
+  transform: translateY(-50%);
 }
 
 @media (min-width: 640px){
