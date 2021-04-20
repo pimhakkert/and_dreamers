@@ -81,10 +81,10 @@ class HatStoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HatStory  $hatStory
+     * @param  \App\Models\HatStory $hatStory
      * @return \Illuminate\Http\Response
      */
-    public function show(HatStory $hatStory)
+    public function show(request $request)
     {
         //
     }
