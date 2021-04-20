@@ -14,6 +14,13 @@
         </a>
     </form>
 
+    <!-- Errors -->
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+
     <!-- Hat story -->
     <div class="relative text-brown">
         <p class="text-5xl italic pt-20 pl-10">Hat story</p>
@@ -28,8 +35,14 @@
                         <div class="form-group" style="margin-top: 0 !important;">
                             <label for="hat_cover_title">TITLE</label>
                             <input class="mb-10" type="text" name="hat_cover_title" placeholder="Hat Name" required>
+                            @error('hat_cover_title')
+                            <p>{{ $message }}</p>
+                            @enderror
                             <label for="hat_cover_text">TEXT</label>
                             <textarea name="hat_cover_text" placeholder="Write a short summary about the hat" required></textarea>
+                            @error('hat_cover_text')
+                            <p>{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <!-- Cover Image -->
@@ -37,6 +50,9 @@
                         <p class="text-5xl absolute -mt-20 -ml-10">IMAGE</p>
                         <label class="hidden" for="hat_cover_image">IMAGE</label>
                         <input type="file" name="hat_cover_image" required>
+                        @error('hat_cover_image')
+                        <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <!-- Cover Extra -->
                     <div class="bg-lightbrown-light py-16 px-16 max-w-lg">
@@ -75,10 +91,19 @@
                         <div class="form-group" style="margin-top: 0 !important;">
                             <label for="hat_pageone_title">Title</label>
                             <input class="mb-10" type="text" name="hat_pageone_title" placeholder="First page title" required>
+                            @error('hat_pageone_title')
+                            <p>{{ $message }}</p>
+                            @enderror
                             <label for="hat_pageone_heading">Heading</label>
                             <input class="mb-10" type="text" name="hat_pageone_heading" placeholder="First page heading" required>
+                            @error('hat_pageone_heading')
+                            <p>{{ $message }}</p>
+                            @enderror
                             <label for="hat_pageone_text">Text</label>
                             <textarea name="hat_pageone_text" placeholder="Text describing the title and/or heading" required></textarea>
+                            @error('hat_pageone_text')
+                            <p>{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <!-- Page One Image -->
@@ -86,6 +111,9 @@
                         <p class="text-5xl absolute -mt-20 -ml-10">IMAGE</p>
                         <label class="hidden" for="hat_pageone_image">Image</label>
                         <input type="file" name="hat_pageone_image" required>
+                        @error('hat_pageone_image')
+                        <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <!-- Page One Extra -->
                     <div class="bg-lightbrown-light py-16 px-16 max-w-lg">
@@ -124,10 +152,19 @@
                         <div class="form-group">
                             <label for="hat_pagetwo_title">Title</label>
                             <input class="mb-10" type="text" name="hat_pagetwo_title" placeholder="Second page title" required>
+                            @error('hat_pagetwo_title')
+                            <p>{{ $message }}</p>
+                            @enderror
                             <label for="hat_pagetwo_heading">Heading</label>
                             <input class="mb-10" type="text" name="hat_pagetwo_heading" placeholder="Second page heading" required>
+                            @error('hat_pagetwo_heading')
+                            <p>{{ $message }}</p>
+                            @enderror
                             <label for="hat_pagetwo_text">Text</label>
                             <textarea name="hat_pagetwo_text" placeholder="Text describing the title and/or heading" required></textarea>
+                            @error('hat_pagetwo_text')
+                            <p>{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <!-- Page Two Image -->
@@ -135,6 +172,9 @@
                         <p class="text-5xl absolute -mt-20 -ml-10">IMAGE</p>
                         <label class="hidden" for="hat_pagetwo_image hidden">Image</label>
                         <input type="file" name="hat_pagetwo_image" required>
+                        @error('hat_pagetwo_image')
+                        <p>{{ $message }}</p>
+                        @enderror
                     </div>
                     <!-- Hat Cover Extra -->
                     <div class="bg-lightbrown-light py-16 px-16 max-w-lg">

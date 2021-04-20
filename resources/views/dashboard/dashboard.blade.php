@@ -24,7 +24,7 @@
             <!-- View Profile -->
             <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="{{ route('dashboard.profile.show') }}">
                 <div class="flex">
-                    <i class="far fa-user text-8xl lg:pr-9 pr-6 flex-none"></i>
+                    <img src="../images/profile_outline.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
                     <div class="lg:pr-9 pr-6">
                         <p class="font-bold text-2xl">View profile</p>
                         <p>Change your password, e-mail, username and more personal data.</p>
@@ -36,7 +36,7 @@
             <!-- Hat Stories Overview -->
             <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="{{ route('hatstories.index') }}">
                 <div class="flex">
-                    <i class="fab fa-redhat text-8xl lg:pr-9 pr-6 flex-none"></i>
+                    <img src="../images/hoed-icon-v2svg.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
                     <div class="lg:pr-9 pr-6">
                         <p class="font-bold text-2xl">Hat overview</p>
                         <p>Add, remove and edit hat stories.</p>
@@ -48,7 +48,7 @@
             <!-- Home Page -->
             <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="/">
                 <div class="flex">
-                    <i class="fas fa-home text-8xl lg:pr-9 pr-6"></i>
+                    <img src="../images/home_outline.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
                     <div class="lg:pr-9 pr-6">
                         <p class="font-bold text-2xl">Homepage</p>
                         <p>Click here to go to the homepage.</p>
@@ -60,7 +60,7 @@
             <!-- Customers -->
             <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="#">
                 <div class="flex">
-                    <i class="fas fa-phone-alt text-8xl lg:pr-9 pr-6"></i>
+                    <img src="../images/phone_outline.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
                     <div class="lg:pr-9 pr-6">
                         <p class="font-bold text-2xl">Customers</p>
                         <p>Curious if you have new requests? Check it here.</p>

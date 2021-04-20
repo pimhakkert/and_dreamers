@@ -92,35 +92,36 @@ class HatStoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HatStory  $hatStory
+     * @param  \App\Models\HatStory $hatstory
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(HatStory $hatStory)
+    public function edit(HatStory $hatstory)
     {
-        return view('dashboard.hatstories.edit');
+        return view('dashboard.hatstories.edit', compact('hatstory'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HatStory  $hatStory
-     * @return \Illuminate\Http\Response
+     * @param  \App\Models\HatStory  $hatstory
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, HatStory $hatStory)
+    public function update(Request $request, HatStory $hatstory)
     {
-        //
+        $hatstory->update($request->all());
+        return redirect()->route('hatstories.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HatStory  $hatStory
+     * @param  \App\Models\HatStory  $hatstory
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(HatStory $hatStory)
+    public function destroy(HatStory $hatstory)
     {
-        $hatStory->delete();
-        return redirect()->route('dashboard.hatstories.index');
+        $hatstory->delete();
+        return redirect()->route('hatstories.index');
     }
 }
