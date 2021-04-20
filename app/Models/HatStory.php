@@ -9,6 +9,8 @@ class HatStory extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'hat_id';
+
     protected $fillable = [
         'hat_cover_title',
         'hat_cover_text',
