@@ -20951,7 +20951,7 @@ html {
   color: rgba(247,89,71,0.57);
 }
 
-#view-password {
+#view-password, .view-password {
   transform: translateY(-50%);
 }
 

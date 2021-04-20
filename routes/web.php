@@ -28,5 +28,7 @@ Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
     Route::get('/profile', [Controller::class, 'show'])
         ->name('dashboard.profile.show');
+    Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
+        ->name('password.email');
 });
 
