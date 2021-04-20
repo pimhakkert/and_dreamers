@@ -26,9 +26,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
-    Route::get('/profile', [Controller::class, 'show'])
-        ->name('dashboard.profile.show');
+//    Route::get('/profile', [Controller::class, 'show'])
+//        ->name('dashboard.profile.show');
+
     Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
         ->name('password.email');
+
+    Route::get('/reset-password/{token}', [Controller::class, 'createNewPassword'])
+        ->name('password.reset');
+
+    Route::post('/reset-password', [Controller::class, 'setNewPassword'])
+        ->name('password.update');
 });
 
