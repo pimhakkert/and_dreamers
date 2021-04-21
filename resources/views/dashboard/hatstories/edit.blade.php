@@ -51,7 +51,7 @@
                 <div class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_cover_image }});">
                     <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>
                     <label class="hidden" for="hat_cover_image">IMAGE</label>
-                    <input type="file" name="hat_cover_image" required>
+                    <input class="ml-50" type="file" name="hat_cover_image">
                     @error('hat_cover_image')
                     <p>{{ $message }}</p>
                     @enderror
@@ -110,9 +110,9 @@
                 </div>
                 <!-- Page One Image -->
                 <div  class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_pageone_image }});">
-                    <p class="text-5xl absolute -mt-20 -ml-10">IMAGE</p>
+                    <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>
                     <label class="hidden" for="hat_pageone_image">Image</label>
-                    <input type="file" name="hat_pageone_image" required>
+                    <input type="file" name="hat_pageone_image">
                     @error('hat_pageone_image')
                     <p>{{ $message }}</p>
                     @enderror
@@ -171,9 +171,9 @@
                 </div>
                 <!-- Page Two Image -->
                 <div  class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_pagetwo_image }});">
-                    <p class="text-5xl absolute -mt-20 -ml-10">IMAGE</p>
+                    <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>
                     <label class="hidden" for="hat_pagetwo_image hidden">Image</label>
-                    <input type="file" name="hat_pagetwo_image" required>
+                    <input type="file" name="hat_pagetwo_image">
                     @error('hat_pagetwo_image')
                     <p>{{ $message }}</p>
                     @enderror

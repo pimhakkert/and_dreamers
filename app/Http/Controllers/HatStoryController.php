@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HatStory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HatStoryController extends Controller
 {
@@ -66,8 +67,8 @@ class HatStoryController extends Controller
             $hatStory->hat_pagetwo_title = $request->hat_pagetwo_title;
             $hatStory->hat_pagetwo_heading = $request->hat_pagetwo_heading;
             $hatStory->hat_pagetwo_text = $request->hat_pagetwo_text;
-            $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
-            $request->file('hat_cover_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
+            $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_image')->extension();
+            $request->file('hat_pagetwo_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
             $hatStory->hat_pagetwo_image = $hat_pagetwo_image;
             $hatStory->hat_pagetwo_hover = $request->hat_pagetwo_hover;
             $hatStory->hat_pagetwo_opacity = $request->hat_pagetwo_opacity;
@@ -109,7 +110,56 @@ class HatStoryController extends Controller
      */
     public function update(Request $request, HatStory $hatstory)
     {
-        $hatstory->update($request->all());
+        $request->validate([
+            'hat_cover_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_pageone_image' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_pagetwo_image' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
+        ]);
+
+        $update = [
+            'hat_cover_title' => $request->hat_cover_title,
+            'hat_cover_text' => $request->hat_cover_text,
+            'hat_cover_hover' => $request->hat_cover_hover,
+            'hat_cover_opacity' => $request->hat_cover_opacity,
+
+            'hat_pageone_title' => $request->hat_pageone_title,
+            'hat_pageone_heading' => $request->hat_pageone_heading,
+            'hat_pageone_text' => $request->hat_pageone_text,
+            'hat_pageone_hover' => $request->hat_pageone_hover,
+            'hat_pageone_opacity' => $request->hat_pageone_opacity,
+
+            'hat_pagetwo_title' => $request->hat_pagetwo_title,
+            'hat_pagetwo_heading' => $request->hat_pagetwo_heading,
+            'hat_pagetwo_text' => $request->hat_pagetwo_text,
+            'hat_pagetwo_hover' => $request->hat_cover_hover,
+            'hat_pagetwo_opacity' => $request->hat_cover_opacity,
+            ];
+
+        if($request->file('hat_cover_image')) {
+            Storage::delete('public/hatimage/' . $hatstory->hat_cover_image);
+            $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_cover_image')->extension();
+            $request->file('hat_cover_image')->storeAs('hatimage', $hat_cover_image, 'public');
+            $hatstory->hat_cover_image = $hat_cover_image;
+            $update['hat_cover_image'] = $hat_cover_image;
+        }
+
+        if($request->file('hat_pageone_image')) {
+            Storage::delete('public/hatimage/' . $hatstory->hat_pageone_image);
+            $hat_pageone_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
+            $request->file('hat_pageone_image')->storeAs('hatimage', $hat_pageone_image, 'public');
+            $hatstory->hat_pageone_image = $hat_pageone_image;
+            $update['hat_pageone_image'] = $hat_pageone_image;
+        }
+
+        if($request->file('hat_pagetwo_image')){
+            Storage::delete('public/hatimage/' . $hatstory->hat_pagetwo_image);
+            $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_image')->extension();
+            $request->file('hat_pagetwo_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
+            $hatstory->hat_pagetwo_image = $hat_pagetwo_image;
+            $update['hat_pagetwo_image'] = $hat_pagetwo_image;
+        }
+
+        $hatstory->update($update);
         return redirect()->route('hatstories.index');
     }
 
