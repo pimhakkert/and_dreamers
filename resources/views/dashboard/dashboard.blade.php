@@ -5,15 +5,6 @@
     <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
-    <!-- Logout -->
-    <form method="POST" action="{{ route('logout') }}" class="absolute text-brown pt-8 right-0 pr-10 z-50">
-        @csrf
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-            <span class="pr-6">Log out</span>
-            <i class="fas fa-sign-out-alt text-3xl bg-white-light" style="width: 70px;height: 70px; border-radius: 50%; text-align: center; line-height: 30px; vertical-align: middle; padding: 20px;"></i>
-        </a>
-    </form>
-
     <!-- Dashboard -->
     <div class="relative text-brown lg:px-28 lg:py-32 md:px-20 md:py-24 px-6 py-6">
         <!-- Welcome Message -->
@@ -57,17 +48,19 @@
                 </div>
             </a>
 
-            <!-- Customers -->
-            <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl" href="#">
-                <div class="flex">
-                    <img src="../images/logout.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
-                    <div class="lg:pr-9 pr-6">
-                        <p class="font-bold text-2xl">Logout</p>
-                        <p>Click here to log out.</p>
-                    </div>
-                    <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
-                </div>
-            </a>
+            <!-- Logout -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a class="bg-white-light border-brown border-5 rounded-2xl lg:py-10 lg:px-8 py-8 px-6 max-w-xl flex" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <img src="../images/logout.svg" class="h-24 w-32 lg:pr-9 pr-6 flex-none">
+                        <div class="lg:pr-9 pr-6">
+                            <p class="font-bold text-2xl">Logout</p>
+                            <p>Click here to log out.</p>
+                        </div>
+                        <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
+                </a>
+            </form>
+
         </div>
 
     </div>
