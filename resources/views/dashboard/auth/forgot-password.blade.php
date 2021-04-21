@@ -12,7 +12,7 @@
                     <div class="w-2/3 lg:mt-2">
                         <div class="form-group">
                             <label for="email">E-MAIL</label>
-                            <input type="email" name="email" id="email" placeholder="email@domain.com">
+                            <input type="email" name="email" id="email" placeholder="email@domain.com" value="{{ old('email') }}">
                         </div>
                         @if($errors->any())
                             <p class="text-red-light mt-2 text-sm lg:text-lg">We have not recognized your e-mail address</p>
