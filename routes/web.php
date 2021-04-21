@@ -32,6 +32,13 @@ Route::group(['auth:sanctum', 'verified'], function () {
     Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
         ->name('password.email');
 
+    Route::get('/reset-request-sent', [Controller::class, 'resetRequestSent'])
+        ->name('password.reset-request-sent');
+
+    Route::get('/resend-resent-request', [Controller::class, 'resendRequest'])
+         ->name('password.resend-request');
+
+
     Route::get('/reset-password/{token}', [Controller::class, 'createNewPassword'])
         ->name('password.reset');
 

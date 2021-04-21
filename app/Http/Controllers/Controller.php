@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\Input;
 
 class Controller extends BaseController
 {
@@ -31,14 +32,37 @@ class Controller extends BaseController
         ]);
     }
 
+    public function resendRequest(Request $request)
+    {
+        return redirect()->route('password.email')->withInput(['email'=>$request->get('email')]);
+    }
+
     public function resetUserPassword(Request $request)
     {
         $email = $request->get('email');
 
-        $user = User::where('email',$email)->get()[0];
+        $users = User::where('email',$email)->get();
+
+        if(count($users) === 0)
+        {
+            $errorBag = new MessageBag();
+
+            $errorBag->add('error','We have not recognized your e-mail address');
+            return view('dashboard.auth.forgot-password')->withErrors($errorBag);
+        }
+
+        $user = $users[0];
         /* @var $user User */
 
         $user->sendPasswordResetNotification(Str::uuid());
+
+        return redirect()->route('password.reset-request-sent',['email'=>$email]);
+
+    }
+
+    public function resetRequestSent()
+    {
+        return view('dashboard.auth.password-reset-request-sent');
     }
 
     public function createNewPassword(Request $request, string $token)
