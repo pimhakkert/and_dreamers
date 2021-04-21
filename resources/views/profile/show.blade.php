@@ -3,7 +3,7 @@
 @section('title', 'Profile')
 
 @section('content')
-        <div class="">
+        <div>
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 <div>
                     @livewire('profile.update-profile-information-form')
@@ -22,7 +22,6 @@
                 </div>
             @endif
         </div>
-        @stack('modals')
 @endsection
 
 @section('css')
@@ -30,5 +29,5 @@
 @endsection
 
 @section('js')
-    @livewireScripts
+
 @endsection

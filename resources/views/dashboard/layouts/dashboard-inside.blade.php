@@ -10,9 +10,16 @@
         <link rel="stylesheet" href="{{ mix('css/tailwind.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         @yield('css')
+
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        @livewireStyles
     </head>
     <body style="overflow-x: hidden;">
+
         @yield('content')
+
         @yield('js')
+        @stack('modals')
+        @livewireScripts
     </body>
 </html>
