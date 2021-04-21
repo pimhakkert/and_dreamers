@@ -71,3 +71,7 @@ html {
 #view-password, .view-password {
     transform: translateY(-50%);
 }
+
+#email p, #email h1, #email a {
+    @apply text-brown;
+}
