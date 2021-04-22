@@ -3,25 +3,44 @@
 @section('title', 'Password reset e-mail')
 
 @section('content')
-    <table id="email" class="ml-4 mt-14">
+    <table>
         <tr>
-            <td><h1 class="italic text-brown text-5xl">Password reset request</h1></td>
+            <td><h1 style="font-size: 3rem; line-height: 1; font-style: italic; font-family: 'Josefin Sans', sans-serif; color: #825550;">Password reset request</h1></td>
         </tr>
         <tr>
-            <td><p class="mt-10">Hi {{ $name }},</p></td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td><p>Someone quested a password reset for the account connected to this e-mail address.<br>If this was a mistake, please ignore this e-mail and nothing will happen.</p></td>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Hi {{ $name }},</p></td>
         </tr>
         <tr>
-            <td><p>To reset your password, visit the following link:<br><a class="underline block" href="{{ $url }}">Click here to change your password!</a></p></td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
-            <td><p class="mt-8">Or copy the following url into your browser:<br>{{ $url }}</p></td>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Someone quested a password reset for the account connected to this e-mail address.<br>If this was a mistake, please ignore this e-mail and nothing will happen.</p></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">To reset your password, visit the following link:<br><a class="underline block" href="{{ $url }}">Click here to change your password!</a></p></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Or copy the following url into your browser:<br>{{ $url }}</p></td>
         </tr>
         <tr>
         <tr>
-            <td><p class="mt-8">Kind regards,<br>And-dreamers.com</p></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Kind regards,<br>And-dreamers.com</p></td>
         </tr>
     </table>
+@endsection
+
+@section('css')
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet" type="text/css" />
 @endsection
