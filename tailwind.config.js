@@ -34,7 +34,8 @@ module.exports = {
             transparent: 'transparent',
             current: 'currentColor',
             white: {
-                light: 'rgba(237,230,224,0.83)'
+                light: 'rgba(237,230,224,0.83)',
+                DEFAULT: '#FFFFFF'
             },
             gray: colors.trueGray,
             indigo: colors.indigo,

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HatStoryController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
@@ -19,6 +20,8 @@ use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 Route::get('/', function () {
     return view('website.layouts.website');
 });
+
+Route::get('/hatstory/test', [WebsiteController::class, 'hatstory'])->name('hatstory');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');

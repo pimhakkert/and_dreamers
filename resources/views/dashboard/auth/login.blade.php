@@ -9,6 +9,7 @@
                 <div class="p-3 pb-0 flex flex-col items-center">
                     <h1 class="text-3xl lg:text-4xl 2xl:text-6xl -mt-6.5 lg:-mt-7 2xl:-mt-9 text-brown font-semibold mr-4 2xl:mr-0">ADMINISTRATOR</h1>
                     @csrf
+
                     <div class="w-2/3">
                         <div class="form-group">
                             <label for="email">E-MAIL</label>
@@ -22,8 +23,12 @@
                             </div>
 
                         </div>
+
                         @if($errors->any())
-                            <p class="text-red-light mt-2 text-sm lg:text-lg">The specified password and email do not match. Try again</p>
+                            @foreach($errors->all() as $error)
+                                <p class="text-red-light mt-2 text-sm lg:text-lg">{{ $error }}</p>
+                            @endforeach
+
                         @endif
                         <div class="flex items-center cursor-pointer mt-4 remember-me">
                             <input type="checkbox" name="remember" id="remember" class="border-brown rounded-md border-2 mr-5">
