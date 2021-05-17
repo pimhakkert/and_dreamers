@@ -34,7 +34,8 @@ module.exports = {
             transparent: 'transparent',
             current: 'currentColor',
             white: {
-                light: 'rgba(237,230,224,0.83)'
+                light: 'rgba(237,230,224,0.83)',
+                DEFAULT: '#ffffff'
             },
             gray: colors.trueGray,
             indigo: colors.indigo,
@@ -53,6 +54,9 @@ module.exports = {
             'lightbrown': {
                 light: 'rgba(237, 230, 224, 0.26)',
                 DEFAULT: '#EDE6E0'
+            },
+            'hoverbrown': {
+                DEFAULT: '#D5C1B8'
             }
         }
     },

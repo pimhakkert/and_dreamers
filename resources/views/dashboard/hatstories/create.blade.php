@@ -23,7 +23,7 @@
 
     <!-- Hat story -->
     <div class="relative text-brown">
-        <p class="text-5xl italic pt-20 pl-10">Hat story</p>
+        <p class="text-3xl italic pt-20 pl-10">New hat</p>
         <!-- Open Form -->
         <form class="pt-44" method="post" action="{{ route('hatstories.store') }}" enctype="multipart/form-data">
             @csrf
