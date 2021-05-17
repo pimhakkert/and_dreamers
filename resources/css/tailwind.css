@@ -12,6 +12,12 @@ html {
     font-size: 100%;
 }
 
+@media only screen and (min-width: 1400px) {
+    html {
+        font-size: 130%;
+    }
+}
+
 @media only screen and (min-width: 2000px) {
     html {
         font-size: 125%;
