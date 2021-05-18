@@ -19,6 +19,13 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
         @livewireStyles
+        <style>
+            @media only screen and (min-width: 1400px) {
+                html {
+                    font-size: 130%;
+                }
+            }
+        </style>
     </head>
     <body style="overflow-x: hidden;">
 
