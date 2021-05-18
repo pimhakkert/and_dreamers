@@ -20,7 +20,7 @@
             <!-- Bottom Left Menu -->
             <div class="flex flex-col justify-end mb-20">
                 <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipProfile menuOne" href="{{ route('profile.show') }}">
-                    <img src="../images/profile.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-1 menuOne-image">
+                    <img src="../images/profile.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-0.5 menuOne-image">
                     <span class="tooltiptext">Change your username, password, 2fa or email</span>
                 </a>
                 <a class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
