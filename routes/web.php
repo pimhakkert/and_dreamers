@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('website.layouts.website');
 });
 
-Route::get('/hatstory/test', [WebsiteController::class, 'hatstory'])->name('hatstory');
+Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');

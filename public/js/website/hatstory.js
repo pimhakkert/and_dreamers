@@ -2264,10 +2264,9 @@ window.addEventListener('load', function () {
     disableFlipByClick: true,
     maxShadowOpacity: 0.5,
     useMouseEvents: false,
-    flippingTime: 600,
+    flippingTime: 750,
     mobileScrollSupport: false
   };
-  console.log(settings);
   var pageFlip = new _page_flip__WEBPACK_IMPORTED_MODULE_0__.PageFlip(element, settings);
   pageFlip.loadFromHTML(document.querySelectorAll('#hatstory .hatstory-page'));
   var previousButtons = document.querySelectorAll('.hatstory-previous');
