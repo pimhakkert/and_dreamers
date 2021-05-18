@@ -113,7 +113,7 @@ class HatStoryController extends Controller
     public function update(Request $request, HatStory $hatstory)
     {
         $request->validate([
-            'hat_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_image' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pageone_image' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pagetwo_imageone' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pagetwo_imagetwo' => 'bail|file|mimes:jpeg,jpg,png|max:10000',
@@ -129,12 +129,12 @@ class HatStoryController extends Controller
             'hat_pagetwo_text' => $request->hat_pagetwo_text,
             ];
 
-        if($request->file('hat_cover_image')) {
-            Storage::delete('public/hatimage/' . $hatstory->hat_cover_image);
-            $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_cover_image')->extension();
-            $request->file('hat_cover_image')->storeAs('hatimage', $hat_cover_image, 'public');
-            $hatstory->hat_cover_image = $hat_cover_image;
-            $update['hat_cover_image'] = $hat_cover_image;
+        if($request->file('hat_image')) {
+            Storage::delete('public/hatimage/' . $hatstory->hat_image);
+            $hat_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_image')->extension();
+            $request->file('hat_image')->storeAs('hatimage', $hat_image, 'public');
+            $hatstory->hat_image = $hat_image;
+            $update['hat_image'] = $hat_image;
         }
 
         if($request->file('hat_pageone_image')) {
