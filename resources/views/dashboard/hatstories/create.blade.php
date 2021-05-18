@@ -55,7 +55,7 @@
                         <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%;">
                             <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
                             <label class="text-2xl" for="hat_name">NAME</label>
-                            <input type="text" name="hat_name" placeholder="Hat name" required>
+                            <input type="text" name="hat_name" placeholder="Hat name" class="bg-lightbrown border-0" required>
                             @error('hat_name')
                             <p>{{ $message }}</p>
                             @enderror
@@ -69,13 +69,13 @@
                         <!-- Hat Image -->
                         <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
                             <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile1()">
                                 <i class="far fa-image text-10xl"></i>
                                 <p class="text-brown-light">Choose your photo</p>
                             </div>
                             <div style='height: 0; width: 0; overflow:hidden;'>
                                 <label class="hidden" for="hat_image">IMAGE</label>
-                                <input id="upfile" type="file" value="upload" name="hat_image" onchange="sub(this)" required>
+                                <input id="upfile1" type="file" value="upload" name="hat_image" onchange="sub(this)" required>
                             </div>
                             @error('hat_image')
                             <p>{{ $message }}</p>
@@ -115,13 +115,13 @@
                         <!-- Page 1 Image -->
                         <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
                             <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile2()">
                                 <i class="far fa-image text-10xl"></i>
                                 <p class="text-brown-light">Choose your photo</p>
                             </div>
                             <div style='height: 0; width: 0; overflow:hidden;'>
                                 <label class="hidden" for="hat_pageone_image">IMAGE</label>
-                                <input id="upfile" type="file" value="upload" name="hat_pageone_image" onchange="sub(this)" required>
+                                <input id="upfile2" type="file" value="upload" name="hat_pageone_image" onchange="sub(this)" required>
                             </div>
                             @error('hat_pageone_image')
                             <p>{{ $message }}</p>
@@ -143,13 +143,13 @@
                         <!-- Page 2 Images -->
                         <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
                             <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile3()">
                                 <i class="far fa-image text-10xl"></i>
                                 <p class="text-brown-light">Choose your photo</p>
                             </div>
                             <div style='height: 0; width: 0; overflow:hidden;'>
                                 <label class="hidden" for="hat_pagetwo_imageone">IMAGE</label>
-                                <input id="upfile" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this)" required>
+                                <input id="upfile3" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this)" required>
                             </div>
                             @error('hat_pagetwo_imageone')
                             <p>{{ $message }}</p>
@@ -157,13 +157,13 @@
                         </div>
                         <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
                             <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile4()">
                                 <i class="far fa-image text-10xl"></i>
                                 <p class="text-brown-light">Choose your photo</p>
                             </div>
                             <div style='height: 0; width: 0; overflow:hidden;'>
                                 <label class="hidden" for="hat_pagetwo_imagetwo">IMAGE</label>
-                                <input id="upfile" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this)" required>
+                                <input id="upfile4" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this)" required>
                             </div>
                             @error('hat_pagetwo_imagetwo')
                             <p>{{ $message }}</p>
@@ -181,6 +181,8 @@
 @endsection
 
 @section('css')
+
+    input:focus
 
 @endsection
 
@@ -206,14 +208,26 @@
             );
         });
 
-        function getFile() {
-            document.getElementById("upfile").click();
+        function getFile1() {
+            document.getElementById("upfile1").click();
+        }
+
+        function getFile2() {
+            document.getElementById("upfile2").click();
+        }
+
+        function getFile3() {
+            document.getElementById("upfile3").click();
+        }
+
+        function getFile4() {
+            document.getElementById("upfile4").click();
         }
 
         function sub(obj) {
             var file = obj.value;
             var fileName = file.split("\\");
-            document.getElementById("yourBtn").innerHTML = fileName[fileName.length - 1];
+            document.getElementById("customFileInput").innerHTML = fileName[fileName.length - 1];
             event.preventDefault();
         }
     </script>
