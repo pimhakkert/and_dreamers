@@ -20,7 +20,7 @@
             crossorigin="anonymous"></script>
         @livewireStyles
         <style>
-            @media only screen and (min-width: 1400px) {
+            @media only screen and (min-width: 1600px) {
                 html {
                     font-size: 130%;
                 }
