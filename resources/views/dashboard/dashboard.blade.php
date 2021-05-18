@@ -80,7 +80,7 @@
                 function(){$('.profileCard-image').attr("src","../images/profile.svg")}
             );
             $('.hatstoryCard').hover(
-                function(){$('.hatstoryCard-image').attr("src","../images/hoed.svg")},
+                function(){$('.hatstoryCard-image').attr("src","../images/hoed-wit.svg")},
                 function(){$('.hatstoryCard-image').attr("src","../images/hoed.svg")}
             );
             $('.homeCard').hover(

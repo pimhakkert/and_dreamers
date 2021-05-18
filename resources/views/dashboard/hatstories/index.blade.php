@@ -24,7 +24,7 @@
                     <span class="tooltiptext">Change your username, password, 2fa or email</span>
                 </a>
                 <div class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo">
-                    <img src="../images/hoed.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
+                    <img src="../images/hoed-wit.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
                     <span class="tooltiptext">View your hats here. Add, remove or edit them</span>
                 </div>
                 <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
@@ -144,7 +144,7 @@
             );
             $('.menuTwo').hover(
                 function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed.svg')},
-                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed.svg')}
+                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed-wit.svg')}
             );
             $('.menuThree').hover(
                 function(){$(this).children('.menuThree-image').attr('src', '../images/home-wit.svg')},
