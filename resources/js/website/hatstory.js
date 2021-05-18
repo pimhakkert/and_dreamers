@@ -3,14 +3,14 @@ import {PageFlip} from 'page-flip';
 window.addEventListener('load', () => {
     const element = document.querySelector('#hatstory');
     const settings = {
-        width: 550, // base page width
-        height: 733, // base page height
+        width: 500, // base page width
+        height: 600, // base page height
 
         // set threshold values:
-        minWidth: 315,
-        maxWidth: 1000,
+        minWidth: 225,
+        maxWidth: 600,
         minHeight: 200,
-        maxHeight: 1350,
+        maxHeight: 600,
 
         showCover: true,
         size: "stretch",
@@ -20,6 +20,8 @@ window.addEventListener('load', () => {
         flippingTime: 600,
         mobileScrollSupport: false
     };
+
+    console.log(settings);
 
     const pageFlip = new PageFlip(element, settings);
 
@@ -38,10 +40,17 @@ window.addEventListener('load', () => {
     for(let i=0; i<nextButtons.length; i++)
     {
         nextButtons[i].addEventListener('click', () => {
-            console.log('next');
             pageFlip.flipNext();
         });
     }
+
+    document.querySelector('#mobile-prev').addEventListener('click', () => {
+        pageFlip.flipPrev();
+    });
+
+    document.querySelector('#mobile-next').addEventListener('click', () => {
+        pageFlip.flipNext();
+    });
 
 });
 
