@@ -39,39 +39,41 @@ class HatStoryController extends Controller
     {
         // Validate the video file and the thumbnail file
         $request->validate([
-            'hat_cover_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pageone_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
-            'hat_pagetwo_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_pagetwo_imageone' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
+            'hat_pagetwo_imagetwo' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
         ]);
 
         $hatStory = new HatStory;
 
-        if($request->file('hat_cover_image') && $request->file('hat_pageone_image') && $request->file('hat_pagetwo_image')) {
-            $hatStory->hat_cover_title = $request->hat_cover_title;
-            $hatStory->hat_cover_text = $request->hat_cover_text;
-            $hat_cover_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_cover_image')->extension();
-            $request->file('hat_cover_image')->storeAs('hatimage', $hat_cover_image, 'public');
-            $hatStory->hat_cover_image = $hat_cover_image;
-            $hatStory->hat_cover_hover = $request->hat_cover_hover;
-            $hatStory->hat_cover_opacity = $request->hat_cover_opacity;
+        if($request->file('hat_image') && $request->file('hat_pageone_image') && $request->file('hat_pagetwo_imageone') && $request->file('hat_pagetwo_imagetwo')) {
+            // Main
+            $hatStory->hat_name = $request->hat_name;
+            $hatStory->hat_text = $request->hat_text;
+            $hat_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_image')->extension();
+            $request->file('hat_image')->storeAs('hatimage', $hat_image, 'public');
+            $hatStory->hat_image = $hat_image;
 
-            $hatStory->hat_pageone_title = $request->hat_pageone_title;
-            $hatStory->hat_pageone_heading = $request->hat_pageone_heading;
-            $hatStory->hat_pageone_text= $request->hat_pageone_text;
+            // Specifications
+            $hatStory->hat_size = $request->hat_size;
+            $hatStory->hat_color = $request->hat_color;
+            $hatStory->hat_material = $request->hat_material;
+
+            // Page One
+            $hatStory->hat_pageone_text = $request->hat_pageone_text;
             $hat_pageone_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pageone_image')->extension();
             $request->file('hat_pageone_image')->storeAs('hatimage', $hat_pageone_image, 'public');
             $hatStory->hat_pageone_image = $hat_pageone_image;
-            $hatStory->hat_pageone_hover = $request->hat_pageone_hover;
-            $hatStory->hat_pageone_opacity = $request->hat_pageone_opacity;
 
-            $hatStory->hat_pagetwo_title = $request->hat_pagetwo_title;
-            $hatStory->hat_pagetwo_heading = $request->hat_pagetwo_heading;
+            // Page Two
             $hatStory->hat_pagetwo_text = $request->hat_pagetwo_text;
-            $hat_pagetwo_image = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_image')->extension();
-            $request->file('hat_pagetwo_image')->storeAs('hatimage', $hat_pagetwo_image, 'public');
-            $hatStory->hat_pagetwo_image = $hat_pagetwo_image;
-            $hatStory->hat_pagetwo_hover = $request->hat_pagetwo_hover;
-            $hatStory->hat_pagetwo_opacity = $request->hat_pagetwo_opacity;
+            $hat_pagetwo_imageone = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_imageone')->extension();
+            $request->file('hat_pagetwo_imageone')->storeAs('hatimage', $hat_pagetwo_imageone, 'public');
+            $hatStory->hat_pagetwo_imageone = $hat_pagetwo_imageone;
+            $hat_pagetwo_imagetwo = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_imagetwo')->extension();
+            $request->file('hat_pagetwo_imagetwo')->storeAs('hatimage', $hat_pagetwo_imagetwo, 'public');
+            $hatStory->hat_pagetwo_imagetwo = $hat_pagetwo_imagetwo;
 
             $hatStory->save();
         }

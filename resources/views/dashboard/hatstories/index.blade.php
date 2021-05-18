@@ -45,8 +45,8 @@
         <div class="pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1">
             @foreach ($hatstory as $hat)
                 <div class="w-64 h-64 relative justify-self-center relative z-0">
-                    <div class="border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 " style="background-image: url(/storage/hatimage/{{ $hat->hat_cover_image }}); border-width: 12px"></div>
-                    <p class="text-center text-3xl"> {{ $hat->hat_cover_title }}</p>
+                    <div class="border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 " style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px"></div>
+                    <p class="text-center text-3xl"> {{ $hat->hat_name }}</p>
                     <!-- Buttons -->
                     <div class="flex absolute left-14 mt-5" style="bottom: -10px">
                         <!-- Delete Button -->
@@ -71,63 +71,6 @@
 @endsection
 
 @section('css')
-    .tooltipProfile, .tooltipHat , .tooltipHome, .tooltipLogout, .tooltipDelete {
-        position: relative;
-    }
-
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext, .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext, .tooltipDelete .tooltiptext {
-        visibility: hidden;
-        background-color: rgb(237,230,224);
-        color: #825550;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        width: 220px;
-        box-shadow: 0 3px 6px #00000029;
-    }
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext, .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext {
-        left: 120%;
-    }
-
-    .tooltipDelete .tooltiptext {
-        bottom: 120%;
-        left: 50%;
-        margin-left: -110px;
-    }
-
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext {
-        top: 3px;
-    }
-
-    .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext {
-        top: 15px;
-    }
-
-    .tooltipProfile .tooltiptext::after, .tooltipHat .tooltiptext::after, .tooltipHome .tooltiptext::after, .tooltipLogout .tooltiptext::after, .tooltipDelete .tooltiptext::after {
-        content: "";
-        position: absolute;
-        border-width: 10px;
-        border-style: solid;
-    }
-
-    .tooltipProfile .tooltiptext::after, .tooltipHat .tooltiptext::after, .tooltipHome .tooltiptext::after, .tooltipLogout .tooltiptext::after {
-        top: 50%;
-        right: 100%;
-        margin-top: -10px;
-        border-color: transparent rgb(237,230,224) transparent transparent;
-    }
-
-    .tooltipDelete .tooltiptext::after {
-        top: 100%;
-        left: 50%;
-        margin-left: -10px;
-        border-color: rgb(237,230,224) transparent transparent transparent;
-    }
-
-    .tooltipProfile:hover .tooltiptext, .tooltipHat:hover .tooltiptext, .tooltipHome:hover .tooltiptext, .tooltipLogout:hover .tooltiptext, .tooltipDelete:hover .tooltiptext {
-        visibility: visible;
-    }
 
 @endsection
 

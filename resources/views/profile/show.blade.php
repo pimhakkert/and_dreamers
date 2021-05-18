@@ -63,65 +63,6 @@
 
 @section('css')
 
-    .tooltipProfile, .tooltipHat , .tooltipHome, .tooltipLogout, .tooltipDelete {
-    position: relative;
-    }
-
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext, .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext {
-    visibility: hidden;
-    background-color: rgb(237,230,224);
-    color: #825550;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    width: 220px;
-    box-shadow: 0 3px 6px #00000029;
-    }
-
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext, .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext {
-    left: 120%;
-    }
-
-    .tooltipDelete .tooltiptext {
-    bottom: 120%;
-    left: 50%;
-    margin-left: -110px;
-    }
-
-    .tooltipProfile .tooltiptext, .tooltipHat .tooltiptext {
-    top: 3px;
-    }
-
-    .tooltipHome .tooltiptext, .tooltipLogout .tooltiptext {
-    top: 15px;
-    }
-
-    .tooltipProfile .tooltiptext::after, .tooltipHat .tooltiptext::after, .tooltipHome .tooltiptext::after, .tooltipLogout .tooltiptext::after {
-    content: "";
-    position: absolute;
-    border-width: 10px;
-    border-style: solid;
-    }
-
-    .tooltipProfile .tooltiptext::after, .tooltipHat .tooltiptext::after, .tooltipHome .tooltiptext::after, .tooltipLogout .tooltiptext::after {
-    top: 50%;
-    right: 100%;
-    margin-top: -10px;
-    border-color: transparent rgb(237,230,224) transparent transparent;
-    }
-
-    .tooltipDelete .tooltiptext::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -10px;
-    border-color: rgb(237,230,224) transparent transparent transparent;
-    }
-
-    .tooltipProfile:hover .tooltiptext, .tooltipHat:hover .tooltiptext, .tooltipHome:hover .tooltiptext, .tooltipLogout:hover .tooltiptext {
-    visibility: visible;
-    }
-
 @endsection
 
 @section('js')
