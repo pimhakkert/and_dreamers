@@ -17,11 +17,9 @@ window.addEventListener('load', () => {
         disableFlipByClick: true,
         maxShadowOpacity: 0.5,
         useMouseEvents: false,
-        flippingTime: 600,
+        flippingTime: 750,
         mobileScrollSupport: false
     };
-
-    console.log(settings);
 
     const pageFlip = new PageFlip(element, settings);
 

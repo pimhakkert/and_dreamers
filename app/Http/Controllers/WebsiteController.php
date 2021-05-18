@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\HatStory;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -11,8 +12,11 @@ class WebsiteController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function hatStory()
+    function hatStory(int $id)
     {
-        return view('website.hatstory');
+
+        $hatStory = HatStory::findOrFail($id);
+
+        return view('website.hatstory', ['hatStory' => $hatStory]);
     }
 }
