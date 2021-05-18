@@ -10,7 +10,7 @@
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+        <div class="pl-10 fixed h-full grid z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <p class="text-3xl italic pb-6">Profile</p>
 
@@ -40,22 +40,17 @@
 
         <!-- Form -->
         <div class="pl-64">
-            @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-                <div>
+            <div class="grid grid-cols-2 gap-20 px-10">
+                @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                     @livewire('profile.update-profile-information-form')
-                </div>
-            @endif
+                @endif
 
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                <div>
+                @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                     @livewire('profile.update-password-form')
-                </div>
-            @endif
-
+                @endif
+            </div>
             @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                <div>
-                    @livewire('profile.two-factor-authentication-form')
-                </div>
+                @livewire('profile.two-factor-authentication-form')
             @endif
         </div>
     </div>

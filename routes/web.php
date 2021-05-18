@@ -21,16 +21,12 @@ Route::get('/', function () {
     return view('website.layouts.website');
 });
 
-Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->name('dashboard');
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
-//    Route::get('/profile', [Controller::class, 'show'])
-//        ->name('dashboard.profile.show');
 
     Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
         ->name('password.email');
