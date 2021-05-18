@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
         // set threshold values:
         minWidth: 225,
-        maxWidth: 600,
+        maxWidth: 1500,
         minHeight: 200,
         maxHeight: 600,
 
