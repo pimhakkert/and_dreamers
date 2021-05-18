@@ -15,7 +15,7 @@
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="text-brown pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <div>
                 <p class="text-3xl italic pb-6">New hat</p>
@@ -45,83 +45,136 @@
             </div>
         </div>
 
-        <!-- Hat story -->
+        <!-- Add hat -->
         <div class="pl-64">
             <!-- Open Form -->
             <form method="post" action="{{ route('hatstories.store') }}" enctype="multipart/form-data">
                 @csrf
-                    <!-- Hat Name & Text -->
-                    <label for="hat_name">NAME</label>
-                    <input type="text" name="hat_name" placeholder="Hat name" required>
-                    @error('hat_name')
-                    <p>{{ $message }}</p>
-                    @enderror
-                    <label for="hat_text">TEXT</label>
-                    <textarea name="hat_text" placeholder="Write a short summary about the hat" required></textarea>
-                    @error('hat_text')
-                    <p>{{ $message }}</p>
-                    @enderror
+                    <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
+                        <!-- Hat Name & Text -->
+                        <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%;">
+                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
+                            <label class="text-2xl" for="hat_name">NAME</label>
+                            <input type="text" name="hat_name" placeholder="Hat name" required>
+                            @error('hat_name')
+                            <p>{{ $message }}</p>
+                            @enderror
+                            <label class="text-2xl" for="hat_text">TEXT</label>
+                            <textarea name="hat_text" placeholder="Write a short summary about the hat" required></textarea>
+                            @error('hat_text')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Hat Image -->
-                    <label class="hidden" for="hat_image">IMAGE</label>
-                    <input type="file" name="hat_image" required>
-                    @error('hat_image')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Hat Image -->
+                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
+                            <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                                <i class="far fa-image text-10xl"></i>
+                                <p class="text-brown-light">Choose your photo</p>
+                            </div>
+                            <div style='height: 0; width: 0; overflow:hidden;'>
+                                <label class="hidden" for="hat_image">IMAGE</label>
+                                <input id="upfile" type="file" value="upload" name="hat_image" onchange="sub(this)" required>
+                            </div>
+                            @error('hat_image')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Hat Specifications -->
-                    <label for="hat_size">SIZE</label>
-                    <input type="text" name="hat_size" placeholder="Hat size" required>
-                    @error('hat_size')
-                    <p>{{ $message }}</p>
-                    @enderror
-                    <label for="hat_color">COLOR</label>
-                    <input type="text" name="hat_color" placeholder="Hat color" required>
-                    @error('hat_color')
-                    <p>{{ $message }}</p>
-                    @enderror
-                    <label for="hat_material">MATERIAL</label>
-                    <input type="text" name="hat_material" placeholder="Hat material" required>
-                    @error('hat_material')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Hat Specifications -->
+                        <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%;">
+                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
+                            <label class="text-2xl" for="hat_size">SIZE</label>
+                            <input type="text" name="hat_size" placeholder="Hat size" required>
+                            @error('hat_size')
+                            <p>{{ $message }}</p>
+                            @enderror
+                            <label class="text-2xl" for="hat_color">COLOR</label>
+                            <input type="text" name="hat_color" placeholder="Hat color" required>
+                            @error('hat_color')
+                            <p>{{ $message }}</p>
+                            @enderror
+                            <label class="text-2xl" for="hat_material">MATERIAL</label>
+                            <input type="text" name="hat_material" placeholder="Hat material" required>
+                            @error('hat_material')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Page 1 Text -->
-                    <label for="hat_pageone_text">TEXT</label>
-                    <textarea name="hat_pageone_text" placeholder="Page one text" required></textarea>
-                    @error('hat_pageone_text')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Page 1 Text -->
+                        <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%;">
+                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
+                            <label class="text-2xl" for="hat_pageone_text">TEXT</label>
+                            <textarea name="hat_pageone_text" placeholder="Page one text" required></textarea>
+                            @error('hat_pageone_text')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Page 1 Image -->
-                    <label class="hidden" for="hat_pageone_image">IMAGE</label>
-                    <input type="file" name="hat_pageone_image" required>
-                    @error('hat_pageone_image')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Page 1 Image -->
+                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
+                            <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                                <i class="far fa-image text-10xl"></i>
+                                <p class="text-brown-light">Choose your photo</p>
+                            </div>
+                            <div style='height: 0; width: 0; overflow:hidden;'>
+                                <label class="hidden" for="hat_pageone_image">IMAGE</label>
+                                <input id="upfile" type="file" value="upload" name="hat_pageone_image" onchange="sub(this)" required>
+                            </div>
+                            @error('hat_pageone_image')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Page 2 Text -->
-                    <label for="hat_pagetwo_text">TEXT</label>
-                    <textarea name="hat_pagetwo_text" placeholder="Page two text" required></textarea>
-                    @error('hat_pagetwo_text')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <div></div>
 
-                    <!-- Page 2 Image 1 -->
-                    <label class="hidden" for="hat_pagetwo_imageone">IMAGE</label>
-                    <input type="file" name="hat_pagetwo_imageone" required>
-                    @error('hat_pagetwo_imageone')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Page 2 Text -->
+                        <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%;">
+                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
+                            <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
+                            <textarea name="hat_pagetwo_text" placeholder="Page two text" required></textarea>
+                            @error('hat_pagetwo_text')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    <!-- Page 2 Image 2 -->
-                    <label class="hidden" for="hat_pagetwo_imagetwo">Image</label>
-                    <input type="file" name="hat_pagetwo_imagetwo" required>
-                    @error('hat_pagetwo_imagetwo')
-                    <p>{{ $message }}</p>
-                    @enderror
+                        <!-- Page 2 Images -->
+                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
+                            <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                                <i class="far fa-image text-10xl"></i>
+                                <p class="text-brown-light">Choose your photo</p>
+                            </div>
+                            <div style='height: 0; width: 0; overflow:hidden;'>
+                                <label class="hidden" for="hat_pagetwo_imageone">IMAGE</label>
+                                <input id="upfile" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this)" required>
+                            </div>
+                            @error('hat_pagetwo_imageone')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8;">
+                            <p class="text-5xl absolute" style="top: -29px; left: 30px;">IMAGE</p>
+                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="getFile()">
+                                <i class="far fa-image text-10xl"></i>
+                                <p class="text-brown-light">Choose your photo</p>
+                            </div>
+                            <div style='height: 0; width: 0; overflow:hidden;'>
+                                <label class="hidden" for="hat_pagetwo_imagetwo">IMAGE</label>
+                                <input id="upfile" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this)" required>
+                            </div>
+                            @error('hat_pagetwo_imagetwo')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
 
-                <button>Create</button>
+                    <!-- Button -->
+                    <div class="w-full text-center">
+                        <button>SAVE</button>
+                    </div>
             </form>
         </div>
     </div>
@@ -152,6 +205,17 @@
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
             );
         });
+
+        function getFile() {
+            document.getElementById("upfile").click();
+        }
+
+        function sub(obj) {
+            var file = obj.value;
+            var fileName = file.split("\\");
+            document.getElementById("yourBtn").innerHTML = fileName[fileName.length - 1];
+            event.preventDefault();
+        }
     </script>
 
 @endsection

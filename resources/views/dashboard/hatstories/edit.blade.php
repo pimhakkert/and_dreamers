@@ -13,196 +13,143 @@
         @endforeach
     </ul>
 
-    <!-- Hat story -->
-{{--    <div class="relative text-brown">--}}
-{{--        <p class="text-5xl italic pt-20 pl-10">Hat story</p>--}}
-{{--        <!-- Open Form -->--}}
-{{--        <form class="pt-44" method="post" action="{{ route('hatstories.update', $hatstory->hat_id) }}" enctype="multipart/form-data">--}}
-{{--        @csrf--}}
-{{--        @method('PUT')--}}
-{{--        <!-- Grid -->--}}
-{{--            <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">--}}
-{{--                <!-- Cover Book -->--}}
-{{--                <div class="bg-lightbrown py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">BOOK</p>--}}
-{{--                    <div class="form-group" style="margin-top: 0 !important;">--}}
-{{--                        <label for="hat_cover_title">TITLE</label>--}}
-{{--                        <input class="mb-10" type="text" name="hat_cover_title" value="{{ $hatstory->hat_cover_title }}" required>--}}
-{{--                        @error('hat_cover_title')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                        <label for="hat_cover_text">TEXT</label>--}}
-{{--                        <textarea name="hat_cover_text" required>{{ $hatstory->hat_cover_text }}</textarea>--}}
-{{--                        @error('hat_cover_text')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- Cover Image -->--}}
-{{--                <div class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_cover_image }});">--}}
-{{--                    <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>--}}
-{{--                    <label class="hidden" for="hat_cover_image">IMAGE</label>--}}
-{{--                    <input class="ml-50" type="file" name="hat_cover_image">--}}
-{{--                    @error('hat_cover_image')--}}
-{{--                    <p>{{ $message }}</p>--}}
-{{--                    @enderror--}}
-{{--                </div>--}}
-{{--                <!-- Cover Extra -->--}}
-{{--                <div class="bg-lightbrown-light py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">EXTRA</p>--}}
-{{--                    <p class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">HOVER COLOR</p>--}}
-{{--                    <div class="flex space-x-4 pb-3">--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_cover_hover" value="EDE6E0" @if($hatstory->hat_cover_hover == "EDE6E0") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur1.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_cover_hover" value="D5C1B8" @if($hatstory->hat_cover_hover == "D5C1B8") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur2.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_cover_hover" value="825550" @if($hatstory->hat_cover_hover == "825550") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur3.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_cover_hover" value="444243" @if($hatstory->hat_cover_hover == "444243") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur4.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                    </div>--}}
-{{--                    <div class="flex flex-col">--}}
-{{--                        <label for="hat_cover_opacity" class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">OPACITY</label>--}}
-{{--                        <div>--}}
-{{--                            <output class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">{{ $hatstory->hat_cover_opacity }}</output>%--}}
-{{--                            <input type="range" name="hat_cover_opacity" min="0" value="{{ $hatstory->hat_cover_opacity }}" max="100" oninput="this.previousElementSibling.value = this.value">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    <!-- Content Grid -->
+    <div class="pt-16 relative text-brown">
+        <!-- Left Menu -->
+        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+            <!-- Top Left Menu -->
+            <div>
+                <p class="text-3xl italic pb-6">Edit hat</p>
+            </div>
 
-{{--                <!-- Page One -->--}}
-{{--                <div class="bg-lightbrown py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">PAGE 1</p>--}}
-{{--                    <div class="form-group" style="margin-top: 0 !important;">--}}
-{{--                        <label for="hat_pageone_title">Title</label>--}}
-{{--                        <input class="mb-10" type="text" name="hat_pageone_title" value="{{ $hatstory->hat_pageone_title }}" required>--}}
-{{--                        @error('hat_pageone_title')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                        <label for="hat_pageone_heading">Heading</label>--}}
-{{--                        <input class="mb-10" type="text" name="hat_pageone_heading" value="{{ $hatstory->hat_pageone_heading }}" required>--}}
-{{--                        @error('hat_pageone_heading')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                        <label for="hat_pageone_text">Text</label>--}}
-{{--                        <textarea name="hat_pageone_text" placeholder="Text describing the title and/or heading" required>{{$hatstory->hat_pageone_text}}</textarea>--}}
-{{--                        @error('hat_pageone_text')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- Page One Image -->--}}
-{{--                <div  class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_pageone_image }});">--}}
-{{--                    <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>--}}
-{{--                    <label class="hidden" for="hat_pageone_image">Image</label>--}}
-{{--                    <input type="file" name="hat_pageone_image">--}}
-{{--                    @error('hat_pageone_image')--}}
-{{--                    <p>{{ $message }}</p>--}}
-{{--                    @enderror--}}
-{{--                </div>--}}
-{{--                <!-- Page One Extra -->--}}
-{{--                <div class="bg-lightbrown-light py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">EXTRA</p>--}}
-{{--                    <p class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">HOVER COLOR</p>--}}
-{{--                    <div class="flex space-x-4 pb-3">--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pageone_hover" value="EDE6E0" @if($hatstory->hat_pageone_hover == "EDE6E0") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur1.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pageone_hover" value="D5C1B8" @if($hatstory->hat_pageone_hover == "D5C1B8") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur2.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pageone_hover" value="825550" @if($hatstory->hat_pageone_hover == "825550") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur3.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pageone_hover" value="444243" @if($hatstory->hat_pageone_hover == "444243") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur4.svg" alt="">--}}
-{{--                        </label>--}}
-{{--                    </div>--}}
-{{--                    <div class="flex flex-col">--}}
-{{--                        <label for="hat_pageone_opactity" class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">Opacity</label>--}}
-{{--                        <div>--}}
-{{--                            <output class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">{{ $hatstory->hat_pageone_opacity }}</output>%--}}
-{{--                            <input type="range" name="hat_pageone_opacity" min="0" value="{{ $hatstory->hat_pageone_opacity }}" max="100" oninput="this.previousElementSibling.value = this.value">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+            <!-- Bottom Left Menu -->
+            <div class="flex flex-col justify-end mb-20">
+                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipProfile menuOne" href="{{ route('profile.show') }}">
+                    <img src="../../images/profile.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-0.5 menuOne-image">
+                    <span class="tooltiptext">Change your username, password, 2fa or email</span>
+                </a>
+                <a class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
+                    <img src="../../images/hoed-wit.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
+                    <span class="tooltiptext">View your hats here. Add, remove or edit them</span>
+                </a>
+                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
+                    <img src="../../images/home.svg" alt="Home" width="50px" height="50px" class="mb-2 menuThree-image">
+                    <span class="tooltiptext">Go to the homepage</span>
+                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <img src="../../images/logout.svg" alt="Logout" width="50px" height="50px" class="menuFour-image">
+                        <span class="tooltiptext">Click to logout</span>
+                    </a>
+                </form>
+            </div>
+        </div>
 
-{{--                <!-- Page Two -->--}}
-{{--                <div class="bg-lightbrown py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">PAGE 2</p>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <label for="hat_pagetwo_title">Title</label>--}}
-{{--                        <input class="mb-10" type="text" name="hat_pagetwo_title" value="{{ $hatstory->hat_pagetwo_title }}" required>--}}
-{{--                        @error('hat_pagetwo_title')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                        <label for="hat_pagetwo_heading">Heading</label>--}}
-{{--                        <input class="mb-10" type="text" name="hat_pagetwo_heading" value="{{ $hatstory->hat_pagetwo_heading }}" required>--}}
-{{--                        @error('hat_pagetwo_heading')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                        <label for="hat_pagetwo_text">Text</label>--}}
-{{--                        <textarea name="hat_pagetwo_text" placeholder="Text describing the title and/or heading" required>{{ $hatstory->hat_pagetwo_text }}</textarea>--}}
-{{--                        @error('hat_pagetwo_text')--}}
-{{--                        <p>{{ $message }}</p>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- Page Two Image -->--}}
-{{--                <div  class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_pagetwo_image }});">--}}
-{{--                    <p class="text-5xl absolute -mt-4 ml-6">IMAGE</p>--}}
-{{--                    <label class="hidden" for="hat_pagetwo_image hidden">Image</label>--}}
-{{--                    <input type="file" name="hat_pagetwo_image">--}}
-{{--                    @error('hat_pagetwo_image')--}}
-{{--                    <p>{{ $message }}</p>--}}
-{{--                    @enderror--}}
-{{--                </div>--}}
-{{--                <!-- Hat Cover Extra -->--}}
-{{--                <div class="bg-lightbrown-light py-16 px-16 max-w-lg">--}}
-{{--                    <p class="text-5xl absolute -mt-20 -ml-10">EXTRA</p>--}}
-{{--                    <p class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">HOVER COLOR</p>--}}
-{{--                    <div class="flex space-x-4 pb-3">--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pagetwo_hover" value="EDE6E0" @if($hatstory->hat_pagetwo_hover == "EDE6E0") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur1.svg" alt="Color is #EDE6E0">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pagetwo_hover" value="D5C1B8" @if($hatstory->hat_pagetwo_hover == "D5C1B8") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur2.svg" alt="Color is #D5C1B8">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pagetwo_hover" value="825550" @if($hatstory->hat_pagetwo_hover == "825550") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur3.svg" alt="Color is #825550">--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input type="radio" name="hat_pagetwo_hover" value="444243" @if($hatstory->hat_pagetwo_hover == "444243") checked @endif>--}}
-{{--                            <img class="w-14" src="../../images/kleur4.svg" alt="Color is #444243">--}}
-{{--                        </label>--}}
-{{--                    </div>--}}
-{{--                    <div class="flex flex-col">--}}
-{{--                        <label for="hat_pagetwo_opactity" class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">Opacity</label>--}}
-{{--                        <div>--}}
-{{--                            <output class="text-brown font-semibold text-lg lg:text-xl 2xl:text-2xl pb-5">{{ $hatstory->hat_pagetwo_opacity }}</output>%--}}
-{{--                            <input type="range" name="hat_pagetwo_opacity" min="0" value="{{ $hatstory->hat_pagetwo_opacity }}" max="100" oninput="this.previousElementSibling.value = this.value">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <button>Create</button>--}}
-{{--        </form>--}}
-{{--    </div>--}}
+        <!-- <div  class="max-w-lg bg-no-repeat bg-cover bg-center" style="background-image: url(/storage/hatimage/{{ $hatstory->hat_pageone_image }});"> -->
+
+        <!-- Edit hat -->
+        <div class="pl-64">
+            <!-- Open Form -->
+            <form method="post" action="{{ route('hatstories.update', $hatstory->hat_id) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
+                    <!-- Hat Name & Text -->
+                    <div class="flex flex-col bg-lightbrown">
+                        <label class="text-2xl" for="hat_name">NAME</label>
+                        <input type="text" name="hat_name" value="{{ $hatstory->hat_name }}" required>
+                        @error('hat_name')
+                        <p>{{ $message }}</p>
+                        @enderror
+                        <label class="text-2xl" for="hat_text">TEXT</label>
+                        <textarea name="hat_text" required>{{ $hatstory->hat_text }}</textarea>
+                        @error('hat_text')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Hat Image -->
+                    <div>
+                        <label class="hidden" for="hat_image">IMAGE</label>
+                        <input type="file" name="hat_image">
+                        @error('hat_cover_image')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Hat Specifications -->
+                    <div class="flex flex-col bg-lightbrown">
+                        <label class="text-2xl" for="hat_size">SIZE</label>
+                        <input type="text" name="hat_size" value="{{ $hatstory->hat_size }}" required>
+                        @error('hat_size')
+                        <p>{{ $message }}</p>
+                        @enderror
+                        <label class="text-2xl" for="hat_color">COLOR</label>
+                        <input type="text" name="hat_color" value="{{ $hatstory->hat_color }}" required>
+                        @error('hat_color')
+                        <p>{{ $message }}</p>
+                        @enderror
+                        <label class="text-2xl" for="hat_material">MATERIAL</label>
+                        <input type="text" name="hat_material" value="{{ $hatstory->hat_material }}" required>
+                        @error('hat_material')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Page 1 Text -->
+                    <div class="flex flex-col bg-lightbrown">
+                        <label class="text-2xl" for="hat_pageone_text">TEXT</label>
+                        <textarea name="hat_pageone_text" required>{{$hatstory->hat_pageone_text}}</textarea>
+                        @error('hat_pageone_text')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Page 1 Image -->
+                    <div>
+                        <label class="hidden" for="hat_pageone_image">IMAGE</label>
+                        <input type="file" name="hat_pageone_image">
+                        @error('hat_pageone_image')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div></div>
+
+                    <!-- Page 2 Text -->
+                    <div class="flex flex-col bg-lightbrown">
+                        <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
+                        <textarea name="hat_pagetwo_text" required>{{ $hatstory->hat_pagetwo_text }}</textarea>
+                        @error('hat_pagetwo_text')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Page 2 Images -->
+                    <div>
+                        <label class="hidden" for="hat_pagetwo_imageone hidden">IMAGE</label>
+                        <input type="file" name="hat_pagetwo_imageone">
+                        @error('hat_pagetwo_imageone')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div>
+                        <label class="hidden" for="hat_pagetwo_imagetwo hidden">IMAGE</label>
+                        <input type="file" name="hat_pagetwo_imagetwo">
+                        @error('hat_pagetwo_imagetwo')
+                        <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="w-full text-center">
+                    <button>SAVE</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 @endsection
 

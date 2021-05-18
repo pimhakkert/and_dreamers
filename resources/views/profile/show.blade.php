@@ -8,9 +8,9 @@
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
     <!-- Content Grid -->
-    <div class="pt-16 relative">
+    <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="text-brown pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <p class="text-3xl italic pb-6">Profile</p>
 
