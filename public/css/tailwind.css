@@ -6473,6 +6473,10 @@ select{
   line-height: 1;
 }
 
+.text-10xl{
+  font-size: 10rem;
+}
+
 .leading-3{
   line-height: .75rem;
 }
@@ -27032,6 +27036,10 @@ html {
     line-height: 1;
   }
 
+  .sm\:text-10xl{
+    font-size: 10rem;
+  }
+
   .sm\:leading-3{
     line-height: .75rem;
   }
@@ -47360,6 +47368,10 @@ html {
   .md\:text-9xl{
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .md\:text-10xl{
+    font-size: 10rem;
   }
 
   .md\:leading-3{
@@ -67692,6 +67704,10 @@ html {
     line-height: 1;
   }
 
+  .lg\:text-10xl{
+    font-size: 10rem;
+  }
+
   .lg\:leading-3{
     line-height: .75rem;
   }
@@ -88022,6 +88038,10 @@ html {
     line-height: 1;
   }
 
+  .xl\:text-10xl{
+    font-size: 10rem;
+  }
+
   .xl\:leading-3{
     line-height: .75rem;
   }
@@ -108350,6 +108370,10 @@ html {
   .\32xl\:text-9xl{
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .\32xl\:text-10xl{
+    font-size: 10rem;
   }
 
   .\32xl\:leading-3{

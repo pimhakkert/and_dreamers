@@ -27,6 +27,9 @@ module.exports = {
                 'big': '68rem',
                 'small': '27rem',
                 'block': '26rem',
+            },
+            fontSize: {
+                '10xl': '10rem',
             }
         },
         /*Disable default colors*/
