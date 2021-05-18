@@ -1,6 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/website/hatstory.js": "/js/website/hatstory.js",
-    "/css/tailwind.css": "/css/tailwind.css",
-    "/css/tooltip.css": "/css/tooltip.css"
+    "/js/website/page-flip.js": "/js/website/page-flip.js",
+    "/css/tailwind.css": "/css/tailwind.css"
 }

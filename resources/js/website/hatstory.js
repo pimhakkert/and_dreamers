@@ -1,4 +1,4 @@
-import {PageFlip} from 'page-flip';
+import {PageFlip} from './page-flip';
 
 window.addEventListener('load', () => {
     const element = document.querySelector('#hatstory');

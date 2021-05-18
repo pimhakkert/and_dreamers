@@ -10,10 +10,19 @@
                 <div class="hatstory-page bg-brown">
                     <button class="hatstory-next">Next</button>
                 </div>
-                <div class="hatstory-page bg-white">
+                <div class="hatstory-page bg-white" data-density="soft">
                     <button class="hatstory-previous">Previous</button>
                 </div>
-                <div class="hatstory-page bg-white">
+                <div class="hatstory-page bg-white" data-density="soft">
+                    <button class="hatstory-next">Next</button>
+                </div>
+                <div class="hatstory-page bg-white" data-density="soft">
+                    <button class="hatstory-previous">Previous</button>
+                </div>
+                <div class="hatstory-page bg-white" data-density="soft">
+                    <button class="hatstory-next">Next</button>
+                </div>
+                <div class="hatstory-page bg-white" data-density="soft">
                     <button class="hatstory-next">Next</button>
                 </div>
                 <div class="hatstory-page bg-white">
@@ -67,5 +76,6 @@
 @endsection
 
 @section('js')
+{{--    <script src="{{ mix('js/website/page-flip.js') }}"></script>--}}
     <script src="{{ mix('js/website/hatstory.js') }}"></script>
 @endsection
