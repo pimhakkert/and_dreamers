@@ -23,10 +23,10 @@
                     <img src="../images/profile.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-1 menuOne-image">
                     <span class="tooltiptext">Change your username, password, 2fa or email</span>
                 </a>
-                <div class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo">
+                <a class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
                     <img src="../images/hoed-wit.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
                     <span class="tooltiptext">View your hats here. Add, remove or edit them</span>
-                </div>
+                </a>
                 <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
                     <img src="../images/home.svg" alt="Home" width="50px" height="50px" class="mb-2 menuThree-image">
                     <span class="tooltiptext">Go to the homepage</span>
