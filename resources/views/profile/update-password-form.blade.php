@@ -14,7 +14,7 @@
                 <x-jet-input-error for="password_confirmation" />
             </div>
 
-            <x-jet-button class="mt-auto border-brown border-4 pt-5 pb-3 text-2xl">
+            <x-jet-button class="mt-auto border-brown border-4 pt-5 pb-3 text-2xl bg-lightbrown hover:bg-brown hover:text-lightbrown">
                 SAVE
             </x-jet-button>
         </div>

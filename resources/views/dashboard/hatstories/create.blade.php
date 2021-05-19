@@ -140,11 +140,12 @@
                                 <input id="upfile4" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this); loadFile4(event)" required>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Button -->
-                    <div class="pt-12 pb-12 w-full text-center">
-                        <button class="border-4 border-brown text-2xl px-40 pb-3 pt-5">SAVE</button>
+                        <div></div>
+                        <!-- Button -->
+                        <div class="pt-12 pb-12 w-full text-center">
+                            <button class="border-4 border-brown text-2xl w-full pb-2 pt-4 bg-white hover:bg-brown hover:text-white">SAVE</button>
+                        </div>
+                        <div></div>
                     </div>
             </form>
         </div>

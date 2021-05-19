@@ -15,7 +15,7 @@
                 <x-jet-input-error for="email" />
             </div>
 
-            <x-jet-button wire:loading.attr="disabled" wire:target="photo" class="mt-auto border-brown border-4 pt-5 pb-3 text-2xl">
+            <x-jet-button wire:loading.attr="disabled" wire:target="photo" class="mt-auto border-brown border-4 pt-5 pb-3 text-2xl bg-lightbrown hover:bg-brown hover:text-lightbrown">
                 SAVE
             </x-jet-button>
         </div>
