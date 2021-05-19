@@ -16,14 +16,14 @@ class CreateHatStoriesTable extends Migration
         Schema::create('hat_stories', function (Blueprint $table) {
             $table->id('hat_id');
             $table->string('hat_name');
-            $table->string('hat_text');
+            $table->text('hat_text');
             $table->string('hat_image');
             $table->string('hat_size');
             $table->string('hat_color');
             $table->string('hat_material');
-            $table->string('hat_pageone_text');
+            $table->text('hat_pageone_text');
             $table->string('hat_pageone_image');
-            $table->string('hat_pagetwo_text');
+            $table->text('hat_pagetwo_text');
             $table->string('hat_pagetwo_imageone');
             $table->string('hat_pagetwo_imagetwo');
             $table->timestamps();
