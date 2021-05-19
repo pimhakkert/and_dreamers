@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="p-5 xl:p-20 bg-lightbrown-light">
-    <div class="max-w-6xl ml-auto mr-auto">
+    <div class="max-w-5xl ml-auto mr-auto">
         <div class="w-full">
             <div id="hatstory">
                 <div class="page-group">
@@ -20,27 +20,38 @@
                     </div>
                 </div>
                 <div class="page-group">
-                    <div class="hatstory-page bg-white" data-density="soft">
-                        <h3>{{ $hatStory->hat_name }}</h3>
-                        <p>"{{ $hatStory->hat_text }}"</p>
-                        <div>
-                            <p>Specifications</p>
+                    <div class="hatstory-page bg-white relative z-10" data-density="soft">
+                        <button class="hatstory-previous absolute top-5 left-5 text-brown">Previous</button>
+                        <div class="pl-16 pt-10 z-10 h-full flex flex-col" style="border-right: 1px solid #888;">
                             <div>
-                                <p>Size</p>
-                                <p>{{ $hatStory->hat_size }}</p>
-                                <p>Color</p>
-                                <p>{{ $hatStory->hat_color }}</p>
-                                <p>Material</p>
-                                <p>{{ $hatStory->hat_material }}</p>
+                                <h3 class="inline-block border-b-4 border-hoverbrown text-hoverbrown italic font-normal text-2xl mt-10">{{ $hatStory->hat_name }}</h3>
+                                <p class="text-brown mt-8" style="max-width: 90%">"{{ $hatStory->hat_text }}"</p>
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <p class="text-brown">Specifications</p>
+                                <div class="specs-grid grid mt-3" style="grid-template-columns: auto 1fr; width: max-content">
+                                    <p class="text-brown mr-6">Size</p>
+                                    <p class="text-brown mr-2">{{ $hatStory->hat_size }}</p>
+                                    <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
+                                    <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
+                                    <p class="text-brown mr-6">Color</p>
+                                    <p class="text-brown mr-2">{{ $hatStory->hat_color }}</p>
+                                    <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
+                                    <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
+                                    <p class="text-brown mr-6">Material</p>
+                                    <p class="text-brown mr-2">{{ $hatStory->hat_material }}</p>
+                                </div>
+
                             </div>
 
-                        </div>
 
-                        <button class="hatstory-previous">Previous</button>
+                        </div>
                     </div>
-                    <div class="hatstory-page bg-white" data-density="soft">
-                        <button class="hatstory-next">Next</button>
-                        <img src="/storage/hatimage/{{ $hatStory->hat_image }}" alt="">
+                    <div class="hatstory-page bg-white relative text-brown overflow-y-hidden" data-density="soft">
+                        <div class="flex justify-center items-center max-h-full" style="border-left: 1px solid #888;">
+                            <button class="hatstory-next absolute top-5 right-5 z-10">Next</button>
+                            <img class="object-cover" src="/storage/hatimage/{{ $hatStory->hat_image }}" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="page-group">
