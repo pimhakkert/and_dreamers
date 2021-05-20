@@ -2252,13 +2252,13 @@ window.addEventListener('load', function () {
   var settings = {
     width: 500,
     // base page width
-    height: 600,
+    height: 700,
     // base page height
     // set threshold values:
     minWidth: 225,
     maxWidth: 1500,
     minHeight: 200,
-    maxHeight: 600,
+    maxHeight: 700,
     showCover: true,
     size: "stretch",
     disableFlipByClick: true,
@@ -2274,21 +2274,35 @@ window.addEventListener('load', function () {
 
   for (var i = 0; i < previousButtons.length; i++) {
     previousButtons[i].addEventListener('click', function () {
-      pageFlip.flipPrev();
+      flipPrev(pageFlip);
     });
   }
 
   for (var _i = 0; _i < nextButtons.length; _i++) {
     nextButtons[_i].addEventListener('click', function () {
-      pageFlip.flipNext();
+      flipNext(pageFlip);
     });
   }
 
   document.querySelector('#mobile-prev').addEventListener('click', function () {
-    pageFlip.flipPrev();
+    flipPrev(pageFlip);
   });
   document.querySelector('#mobile-next').addEventListener('click', function () {
+    flipNext(pageFlip);
+  });
+
+  function flipPrev(pageFlip) {
+    document.body.classList.add('noscroll');
+    pageFlip.flipPrev();
+  }
+
+  function flipNext(pageFlip) {
+    document.body.classList.add('noscroll');
     pageFlip.flipNext();
+  }
+
+  pageFlip.on('flip', function (e) {
+    document.body.classList.remove('noscroll');
   });
 });
 })();
