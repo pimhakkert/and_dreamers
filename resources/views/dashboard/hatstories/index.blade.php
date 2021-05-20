@@ -42,10 +42,10 @@
         </div>
 
         <!-- Hat Stories -->
-        <div class="pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1">
+        <div class="pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1 pb-20">
             @foreach ($hatstory as $hat)
                 <div class="w-64 h-64 relative justify-self-center relative z-0">
-                    <div class="border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 " style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px"></div>
+                    <div class="border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 relative" style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px"><img src="" alt=""></div>
                     <p class="text-center text-3xl"> {{ $hat->hat_name }}</p>
                     <!-- Buttons -->
                     <div class="flex absolute left-14 mt-5" style="bottom: -10px">
