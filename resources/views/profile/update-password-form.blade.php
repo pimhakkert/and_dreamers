@@ -1,7 +1,7 @@
 <x-jet-form-section submit="updatePassword">
     <x-slot name="form">
         <!-- New Password -->
-        <div class="bg-lightbrown flex flex-col relative mb-20" style="height: 422px;">
+        <div class="bg-lightbrown flex flex-col relative mb-20">
             <div class="flex flex-col" style="padding: 20% 20% 0 20%">
                 <p class="text-5xl absolute" style="top: -18px; left: 30px;">PASSWORD</p>
                 <x-jet-label for="password" value="New Password" class="text-2xl"/>

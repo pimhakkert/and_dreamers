@@ -2,7 +2,7 @@
 
     <x-slot name="form">
         <!-- Name -->
-        <div class="bg-lightbrown flex flex-col relative mb-20" style="height: 422px;">
+        <div class="bg-lightbrown flex flex-col relative mb-20">
             <div class="flex flex-col" style="padding: 20% 20% 0 20%">
                 <p class="text-5xl absolute" style="top: -18px; left: 30px;">ADMIN</p>
                 <x-jet-label for="name" value="NAME" class="text-2xl"/>

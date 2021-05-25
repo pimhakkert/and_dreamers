@@ -3,6 +3,7 @@
 @section('content')
     <!-- Background Images -->
     <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
+    <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
     <!-- Content Grid -->
     <div class="pt-16">
@@ -11,10 +12,16 @@
             <!-- Top Left Menu -->
             <div>
                 <p class="text-3xl italic pb-6">Hat stories</p>
-                <a href="{{ route('hatstories.create') }}" class="pl-5 hover:text-hoverbrown">
-                    <i class="fas fa-plus pr-5"></i>
-                    Add hat
-                </a>
+                <div>
+                    <a href="{{ route('hatstories.create') }}" class="pl-5 hover:text-hoverbrown">
+                        <i class="fas fa-plus fa-fw pr-10"></i>Add hat
+                    </a>
+                </div>
+                <div class="pt-2">
+                    <a href="" class="pl-5 hover:text-hoverbrown">
+                        <i class="far fa-eye-slash fa-fw pr-10"></i>Show hidden hats
+                    </a>
+                </div>
             </div>
 
             <!-- Bottom Left Menu -->
@@ -45,7 +52,12 @@
         <div class="pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1 pb-20">
             @foreach ($hatstory as $hat)
                 <div class="w-64 h-64 relative justify-self-center relative z-0">
-                    <div class="border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 relative" style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px"><img src="" alt=""></div>
+                    <div class="hatStory-circle cursor-pointer border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 relative" style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px">
+                        <div class="hatStory-hidden hidden rounded-full absolute top-0 left-0 w-full h-full" style="background-color: rgba(0, 0, 0, 0.38);">
+                            <img class="absolute" src="../images/oog-wit.svg" alt="Button to make the hat hidden" style="left: 25px; top: -5px; width: 200px;">
+                            <p class="absolute text-lightbrown text-2xl" style="left: 40%; top: 66%;">Hide</p>
+                        </div>
+                    </div>
                     <p class="text-center text-3xl"> {{ $hat->hat_name }}</p>
                     <!-- Buttons -->
                     <div class="flex absolute left-14 mt-5" style="bottom: -10px">
@@ -96,6 +108,10 @@
             $('.menuFour').hover(
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout-wit.svg')},
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
+            );
+            $('.hatStory-circle').hover(
+                function(){$(this).children('.hatStory-hidden').css('display', 'block')},
+                function(){$(this).children('.hatStory-hidden').css('display', 'none')},
             );
         });
     </script>

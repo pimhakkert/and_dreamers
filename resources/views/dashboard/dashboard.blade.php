@@ -21,7 +21,7 @@
                         <p class="font-bold text-2xl">View profile</p>
                         <p>Change your password, e-mail, username and more personal data.</p>
                     </div>
-                    <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
+                    <img src="../images/next.svg" alt="" class="self-end ml-auto profileCard-next" style="width: 40px; height: 40px;">
                 </div>
             </a>
 
@@ -33,7 +33,7 @@
                         <p class="font-bold text-2xl">Hat overview</p>
                         <p>View all your beautiful hats! Add, remove or edit them here.</p>
                     </div>
-                    <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
+                    <img src="../images/next.svg" alt="" class="self-end ml-auto hatstoryCard-next" style="width: 40px; height: 40px;">
                 </div>
             </a>
 
@@ -45,7 +45,7 @@
                         <p class="font-bold text-2xl">Homepage</p>
                         <p>Want to view your beautiful homepage? Click here!</p>
                     </div>
-                    <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
+                    <img src="../images/next.svg" alt="" class="self-end ml-auto homeCard-next" style="width: 40px; height: 40px;">
                 </div>
             </a>
 
@@ -58,7 +58,7 @@
                             <p class="font-bold text-2xl">Logout</p>
                             <p>Are you done for today? Click here to log out!</p>
                         </div>
-                        <i class="fas fa-caret-square-right text-2xl self-end ml-auto"></i>
+                    <img src="../images/next.svg" alt="" class="self-end ml-auto logoutCard-next" style="width: 40px; height: 40px;">
                 </a>
             </form>
 
@@ -76,20 +76,44 @@
     <script>
         $(document).ready(function(){
             $('.profileCard').hover(
-                function(){$('.profileCard-image').attr("src","../images/profile-wit.svg")},
-                function(){$('.profileCard-image').attr("src","../images/profile.svg")}
+                function(){
+                    $('.profileCard-image').attr("src","../images/profile-wit.svg")
+                    $('.profileCard-next').attr("src","../images/next-wit.svg")
+                },
+                function(){
+                    $('.profileCard-image').attr("src","../images/profile.svg")
+                    $('.profileCard-next').attr("src","../images/next.svg")
+                },
             );
             $('.hatstoryCard').hover(
-                function(){$('.hatstoryCard-image').attr("src","../images/hoed-wit.svg")},
-                function(){$('.hatstoryCard-image').attr("src","../images/hoed.svg")}
+                function(){
+                    $('.hatstoryCard-image').attr("src","../images/hoed-wit.svg")
+                    $('.hatstoryCard-next').attr("src","../images/next-wit.svg")
+                },
+                function(){
+                    $('.hatstoryCard-image').attr("src","../images/hoed.svg")
+                    $('.hatstoryCard-next').attr("src","../images/next.svg")
+                },
             );
             $('.homeCard').hover(
-                function(){$('.homeCard-image').attr("src","../images/home-wit.svg")},
-                function(){$('.homeCard-image').attr("src","../images/home.svg")}
+                function(){
+                    $('.homeCard-image').attr("src","../images/home-wit.svg")
+                    $('.homeCard-next').attr("src","../images/next-wit.svg")
+                },
+                function(){
+                    $('.homeCard-image').attr("src","../images/home.svg")
+                    $('.homeCard-next').attr("src","../images/next.svg")
+                },
             );
             $('.logoutCard').hover(
-                function(){$('.logoutCard-image').attr("src","../images/logout-wit.svg")},
-                function(){$('.logoutCard-image').attr("src","../images/logout.svg")}
+                function(){
+                    $('.logoutCard-image').attr("src","../images/logout-wit.svg")
+                    $('.logoutCard-next').attr("src","../images/next-wit.svg")
+                },
+                function(){
+                    $('.logoutCard-image').attr("src","../images/logout.svg")
+                    $('.logoutCard-next').attr("src","../images/next.svg")
+                },
             );
         });
     </script>

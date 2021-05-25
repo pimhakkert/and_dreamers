@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.dashboard-inside')
 
 @section('content')
-
     <!-- Background Images -->
     <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
