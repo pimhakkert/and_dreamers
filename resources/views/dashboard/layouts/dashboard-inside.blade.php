@@ -28,12 +28,13 @@
             }
         </style>
     </head>
-    <body style="overflow-x: hidden;">
-
+    <body class="overflow-x-hidden">
         @yield('content')
 
         @yield('js')
+
         @stack('modals')
+
         @livewireScripts
     </body>
 </html>
