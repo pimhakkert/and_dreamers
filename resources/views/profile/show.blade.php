@@ -10,7 +10,7 @@
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="pl-10 fixed h-full grid z-50" style="grid-template-columns: auto">
+        <div class="md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <p class="text-3xl italic pb-6">Profile</p>
 
@@ -39,8 +39,8 @@
         </div>
 
         <!-- Form -->
-        <div class="pl-64">
-            <div class="grid grid-cols-2 gap-20 px-10">
+        <div class="md:pl-64">
+            <div class="xl:grid grid-cols-2 gap-20 px-10">
                 @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                     @livewire('profile.update-profile-information-form')
                 @endif

@@ -18,9 +18,9 @@
         <!-- Content Grid -->
         <div class="pt-16 relative text-brown">
             <!-- Left Menu -->
-            <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+            <div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
                 <!-- Top Left Menu -->
-                <div>
+                <div class="pl-10 md:pl-0 z-50 md:pb-0 pb-10">
                     <p class="text-3xl italic pb-6">New hat</p>
                 </div>
 
@@ -49,7 +49,7 @@
             </div>
 
             <!-- Add hat -->
-            <div class="pl-64">
+            <div class="md:pl-64">
                 <!-- Open Form -->
                 <form method="post" action="{{ route('hatstories.store') }}" enctype="multipart/form-data">
                     @csrf
