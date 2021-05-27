@@ -15,9 +15,9 @@
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+        <div class="pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
-            <div>
+            <div class="pb-10 md:pb-0">
                 <p class="text-3xl italic pb-6">Edit hat</p>
                 <span class="pl-5">{{ $hatstory->hat_name }}</span>
             </div>
@@ -47,14 +47,14 @@
         </div>
 
         <!-- Edit hat -->
-        <div class="pl-64">
+        <div class="md:pl-64">
             <!-- Open Form -->
             <form method="post" action="{{ route('hatstories.update', $hatstory->hat_id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
                     <!-- Hat Name & Text -->
-                    <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 20% 20%; height: 422px;">
+                    <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 80px 80px; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
                         <label class="text-2xl" for="hat_name">NAME</label>
                         <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_name }}"required>
@@ -63,8 +63,8 @@
                     </div>
 
                     <!-- Hat Image -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                        <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
                             <img id="output1" src="/storage/hatimage/{{ $hatstory->hat_image }}" alt="" class="absolute z-40 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -77,7 +77,7 @@
                     </div>
 
                     <!-- Hat Specifications -->
-                    <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%; height: 422px;">
+                    <div class="flex flex-col bg-lightbrown relative" style="padding: 80px 80px; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
                         <label class="text-2xl" for="hat_size">SIZE</label>
                         <input type="text" name="hat_size" placeholder="Hat size" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_size }}" required>
@@ -88,15 +88,15 @@
                     </div>
 
                     <!-- Page 1 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 20% 20%; height: 422px;">
+                    <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 80px 80px; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
                         <label class="text-2xl" for="hat_pageone_text">TEXT</label>
                         <textarea name="hat_pageone_text" rows="5" placeholder="Page one text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pageone_text }}</textarea>
                     </div>
 
                     <!-- Page 1 Image -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                        <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
                             <img id="output2" src="/storage/hatimage/{{ $hatstory->hat_pageone_image }}" alt="" class="absolute z-40 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -111,15 +111,15 @@
                     <div></div>
 
                     <!-- Page 2 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 20% 20%; height: 422px;">
+                    <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 80px 80px; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
                         <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
                         <textarea name="hat_pagetwo_text" rows="5" placeholder="Page two text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pagetwo_text }}</textarea>
                     </div>
 
                     <!-- Page 2 Images -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                        <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
                             <img id="output3" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imageone }}" alt="" class="absolute z-40 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -130,8 +130,8 @@
                             <input id="upfile3" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this); loadFile3(event)">
                         </div>
                     </div>
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                        <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
                             <img id="output4" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imagetwo }}" alt="" class="absolute z-40 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -144,7 +144,7 @@
                     </div>
                     <div></div>
                     <!-- Button -->
-                    <div class="pt-12 pb-12 w-full text-center">
+                    <div class="pt-12 md:pb-12 pb-28 w-full text-center">
                         <button class="border-4 border-brown text-2xl w-full pb-2 pt-4 bg-white hover:bg-brown hover:text-white">SAVE</button>
                     </div>
                     <div></div>

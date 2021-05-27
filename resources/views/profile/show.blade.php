@@ -12,7 +12,7 @@
         <!-- Left Menu -->
         <div class="md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
-            <p class="text-3xl italic pb-6">Profile</p>
+            <p class="text-3xl italic md:pb-6 pb-10">Profile</p>
 
             <!-- Bottom Left Menu -->
             <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
