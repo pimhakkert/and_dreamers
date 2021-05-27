@@ -3,7 +3,7 @@
     <x-slot name="form">
         <!-- Name -->
         <div class="bg-lightbrown flex flex-col relative mb-20" style="max-width: 526px;">
-            <div class="flex flex-col" style="padding: 20% 20% 0 20%">
+            <div class="flex flex-col" style="padding: 60px 80px 40px 80px">
                 <p class="text-5xl absolute" style="top: -18px; left: 30px;">ADMIN</p>
                 <x-jet-label for="name" value="NAME" class="text-2xl"/>
                 <x-jet-input id="name" type="text" wire:model.defer="state.name" autocomplete="name" placeholder="Your name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown"/>
