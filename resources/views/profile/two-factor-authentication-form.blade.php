@@ -2,6 +2,7 @@
     <x-slot name="content">
         <div class="px-10">
             <h2>2FA</h2>
+            <input class="apple-switch" type="checkbox">
             <h3>
                 @if ($this->enabled)
                     You have enabled two factor authentication.
@@ -76,3 +77,50 @@
         </div>
     </x-slot>
 </x-jet-action-section>
+<style>
+    [type="checkbox"]:checked {
+        background-color: unset !important;
+        color: unset;
+    }
+
+    [type="checkbox"]:checked:hover {
+        background-color: unset !important;
+        color: unset;
+    }
+
+
+    input.apple-switch {
+        position: relative;
+        -webkit-appearance: none;
+        outline: none;
+        width: 50px;
+        height: 30px;
+        background-color: #fff;
+        border: 1px solid #D9DADC !important;
+        border-radius: 50px;
+        box-shadow: inset -20px 0 0 0 #fff;
+        cursor: pointer;
+    }
+
+    input.apple-switch:after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        background: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+    }
+
+    input.apple-switch:checked {
+        box-shadow: inset 20px 0 0 0 #4ed164;
+        border-color: #4ed164;
+    }
+
+    input.apple-switch:checked:after {
+        left: 20px;
+        box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+    }
+</style>
