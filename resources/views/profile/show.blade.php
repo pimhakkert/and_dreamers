@@ -15,24 +15,24 @@
             <p class="text-3xl italic pb-6">Profile</p>
 
             <!-- Bottom Left Menu -->
-            <div class="flex flex-col justify-end mb-20">
-                <a class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-white-light tooltipProfile menuOne" href="{{ route('profile.show') }}">
-                    <img src="../images/profile-wit.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-1 menuOne-image">
-                    <span class="tooltiptext">Change your username, password, 2fa or email</span>
+            <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
+                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipProfile menuOne" href="{{ route('profile.show') }}">
+                    <img src="../images/profile-wit.svg" alt="Profile" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
+                    <span class="tooltiptext hidden md:block">Change your username, password, 2fa or email</span>
                 </a>
-                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
-                    <img src="../images/hoed.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
-                    <span class="tooltiptext">View your hats here. Add, remove or edit them</span>
+                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
+                    <img src="../images/hoed.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+                    <span class="tooltiptext hidden md:block">View your hats here. Add, remove or edit them</span>
                 </a>
-                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
-                    <img src="../images/home.svg" alt="Home" width="50px" height="50px" class="mb-2 menuThree-image">
-                    <span class="tooltiptext">Go to the homepage</span>
+                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
+                    <img src="../images/home.svg" alt="Home" class="mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
+                    <span class="tooltiptext hidden md:block">Go to the homepage</span>
                 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                        <img src="../images/logout.svg" alt="Logout" width="50px" height="50px" class="menuFour-image">
-                        <span class="tooltiptext">Click to logout</span>
+                    <a class="md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <img src="../images/logout.svg" alt="Logout" class="menuFour-image md:w-12 md:h-12 w-10 h-10">
+                        <span class="tooltiptext hidden md:block">Click to logout</span>
                     </a>
                 </form>
             </div>

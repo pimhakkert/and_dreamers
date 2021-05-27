@@ -1,153 +1,157 @@
 @extends('dashboard.layouts.dashboard-inside')
 
 @section('content')
-    <!-- Background Images -->
-    <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
-    <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
-    <!-- Errors -->
-    <ul class="absolute top-0">
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+    <!-- Overflow X hidden for mobile -->
+    <div class="overflow-x-hidden">
+        <!-- Background Images -->
+        <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="">
+        <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
-    <!-- Content Grid -->
-    <div class="pt-16 relative text-brown">
-        <!-- Left Menu -->
-        <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
-            <!-- Top Left Menu -->
-            <div>
-                <p class="text-3xl italic pb-6">New hat</p>
+        <!-- Errors -->
+        <ul class="absolute top-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+
+        <!-- Content Grid -->
+        <div class="pt-16 relative text-brown">
+            <!-- Left Menu -->
+            <div class="pl-10 fixed h-full grid fixed z-50" style="grid-template-columns: auto">
+                <!-- Top Left Menu -->
+                <div>
+                    <p class="text-3xl italic pb-6">New hat</p>
+                </div>
+
+                <!-- Bottom Left Menu -->
+                <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
+                    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipProfile menuOne" href="{{ route('profile.show') }}">
+                        <img src="../images/profile.svg" alt="Profile" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
+                        <span class="tooltiptext hidden md:block">Change your username, password, 2fa or email</span>
+                    </a>
+                    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
+                        <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+                        <span class="tooltiptext hidden md:block">View your hats here. Add, remove or edit them</span>
+                    </a>
+                    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
+                        <img src="../images/home.svg" alt="Home" class="mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
+                        <span class="tooltiptext hidden md:block">Go to the homepage</span>
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                            <img src="../images/logout.svg" alt="Logout" class="menuFour-image md:w-12 md:h-12 w-10 h-10">
+                            <span class="tooltiptext hidden md:block">Click to logout</span>
+                        </a>
+                    </form>
+                </div>
             </div>
 
-            <!-- Bottom Left Menu -->
-            <div class="flex flex-col justify-end mb-20">
-                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipProfile menuOne" href="{{ route('profile.show') }}">
-                    <img src="../images/profile.svg" alt="Profile" width="55px" height="55px" class="mb-2 ml-0.5 menuOne-image">
-                    <span class="tooltiptext">Change your username, password, 2fa or email</span>
-                </a>
-                <a class="w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
-                    <img src="../images/hoed-wit.svg" alt="Hat stories" width="60px" height="60px" class="menuTwo-image">
-                    <span class="tooltiptext">View your hats here. Add, remove or edit them</span>
-                </a>
-                <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
-                    <img src="../images/home.svg" alt="Home" width="50px" height="50px" class="mb-2 menuThree-image">
-                    <span class="tooltiptext">Go to the homepage</span>
-                </a>
-                <form method="POST" action="{{ route('logout') }}">
+            <!-- Add hat -->
+            <div class="pl-64">
+                <!-- Open Form -->
+                <form method="post" action="{{ route('hatstories.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <a class="w-16 h-16 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                        <img src="../images/logout.svg" alt="Logout" width="50px" height="50px" class="menuFour-image">
-                        <span class="tooltiptext">Click to logout</span>
-                    </a>
+                        <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
+                            <!-- Hat Name & Text -->
+                            <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 20% 20%; height: 422px;">
+                                <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
+                                <label class="text-2xl" for="hat_name">NAME</label>
+                                <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
+                                <label class="text-2xl" for="hat_text">TEXT</label>
+                                <textarea name="hat_text" rows="5" placeholder="Write a short summary about the hat" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
+                            </div>
+
+                            <!-- Hat Image -->
+                            <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
+                                <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                                <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
+                                    <img id="output1" src="" alt="" class="absolute z-40 h-full w-full hidden object-cover overflow-hidden">
+                                    <i class="far fa-image text-10xl"></i>
+                                    <p class="text-brown-light">Choose your photo</p>
+                                </div>
+                                <div style='height: 0; width: 0; overflow:hidden;'>
+                                    <label class="hidden" for="hat_image">IMAGE</label>
+                                    <input id="upfile1" type="file" value="upload" name="hat_image" onchange="sub(this); loadFile1(event)" required>
+                                </div>
+                            </div>
+
+                            <!-- Hat Specifications -->
+                            <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%; height: 422px;">
+                                <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
+                                <label class="text-2xl" for="hat_size">SIZE</label>
+                                <input type="text" name="hat_size" placeholder="Hat size" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
+                                <label class="text-2xl" for="hat_color">COLOR</label>
+                                <input type="text" name="hat_color" placeholder="Hat color" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
+                                <label class="text-2xl" for="hat_material">MATERIAL</label>
+                                <input type="text" name="hat_material" placeholder="Hat material" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
+                            </div>
+
+                            <!-- Page 1 Text -->
+                            <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 20% 20%; height: 422px;">
+                                <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
+                                <label class="text-2xl" for="hat_pageone_text">TEXT</label>
+                                <textarea name="hat_pageone_text" rows="5" placeholder="Page one text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
+                            </div>
+
+                            <!-- Page 1 Image -->
+                            <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
+                                <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                                <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
+                                    <img id="output2" src="" alt="" class="absolute z-40 h-full w-full hidden object-cover overflow-hidden">
+                                    <i class="far fa-image text-10xl"></i>
+                                    <p class="text-brown-light">Choose your photo</p>
+                                </div>
+                                <div style='height: 0; width: 0; overflow:hidden;'>
+                                    <label class="hidden" for="hat_pageone_image">IMAGE</label>
+                                    <input id="upfile2" type="file" value="upload" name="hat_pageone_image" onchange="sub(this); loadFile2(event)" required>
+                                </div>
+                            </div>
+
+                            <div></div>
+
+                            <!-- Page 2 Text -->
+                            <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 20% 20%; height: 422px;">
+                                <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
+                                <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
+                                <textarea name="hat_pagetwo_text" rows="5" placeholder="Page two text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
+                            </div>
+
+                            <!-- Page 2 Images -->
+                            <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
+                                <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                                <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
+                                    <img id="output3" src="" alt="" class="absolute z-40 w-full h-full hidden object-cover overflow-hidden">
+                                    <i class="far fa-image text-10xl"></i>
+                                    <p class="text-brown-light">Choose your photo</p>
+                                </div>
+                                <div style='height: 0; width: 0; overflow:hidden;'>
+                                    <label class="hidden" for="hat_pagetwo_imageone">IMAGE</label>
+                                    <input id="upfile3" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this); loadFile3(event)" required>
+                                </div>
+                            </div>
+                            <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
+                                <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
+                                <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
+                                    <img id="output4" src="" alt="" class="absolute z-40 w-full h-full hidden object-cover overflow-hidden">
+                                    <i class="far fa-image text-10xl"></i>
+                                    <p class="text-brown-light">Choose your photo</p>
+                                </div>
+                                <div style='height: 0; width: 0; overflow:hidden;'>
+                                    <label class="hidden" for="hat_pagetwo_imagetwo">IMAGE</label>
+                                    <input id="upfile4" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this); loadFile4(event)" required>
+                                </div>
+                            </div>
+                            <div></div>
+                            <!-- Button -->
+                            <div class="pt-12 pb-12 w-full text-center">
+                                <button class="border-4 border-brown text-2xl w-full pb-2 pt-4 bg-white hover:bg-brown hover:text-white">SAVE</button>
+                            </div>
+                            <div></div>
+                        </div>
                 </form>
             </div>
-        </div>
-
-        <!-- Add hat -->
-        <div class="pl-64">
-            <!-- Open Form -->
-            <form method="post" action="{{ route('hatstories.store') }}" enctype="multipart/form-data">
-                @csrf
-                    <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
-                        <!-- Hat Name & Text -->
-                        <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 20% 20%; height: 422px;">
-                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
-                            <label class="text-2xl" for="hat_name">NAME</label>
-                            <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
-                            <label class="text-2xl" for="hat_text">TEXT</label>
-                            <textarea name="hat_text" rows="5" placeholder="Write a short summary about the hat" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
-                        </div>
-
-                        <!-- Hat Image -->
-                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                            <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
-                                <img id="output1" src="" alt="" class="absolute z-40 h-full w-full hidden object-cover overflow-hidden">
-                                <i class="far fa-image text-10xl"></i>
-                                <p class="text-brown-light">Choose your photo</p>
-                            </div>
-                            <div style='height: 0; width: 0; overflow:hidden;'>
-                                <label class="hidden" for="hat_image">IMAGE</label>
-                                <input id="upfile1" type="file" value="upload" name="hat_image" onchange="sub(this); loadFile1(event)" required>
-                            </div>
-                        </div>
-
-                        <!-- Hat Specifications -->
-                        <div class="flex flex-col bg-lightbrown relative" style="padding: 20% 20%; height: 422px;">
-                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
-                            <label class="text-2xl" for="hat_size">SIZE</label>
-                            <input type="text" name="hat_size" placeholder="Hat size" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
-                            <label class="text-2xl" for="hat_color">COLOR</label>
-                            <input type="text" name="hat_color" placeholder="Hat color" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
-                            <label class="text-2xl" for="hat_material">MATERIAL</label>
-                            <input type="text" name="hat_material" placeholder="Hat material" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" required>
-                        </div>
-
-                        <!-- Page 1 Text -->
-                        <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 20% 20%; height: 422px;">
-                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
-                            <label class="text-2xl" for="hat_pageone_text">TEXT</label>
-                            <textarea name="hat_pageone_text" rows="5" placeholder="Page one text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
-                        </div>
-
-                        <!-- Page 1 Image -->
-                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                            <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
-                                <img id="output2" src="" alt="" class="absolute z-40 h-full w-full hidden object-cover overflow-hidden">
-                                <i class="far fa-image text-10xl"></i>
-                                <p class="text-brown-light">Choose your photo</p>
-                            </div>
-                            <div style='height: 0; width: 0; overflow:hidden;'>
-                                <label class="hidden" for="hat_pageone_image">IMAGE</label>
-                                <input id="upfile2" type="file" value="upload" name="hat_pageone_image" onchange="sub(this); loadFile2(event)" required>
-                            </div>
-                        </div>
-
-                        <div></div>
-
-                        <!-- Page 2 Text -->
-                        <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 20% 20%; height: 422px;">
-                            <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
-                            <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
-                            <textarea name="hat_pagetwo_text" rows="5" placeholder="Page two text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required></textarea>
-                        </div>
-
-                        <!-- Page 2 Images -->
-                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                            <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
-                                <img id="output3" src="" alt="" class="absolute z-40 w-full h-full hidden object-cover overflow-hidden">
-                                <i class="far fa-image text-10xl"></i>
-                                <p class="text-brown-light">Choose your photo</p>
-                            </div>
-                            <div style='height: 0; width: 0; overflow:hidden;'>
-                                <label class="hidden" for="hat_pagetwo_imageone">IMAGE</label>
-                                <input id="upfile3" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this); loadFile3(event)" required>
-                            </div>
-                        </div>
-                        <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px;">
-                            <p class="text-5xl absolute z-50" style="top: -29px; left: 30px;">IMAGE</p>
-                            <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
-                                <img id="output4" src="" alt="" class="absolute z-40 w-full h-full hidden object-cover overflow-hidden">
-                                <i class="far fa-image text-10xl"></i>
-                                <p class="text-brown-light">Choose your photo</p>
-                            </div>
-                            <div style='height: 0; width: 0; overflow:hidden;'>
-                                <label class="hidden" for="hat_pagetwo_imagetwo">IMAGE</label>
-                                <input id="upfile4" type="file" value="upload" name="hat_pagetwo_imagetwo" onchange="sub(this); loadFile4(event)" required>
-                            </div>
-                        </div>
-                        <div></div>
-                        <!-- Button -->
-                        <div class="pt-12 pb-12 w-full text-center">
-                            <button class="border-4 border-brown text-2xl w-full pb-2 pt-4 bg-white hover:bg-brown hover:text-white">SAVE</button>
-                        </div>
-                        <div></div>
-                    </div>
-            </form>
         </div>
     </div>
 @endsection
