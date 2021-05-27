@@ -66,7 +66,7 @@
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
-                            <img id="output1" src="/storage/hatimage/{{ $hatstory->hat_image }}" alt="" class="absolute z-40 h-full w-full object-cover overflow-hidden">
+                            <img id="output1" src="/storage/hatimage/{{ $hatstory->hat_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
                             <p class="text-brown-light">Choose your photo</p>
                         </div>
@@ -98,7 +98,7 @@
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
-                            <img id="output2" src="/storage/hatimage/{{ $hatstory->hat_pageone_image }}" alt="" class="absolute z-40 h-full w-full object-cover overflow-hidden">
+                            <img id="output2" src="/storage/hatimage/{{ $hatstory->hat_pageone_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
                             <p class="text-brown-light">Choose your photo</p>
                         </div>
@@ -121,7 +121,7 @@
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
-                            <img id="output3" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imageone }}" alt="" class="absolute z-40 w-full h-full object-cover overflow-hidden">
+                            <img id="output3" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imageone }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
                             <p class="text-brown-light">Choose your photo</p>
                         </div>
@@ -133,7 +133,7 @@
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
-                            <img id="output4" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imagetwo }}" alt="" class="absolute z-40 w-full h-full object-cover overflow-hidden">
+                            <img id="output4" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imagetwo }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
                             <p class="text-brown-light">Choose your photo</p>
                         </div>
