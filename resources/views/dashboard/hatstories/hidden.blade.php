@@ -13,15 +13,15 @@
             <div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
                 <!-- Top Left Menu -->
                 <div class="pl-10 md:pl-0 z-50 md:pb-0 pb-10">
-                    <p class="text-3xl italic pb-6">Hat stories</p>
+                    <p class="text-3xl italic pb-6">Hidden hat stories</p>
                     <div>
                         <a href="{{ route('hatstories.create') }}" class="pl-5 hover:text-hoverbrown">
                             <i class="fas fa-plus fa-fw pr-10"></i>Add hat
                         </a>
                     </div>
                     <div class="pt-4">
-                        <a href="{{ route('hidden') }}" class="pl-5 hover:text-hoverbrown">
-                            <i class="far fa-eye-slash fa-fw pr-10"></i>Show hidden hats
+                        <a href="{{ route('hatstories.index') }}" class="pl-5 hover:text-hoverbrown">
+                            <i class="far fa-eye fa-fw pr-10"></i>Show all hats
                         </a>
                     </div>
                 </div>
@@ -119,3 +119,4 @@
         });
     </script>
 @endsection
+

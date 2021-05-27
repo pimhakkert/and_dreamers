@@ -20,8 +20,14 @@ class HatStoryController extends Controller
      */
     public function index()
     {
-        $hatstory = HatStory::all();
+        $hatstory = HatStory::all()->where('hat_hidden', '=', '0');
         return view('dashboard.hatstories.index', ['hatstory'=>$hatstory]);
+    }
+
+    public function hidden()
+    {
+        $hatstory = HatStory::all()->where('hat_hidden', '=', '1');
+        return view('dashboard.hatstories.hidden', ['hatstory'=>$hatstory]);
     }
 
     /**
@@ -79,6 +85,8 @@ class HatStoryController extends Controller
             $hat_pagetwo_imagetwo = md5(uniqid(mt_rand(), true)) . '-' . time() . '.' . $request->file('hat_pagetwo_imagetwo')->extension();
             $request->file('hat_pagetwo_imagetwo')->storeAs('hatimage', $hat_pagetwo_imagetwo, 'public');
             $hatStory->hat_pagetwo_imagetwo = $hat_pagetwo_imagetwo;
+
+            $hatStory->hat_hidden = false;
 
             $hatStory->save();
         }

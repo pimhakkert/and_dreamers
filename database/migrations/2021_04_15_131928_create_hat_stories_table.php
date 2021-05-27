@@ -26,6 +26,7 @@ class CreateHatStoriesTable extends Migration
             $table->text('hat_pagetwo_text');
             $table->string('hat_pagetwo_imageone');
             $table->string('hat_pagetwo_imagetwo');
+            $table->boolean('hat_hidden');
             $table->timestamps();
         });
     }

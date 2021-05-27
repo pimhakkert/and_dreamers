@@ -29,6 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
+    Route::get('hatstories-hidden', [HatStoryController::class, 'hidden'])
+        ->name('hidden');
 
     Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
         ->name('password.email');
@@ -38,7 +40,6 @@ Route::group(['auth:sanctum', 'verified'], function () {
 
     Route::get('/resend-resent-request', [Controller::class, 'resendRequest'])
          ->name('password.resend-request');
-
 
     Route::get('/reset-password/{token}', [Controller::class, 'createNewPassword'])
         ->name('password.reset');

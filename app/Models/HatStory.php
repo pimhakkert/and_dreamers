@@ -23,6 +23,7 @@ class HatStory extends Model
         'hat_pageone_image',
         'hat_pagetwo_text',
         'hat_pagetwo_imageone',
-        'hat_pageone_imagetwo'
+        'hat_pageone_imagetwo',
+        'hat_hidden'
     ];
 }
