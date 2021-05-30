@@ -22,6 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
+Route::get('/hats', function(){
+    return view('website.hatstories');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');
