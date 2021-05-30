@@ -10,7 +10,7 @@
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
+        <div class="pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <p class="text-3xl italic md:pb-6 pb-10">Profile</p>
 
@@ -80,6 +80,7 @@
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout-wit.svg')},
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
             );
+            $('.inputError').delay(3000).fadeOut();
         });
     </script>
 
