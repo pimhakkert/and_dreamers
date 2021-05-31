@@ -15,7 +15,8 @@ module.exports = {
                 'josefin': ['Josefin Sans']
             },
             borderWidth: {
-                '5': '5px'
+                '5': '5px',
+                '15': '15px'
             },
             margin: {
                 '-6.5': '-1.625rem',

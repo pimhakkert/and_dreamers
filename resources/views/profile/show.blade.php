@@ -8,7 +8,7 @@
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
     <!-- Content Grid -->
-    <div class="pt-16 relative text-brown">
+    <div class="pt-16 relative text-brown" style="margin-bottom: 100px;">
         <!-- Left Menu -->
         <div class="md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
@@ -39,8 +39,8 @@
         </div>
 
         <!-- Form -->
-        <div class="md:pl-64">
-            <div class="xl:grid grid-cols-2 gap-20 px-10">
+        <div class="md:px-60 px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 mb-20 gap-20">
                 @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                     @livewire('profile.update-profile-information-form')
                 @endif
