@@ -55,6 +55,9 @@ module.exports = {
                 light: 'rgba(247,89,71,0.57)',
                 DEFAULT: '#F75947'
             },
+            'green': {
+                light: '#6dd06d'
+            },
             'lightbrown': {
                 light: 'rgba(237, 230, 224, 0.26)',
                 DEFAULT: '#EDE6E0'

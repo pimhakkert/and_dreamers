@@ -21,7 +21,8 @@ Route::get('/', function () {
     return view('website.layouts.website');
 });
 
-Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
+Route::get('/hat/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
+Route::post('/hat/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
 Route::get('/hats', function(){
     return view('website.hatstories');
 });
