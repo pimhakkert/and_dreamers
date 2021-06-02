@@ -64,6 +64,9 @@ module.exports = {
             },
             'hoverbrown': {
                 DEFAULT: '#D5C1B8'
+            },
+            'mainbg': {
+                DEFAULT: '#F9F9F9'
             }
         }
     },

@@ -54,10 +54,6 @@
     @yield('content')
 </main>
 
-
-@yield('js')
-@stack('modals')
-@livewireScripts
 <footer class="@if(Route::current()->getName() != 'contact') flex-shrink-0 @else h-full flex flex-col @endif">
     @if(Route::current()->getName() != 'contact')
     <a href="{{ route('contact') }}">
@@ -98,6 +94,9 @@
         <p class="text-white font-light">A website by Loudmouth</p>
     </div>
 </footer>
+@yield('js')
+@stack('modals')
+@livewireScripts
 <script>
     window.addEventListener('load', () => {
 
