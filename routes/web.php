@@ -18,7 +18,7 @@ use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 */
 
 Route::get('/', function () {
-    return view('website.layouts.website');
+    return view('website.home');
 });
 
 Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');

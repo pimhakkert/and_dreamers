@@ -162,7 +162,6 @@
 
     body {
         position: relative;
-        overflow: hidden;
         height: 100vh;
     }
 
@@ -202,10 +201,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('{{ asset('images/book_back.png') }}');
-    }
-
-    body.noscroll {
-        overflow: hidden;
     }
 </style>
 @endsection
