@@ -19,11 +19,11 @@ use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
 Route::get('/', function () {
     return view('website.home');
-});
+})->name('home');
 
 Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
 
-Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatstories');
+Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatoverview');
 
 Route::get('/hat/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
 Route::post('/hat/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
