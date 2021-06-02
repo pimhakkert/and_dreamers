@@ -37,7 +37,7 @@
                     </div>
                     <a class="mr-5 lg:mr-0 self-end lg:self-center text-xs lg:text-lg text-brown lg:text-brown-light mt-10" href="{{ route('password.request') }}">I forgot my password!</a>
                 </div>
-                <button class="mt-6 lg:mt-3 w-full border-5 border-brown leading-none p-3 lg:p-4 2xl:p-4 pb-2 lg:pb-2 2xl:pb-3 text-md lg:text-lg 2xl:text-2xl text-brown font-semibold hover:text-white-light hover:bg-brown ">LOGIN</button>
+                <button class="mt-6 lg:mt-3 w-full border-5 border-brown leading-none p-3 lg:p-4 2xl:p-4 pb-2 lg:pb-2 2xl:pb-3 text-md lg:text-lg 2xl:text-2xl text-brown font-semibold hover:text-white-light hover:bg-brown">LOGIN</button>
             </form>
         </div>
     </div>

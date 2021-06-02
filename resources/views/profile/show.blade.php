@@ -15,7 +15,7 @@
             <p class="text-3xl italic md:pb-6 pb-10">Profile</p>
 
             <!-- Bottom Left Menu -->
-            <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
+            <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white left-0">
                 <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipProfile menuOne" href="{{ route('profile.show') }}">
                     <img src="../images/profile-wit.svg" alt="Profile" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
                     <span class="tooltiptext hidden md:block">Change your username, password, 2fa or email</span>
@@ -40,14 +40,17 @@
 
         <!-- Form -->
         <div class="md:px-60 px-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 mb-20 gap-20">
-                @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-                    @livewire('profile.update-profile-information-form')
-                @endif
-
-                @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                    @livewire('profile.update-password-form')
-                @endif
+            <div class="grid grid-cols-1 xl:grid-cols-2 mb-20 gap-20">
+                <div class="justify-self-center">
+                    @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                        @livewire('profile.update-profile-information-form')
+                    @endif
+                </div>
+                <div class="justify-self-center">
+                    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                        @livewire('profile.update-password-form')
+                    @endif
+                </div>
             </div>
             @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                 @livewire('profile.two-factor-authentication-form')
