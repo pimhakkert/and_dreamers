@@ -19,4 +19,10 @@ class WebsiteController extends BaseController
 
         return view('website.hatstory', ['hatStory' => $hatStory]);
     }
+
+    function hatOverview() {
+        $hatStory = HatStory::orderBy('created_at', 'asc')->where('hat_hidden', '0')->get();
+
+        return view('website.hatstories', ['hatStory' => $hatStory]);
+    }
 }
