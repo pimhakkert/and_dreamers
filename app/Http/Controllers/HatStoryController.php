@@ -30,6 +30,13 @@ class HatStoryController extends Controller
         return view('dashboard.hatstories.hidden', ['hatstory'=>$hatstory]);
     }
 
+    public function hide(HatStory $hatstory)
+    {
+        $hatstory->update(['hat_hidden' => '1']);
+
+        return redirect()->route('dashboard.hatstories.index')->with('success', 'Hidden');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
