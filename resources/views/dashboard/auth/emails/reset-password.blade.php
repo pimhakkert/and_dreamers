@@ -11,13 +11,13 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Hi {{ $name }},</p></td>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Hello!,</p></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Someone quested a password reset for the account connected to this e-mail address.<br>If this was a mistake, please ignore this e-mail and nothing will happen.</p></td>
+            <td><p style="font-family: 'Josefin Sans', sans-serif; color: #825550;">Someone requested a password reset for the account connected to this e-mail address.<br>If this was a mistake, please ignore this e-mail and nothing will happen.</p></td>
         </tr>
         <tr>
             <td>&nbsp;</td>

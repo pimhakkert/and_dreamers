@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
 Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatstories');
+Route::get('/hat/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
+Route::post('/hat/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');

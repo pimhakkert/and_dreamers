@@ -24,23 +24,27 @@
         {{ $content }}
 
         <div x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-jet-input type="password"  placeholder="{{ __('Password') }}"
-                        x-ref="confirmable_password"
-                        wire:model.defer="confirmablePassword"
-                        wire:keydown.enter="confirmPassword" />
+            <div class="form-group" style="margin-top: 2rem;">
+                <x-jet-input type="password"  placeholder="{{ __('Password') }}"
+                             x-ref="confirmable_password"
+                             wire:model.defer="confirmablePassword"
+                             wire:keydown.enter="confirmPassword"/>
 
-            <x-jet-input-error for="confirmable_password" />
+                <x-jet-input-error for="confirmable_password" class="mt-3 text-red" />
+            </div>
         </div>
     </x-slot>
 
     <x-slot name="footer">
-        <x-jet-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
-            Cancel
-        </x-jet-secondary-button>
+        <div class="grid grid-cols-2 gap-10">
+            <x-jet-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
+                Cancel
+            </x-jet-secondary-button>
 
-        <x-jet-button dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">
-            {{ $button }}
-        </x-jet-button>
+            <x-jet-secondary-button dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">
+                {{ $button }}
+            </x-jet-secondary-button>
+        </div>
     </x-slot>
 </x-jet-dialog-modal>
 @endonce

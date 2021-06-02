@@ -15,7 +15,8 @@ module.exports = {
                 'josefin': ['Josefin Sans']
             },
             borderWidth: {
-                '5': '5px'
+                '5': '5px',
+                '15': '15px'
             },
             margin: {
                 '-6.5': '-1.625rem',
@@ -53,6 +54,9 @@ module.exports = {
             'red': {
                 light: 'rgba(247,89,71,0.57)',
                 DEFAULT: '#F75947'
+            },
+            'green': {
+                light: '#6dd06d'
             },
             'lightbrown': {
                 light: 'rgba(237, 230, 224, 0.26)',

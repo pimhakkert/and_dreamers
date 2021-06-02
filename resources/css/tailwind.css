@@ -71,3 +71,11 @@ html {
 #view-password, .view-password {
     transform: translateY(-50%);
 }
+
+.hatstory-previous-desktop {
+    @apply absolute top-2 left-2;
+}
+
+.hatstory-next-desktop {
+    @apply absolute top-2 right-2;
+}
