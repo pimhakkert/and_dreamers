@@ -24,10 +24,6 @@
     @yield('content')
 </div>
 
-
-@yield('js')
-@stack('modals')
-@livewireScripts
 <footer class="flex-shrink-0">
     <a href="{{ route('contact') }}">
         <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between items-center">
@@ -44,5 +40,8 @@
         <p class="text-white font-light">A website by Loudmouth</p>
     </div>
 </footer>
+@yield('js')
+@stack('modals')
+@livewireScripts
 </body>
 </html>
