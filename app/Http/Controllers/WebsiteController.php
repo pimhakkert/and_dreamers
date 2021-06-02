@@ -43,4 +43,9 @@ class WebsiteController extends BaseController
             return 500;
         }
     }
+
+    function contact()
+    {
+        return view('website.contact');
+    }
 }

@@ -28,6 +28,8 @@ Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatstories
 Route::get('/hat/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
 Route::post('/hat/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
 
+Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->name('dashboard');

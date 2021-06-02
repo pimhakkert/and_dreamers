@@ -28,10 +28,21 @@
 @yield('js')
 @stack('modals')
 @livewireScripts
-<footer class="flex-shrink-0 flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
-    <p class="text-white font-light">All rights reserved 2021</p>
-    <span class="text-white font-light mx-5">|</span>
-    <p class="text-white font-light">A website by Loudmouth</p>
+<footer class="flex-shrink-0">
+    <a href="{{ route('contact') }}">
+        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between items-center">
+            <div class="max-w-2xl">
+                <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
+                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"I would like to get in contact to talk about your hats"</h5>
+            </div>
+            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Link naar de contact pagina">
+        </div>
+    </a>
+    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
+        <p class="text-white font-light">All rights reserved 2021</p>
+        <span class="text-white font-light mx-5">|</span>
+        <p class="text-white font-light">A website by Loudmouth</p>
+    </div>
 </footer>
 </body>
 </html>
