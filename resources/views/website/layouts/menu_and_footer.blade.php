@@ -50,6 +50,11 @@
     </div>
 
 </nav>
+<section class="fixed top-10 right-10">
+    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown hatMenu" href="/hats">
+        <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+    </a>
+</section>
 <main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @endif">
     @yield('content')
 </main>
@@ -125,7 +130,13 @@
             }
         });
 
+    });
 
+    $(document).ready(function(){
+        $('.hatMenu').hover(
+            function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed.svg')},
+            function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed-wit.svg')}
+        );
     });
 </script>
 </body>
