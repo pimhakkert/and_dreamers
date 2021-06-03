@@ -29,7 +29,7 @@
     @livewireStyles
 </head>
 <body style="overflow-x: hidden; height: 100vh;" class="flex flex-col">
-<nav class="fixed top-0 left-0 bg-brown  h-full z-50 w-16" style="box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
+<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
     <div class="relative flex flex-col justify-evenly items-center h-full">
         <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">Hat stories</a>
         <div id="desktop-menu" class="w-full">
