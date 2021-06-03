@@ -41,13 +41,13 @@
                 <div class="canvas absolute left-0 top-0 h-auto flex p-72" style="transform: translate(-50vw, -50vw); width: 200%; transition: 1.5s ease-out;">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     @foreach ($hatStory as $hat)
-                            <div class="relative layer p-8" data-speed="2">
+                            <a class="relative layer p-8" data-speed="2" href="/hatstory/{{ $hat->hat_id }}">
                                 <img src="../images/book_front.png" alt="Front of the book">
                                 <p class="text-xl italic absolute w-full text-center" style="left: 50%; top: 10%; transform: translate(-50%, 0%);">{{ $hat->hat_name }}</p>
                                 <p class="font-thin absolute" style="left: 50%; top: 20%; transform: translate(-50%, 0%);">and.dreamers</p>
                                 <p class="italic absolute w-full text-center" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">Let's take a look inside</p>
                                 <div class="absolute hatStory-circle rounded-full bg-no-repeat bg-cover bg-center block w-32 h-32 top-0 left-0" style="background-image: url(../storage/hatimage/{{ $hat->hat_image }}); left: 50%; top: 55%; transform: translate(-50%, -45%);"></div>
-                            </div>
+                            </a>
                             <div class="hidden sm:block p-2"></div>
                             <div class="hidden sm:block md:hidden p-2"></div>
                     @endforeach
