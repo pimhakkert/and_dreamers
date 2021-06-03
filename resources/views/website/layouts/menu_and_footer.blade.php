@@ -13,10 +13,10 @@
     @yield('css')
     <style>
         #desktop-menu-nav {
-            transition-duration: 1s;
+            transition-duration: 300ms;
         }
 
-        #desktop-menu.menu-open #desktop-menu-nav {
+        #desktop-menu-nav.menu-open {
             opacity: 1 !important;
         }
     </style>
@@ -38,13 +38,13 @@
                 <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
                 <div class="rounded-full w-2 h-2 bg-white"></div>
             </div>
-            <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.6)">
-                <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">Home</a>
-                <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">Hat stories</a>
-                <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">About</a>
-                <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">Contact</a>
-                <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">Privacy policy</a>
-            </div>
+        </div>
+        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.6)">
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">Home</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">Hat stories</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">About</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">Contact</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">Privacy policy</a>
         </div>
         <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">Contact</a>
     </div>
@@ -55,20 +55,44 @@
         <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
     </a>
 </section>
-<main style="flex: 1 0 auto;">
+<main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @endif">
     @yield('content')
 </main>
 
-<footer class="flex-shrink-0">
+<footer class="@if(Route::current()->getName() != 'contact') flex-shrink-0 @else h-full flex flex-col @endif">
+    @if(Route::current()->getName() != 'contact')
     <a href="{{ route('contact') }}">
-        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between items-center">
+    @endif
+        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between  @if(Route::current()->getName() == 'contact') h-full flex-col @else items-center @endif">
             <div class="max-w-2xl">
                 <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
                 <h5 class="text-4xl italic text-brown -mt-12 ml-20">"I would like to get in contact to talk about your hats"</h5>
             </div>
+            @if(Route::current()->getName() != 'contact')
             <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Link naar de contact pagina">
+            @else
+            <div>
+                <form class="w-7/12 mt-5">
+                    <h3 class="text-brown text-2xl font-semibold -mb-10">CONTACT</h3>
+                    <div class="form-group -mb-10">
+                        <input type="text" placeholder="NAME" name="name" style="border-bottom-width: 3px;">
+                    </div>
+                    <div class="form-group -mb-10">
+                        <input type="text" placeholder="PHONE NUMBER" name="phone_number" style="border-bottom-width: 3px;">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="MESSAGE" style="border-bottom-width: 3px; height: 130px;"></textarea>
+                    </div>
+                    <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-5 p-2 lg:p-3 2xl:p-3 pb-1 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">SEND</button>
+                </form>
+            </div>
+            @endif
         </div>
+    @if(Route::current()->getName() != 'contact')
     </a>
+    @endif
+
+
     <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
         <p class="text-white font-light">All rights reserved 2021</p>
         <span class="text-white font-light mx-5">|</span>
@@ -82,15 +106,21 @@
     window.addEventListener('load', () => {
 
         const menu = document.querySelector('#desktop-menu');
+        const menuNav = document.querySelector('#desktop-menu-nav');
 
-        menu.addEventListener('click', () => {
-            if(menu.classList.contains('menu-open'))
+        menu.addEventListener('click', (event) => {
+
+            if(menuNav.classList.contains('menu-open'))
             {
-                menu.classList.remove('menu-open');
+                menuNav.classList.remove('menu-open');
+                window.setTimeout(() => {
+                    menuNav.style.display = 'none';
+                }, 300);
             }
             else
             {
-                menu.classList.add('menu-open');
+                menuNav.style.display = 'block';
+                menuNav.classList.add('menu-open');
             }
         });
 
