@@ -3,4 +3,5 @@
 @section('title', 'Contact')
 
 @section('content')
+{{--  See menu_and_footer.blade.php  --}}
 @endsection

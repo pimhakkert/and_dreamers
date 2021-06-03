@@ -48,4 +48,9 @@ class WebsiteController extends BaseController
     {
         return view('website.contact');
     }
+
+    function about()
+    {
+        return view('website.about');
+    }
 }
