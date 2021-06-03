@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Background images -->
-    <img src="../images/cirkel.svg" alt="Background Image" class="absolute top-80 z-20" style="left: -350px; width: 900px">
+    <img src="../images/cirkel.svg" alt="Background Image" class="absolute top-80 z-20" style="left: -350px; width: 900px;">
 
     <!-- Header -->
     <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url(../images/background.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -14,8 +14,8 @@
             </div>
         </div>
         <div class="hidden text pl-40 z-40">
-            <p class="text-xl pb-10 text-brown">Welcome!</p>
-            <p class="text-10xl italic">and.dreamers</p>
+            <p class="text-xl pb-10">Welcome!</p>
+            <p class="text-10xl italic text-brown">and.dreamers</p>
         </div>
         <div class="hidden textTwo pl-40 pr-36 z-50">
             <p class="text-xl pb-10">and.dreamers</p>
@@ -66,14 +66,14 @@
         </div>
     </div>
 
-    <!-- Bookcase Text -->
+    <!-- Bookshelf Text -->
     <div class="text-brown pl-40 z-40">
-        <p class="text-4xl italic">My hat story closet</p>
+        <p class="text-4xl italic">My hat story shelf</p>
         <p class="text-sm pt-2">Enjoy my hat stories!</p>
         <p class="text-sm pb-16">Updated regularly so please check back in!</p>
     </div>
 
-    <!-- Bookcase -->
+    <!-- Bookshelf -->
     <div style="display:none">
         {{ $hats =  \App\Models\HatStory::orderBy('created_at', 'desc')->take(3)->get() }}
     </div>
