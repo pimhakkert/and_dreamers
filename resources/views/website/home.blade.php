@@ -7,19 +7,19 @@
     <img src="../images/cirkel.svg" alt="Background Image" class="absolute top-80 z-20" style="left: -350px; width: 900px">
 
     <!-- Header -->
-    <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url(../images/background.jpeg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url(../images/background.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="addText">
             <div class="bg-lightbrown rounded-full z-50 w-80 md:w-96 removeImage" style="animation: backInDown; animation-duration: 2s;">
                 <img src="../images/logo.svg" alt="and.dreamers Logo">
             </div>
         </div>
-        <div class="hidden text text-white pl-40 z-40">
-            <p class="text-xl pb-10">Welcome!</p>
-            <p class="text-9xl italic">and.dreamers</p>
+        <div class="hidden text pl-40 z-40">
+            <p class="text-xl pb-10 text-brown">Welcome!</p>
+            <p class="text-10xl italic">and.dreamers</p>
         </div>
-        <div class="hidden textTwo pl-40 pr-36 text-white z-50">
+        <div class="hidden textTwo pl-40 pr-36 z-50">
             <p class="text-xl pb-10">and.dreamers</p>
-            <p class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">Hat stories from a one-time millinery apprentice who came back to a forgotten dream.</p>
+            <p class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-brown">Hat stories from a one-time millinery apprentice who came back to a forgotten dream.</p>
             <p class="text-xl pt-10">Bespoke custom made and one-of-a-kind original designs from recycled and sustainable materials.</p>
         </div>
     </div>

@@ -26,7 +26,7 @@
                         <img src="../images/hoed-wit.svg" alt="All hats" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
                         <span class="tooltiptext hidden md:block">View all of our hats!</span>
                     </a>
-                    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
+                    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/contact">
                         <img src="../images/mail.svg" alt="Contact" class="mt-1 mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
                         <span class="tooltiptext hidden md:block">Contact us!</span>
                     </a>
