@@ -191,22 +191,7 @@
     body {
         position: relative;
         height: 100vh;
-    }
-
-    body::before {
-        z-index: -1;
-        position: absolute;
-        width: 90%;
-        padding-top: 100%;
-        content: '';
-        border-radius: 50%;
-        background-color: #FAFAFA;
-
-        left: 50%;
-        top: 50%;
-
-        transform: translate(-50%,-50%);
-        box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        background-image: url("{{ asset('images/background_hatstory.svg') }}");
     }
 
     .mobile-nav img {
@@ -229,6 +214,10 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('{{ asset('images/book_back.png') }}');
+    }
+
+    body.noscroll {
+        overflow: hidden;
     }
 </style>
 @endsection

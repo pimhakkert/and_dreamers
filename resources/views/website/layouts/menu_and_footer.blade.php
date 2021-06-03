@@ -129,7 +129,6 @@
                 menuNav.classList.add('menu-open');
             }
         });
-
     });
 
     $(document).ready(function(){

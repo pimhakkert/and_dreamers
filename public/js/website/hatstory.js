@@ -2292,12 +2292,12 @@ window.addEventListener('load', function () {
   });
 
   function flipPrev(pageFlip) {
-    // document.body.classList.add('noscroll');
+    document.body.classList.add('noscroll');
     pageFlip.flipPrev();
   }
 
   function flipNext(pageFlip) {
-    // document.body.classList.add('noscroll');
+    document.body.classList.add('noscroll');
     pageFlip.flipNext();
   }
 
