@@ -45,7 +45,8 @@ module.exports = {
             indigo: colors.indigo,
             yellow: colors.amber,
             'black': {
-                DEFAULT: '#444243'
+                DEFAULT: '#444243',
+                'black': '#000000'
             },
             'brown': {
                 light: 'rgba(130,85,80,0.57)',

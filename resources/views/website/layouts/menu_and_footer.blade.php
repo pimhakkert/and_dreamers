@@ -73,20 +73,20 @@
             @else
             <div class="flex">
                 <form class="w-1/4 mr-32">
-                    <h3 class="text-brown text-3xl font-semibold -mb-10">CONTACT FORM</h3>
+                    <h3 class="text-brown text-3xl font-semibold -mb-10">{{ __('pages/general.contact_title') }}</h3>
                     <div class="form-group -mb-10">
-                        <input type="text" placeholder="NAME" name="name" style="border-bottom-width: 3px;">
+                        <input type="text" placeholder="{{ __('pages/general.contact_field_name') }}" name="name" style="border-bottom-width: 3px;">
                     </div>
                     <div class="form-group -mb-10">
-                        <input type="text" placeholder="PHONE NUMBER" name="phone_number" style="border-bottom-width: 3px;">
+                        <input type="text" placeholder="{{ __('pages/general.contact_field_phone') }}" name="phone_number" style="border-bottom-width: 3px;">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="MESSAGE" style="border-bottom-width: 3px; height: 130px;"></textarea>
+                        <textarea name="message" placeholder="{{ __('pages/general.contact_field_message') }}" style="border-bottom-width: 3px; height: 130px;"></textarea>
                     </div>
-                    <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">SEND</button>
+                    <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/general.contact_button') }}</button>
                 </form>
                 <div>
-                    <h3 class="text-brown text-3xl font-semibold">CONTACT ME</h3>
+                    <h3 class="text-brown text-3xl font-semibold">{{ __('pages/general.contact_end') }}</h3>
                     <p class="mt-7 text-brown-light">Andrea Mengelberg</p>
                     <p class="mt-5 -mb-1 text-brown-light">+31 6 149 285 01</p>
                     <a class="text-brown-light" href="mailto:info@and-dreamers.com?subject=I%20would%20like%20to%20get%20in%20touch">info@and-dreamers.com</a>
