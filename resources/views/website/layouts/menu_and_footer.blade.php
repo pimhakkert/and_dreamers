@@ -39,7 +39,7 @@
                 <div class="rounded-full w-2 h-2 bg-white"></div>
             </div>
         </div>
-        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9)">
+        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">
             <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
             <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
             <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>

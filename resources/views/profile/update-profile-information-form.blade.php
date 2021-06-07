@@ -4,7 +4,7 @@
         <!-- Name -->
         <div class="bg-white-light" style="max-width:500px; min-width: 400px;">
             <div class="p-3 pb-0 flex flex-col items-center">
-                <h1 class="text-3xl lg:text-4xl 2xl:text-6xl -mt-6.5 lg:-mt-7 2xl:-mt-9 text-brown font-semibold mr-4 2xl:mr-0">ADMINISTRATOR</h1>
+                <h1 class="text-3xl lg:text-4xl 2xl:text-6xl -mt-6.5 lg:-mt-7 2xl:-mt-9 text-brown mr-48 2xl:mr-0">ADMIN</h1>
                 <div class="w-2/3">
                     <div class="form-group">
                         <!--  -->

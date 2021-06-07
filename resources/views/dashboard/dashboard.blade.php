@@ -3,7 +3,7 @@
 @section('content')
     <!-- Background Images -->
     <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
-    <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
+    <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden 2xl:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
     <!-- Dashboard -->
     <div class="relative text-brown lg:px-28 lg:py-32 md:px-20 md:py-24 px-3 py-3">

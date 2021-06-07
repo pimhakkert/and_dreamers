@@ -5,7 +5,7 @@
     <div class="overflow-x-hidden">
         <!-- Background Images -->
         <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="">
-        <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
+        <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden 2xl:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
         <!-- Content Grid -->
         <div class="pt-16">
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Hat Stories -->
-            <div class="md:pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1 md:pb-20 pb-40">
+            <div class="md:pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1 md:pb-20 pb-40 pr-10">
                 @foreach ($hatstory as $hat)
                     <div class="w-64 h-64 relative justify-self-center relative z-0">
                         <form action="{{ route('hatstories.showing', $hat->hat_id) }}" method="POST" onsubmit="return confirm('Are you sure?');">

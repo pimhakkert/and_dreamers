@@ -6,7 +6,7 @@
     <div class="overflow-x-hidden">
         <!-- Background Images -->
         <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="">
-        <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
+        <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden 2xl:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
         <!-- Errors -->
         @if ($errors->all())
