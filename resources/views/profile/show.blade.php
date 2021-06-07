@@ -83,7 +83,9 @@
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout-wit.svg')},
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
             );
-            $('.inputError').delay(3000).fadeOut();
+            setTimeout(function(){
+                $('.removePopup').fadeOut();
+            }, 5000);
         });
     </script>
 

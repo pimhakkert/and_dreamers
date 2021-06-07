@@ -30,11 +30,18 @@ class HatStoryController extends Controller
         return view('dashboard.hatstories.hidden', ['hatstory'=>$hatstory]);
     }
 
-    public function hide(HatStory $hatstory)
+    public function hide($id)
     {
-        $hatstory->update(['hat_hidden' => '1']);
+        $idInt = (int)$id;
+        HatStory::where('hat_id', $idInt)->update(array('hat_hidden' => true));
+        return redirect()->route('hatstories.index');
+    }
 
-        return redirect()->route('dashboard.hatstories.index')->with('success', 'Hidden');
+    public function showing($id)
+    {
+        $idInt = (int)$id;
+        HatStory::where('hat_id', $idInt)->update(array('hat_hidden' => false));
+        return redirect()->route('hidden');
     }
 
     /**
@@ -57,6 +64,7 @@ class HatStoryController extends Controller
     {
         // Validate the video file and the thumbnail file
         $request->validate([
+            'hat_name' => 'required|max:25',
             'hat_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pageone_image' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',
             'hat_pagetwo_imageone' => 'bail|required|file|mimes:jpeg,jpg,png|max:10000',

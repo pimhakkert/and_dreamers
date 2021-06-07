@@ -6,16 +6,21 @@
     <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
 
     <!-- Errors -->
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+    @if ($errors->all())
+        <div class="fixed top-10 z-50 flex w-full justify-center">
+            <ul class="removeAfter text-xl bg-white rounded-2xl list-disc text-red" style="padding: 15px 25px; box-shadow: 0 3px 6px #00000029;">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
+
 
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
+        <div class="pl-10 md:fixed h-full grid md:w-auto w-full z-40" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
             <div class="pb-10 md:pb-0">
                 <p class="text-3xl italic pb-6">Edit hat</p>
@@ -52,18 +57,18 @@
             <form method="post" action="{{ route('hatstories.update', $hatstory->hat_id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-template-rows: auto">
+                <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-auto-flow: row;">
                     <!-- Hat Name & Text -->
-                    <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 80px 80px; height: 422px; max-width: 526px;">
+                    <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
                         <label class="text-2xl" for="hat_name">NAME</label>
-                        <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_name }}"required>
+                        <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_name }}" required>
                         <label class="text-2xl" for="hat_text">TEXT</label>
                         <textarea name="hat_text" rows="5" placeholder="Write a short summary about the hat" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_text }}</textarea>
                     </div>
 
                     <!-- Hat Image -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
                             <img id="output1" src="/storage/hatimage/{{ $hatstory->hat_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
@@ -77,7 +82,7 @@
                     </div>
 
                     <!-- Hat Specifications -->
-                    <div class="flex flex-col bg-lightbrown relative" style="padding: 80px 80px; height: 422px; max-width: 526px;">
+                    <div class="flex flex-col bg-lightbrown relative" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
                         <label class="text-2xl" for="hat_size">SIZE</label>
                         <input type="text" name="hat_size" placeholder="Hat size" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_size }}" required>
@@ -88,14 +93,14 @@
                     </div>
 
                     <!-- Page 1 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 80px 80px; height: 422px; max-width: 526px;">
+                    <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
                         <label class="text-2xl" for="hat_pageone_text">TEXT</label>
                         <textarea name="hat_pageone_text" rows="5" placeholder="Page one text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pageone_text }}</textarea>
                     </div>
 
                     <!-- Page 1 Image -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
                             <img id="output2" src="/storage/hatimage/{{ $hatstory->hat_pageone_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
@@ -111,14 +116,14 @@
                     <div></div>
 
                     <!-- Page 2 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 80px 80px; height: 422px; max-width: 526px;">
+                    <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
                         <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
                         <textarea name="hat_pagetwo_text" rows="5" placeholder="Page two text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pagetwo_text }}</textarea>
                     </div>
 
                     <!-- Page 2 Images -->
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
                             <img id="output3" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imageone }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
@@ -130,7 +135,8 @@
                             <input id="upfile3" type="file" value="upload" name="hat_pagetwo_imageone" onchange="sub(this); loadFile3(event)">
                         </div>
                     </div>
-                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; height: 422px; max-width: 526px;">
+
+                    <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
                         <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
                             <img id="output4" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imagetwo }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
@@ -179,6 +185,10 @@
                 function(){$(this).children('.menuFour-image').attr('src', '../../images/logout-wit.svg')},
                 function(){$(this).children('.menuFour-image').attr('src', '../../images/logout.svg')}
             );
+
+            setTimeout(function(){
+                $('.removeAfter').fadeOut();
+            }, 5000);
         });
 
         var loadFile1 = function(event) {
@@ -213,6 +223,8 @@
         function sub(obj) {
             obj.value;
         }
+
+
     </script>
 
     <script src="{{ mix('js/dashboard/edit-create.js') }}"></script>

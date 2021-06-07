@@ -9,11 +9,15 @@
         <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
         <!-- Errors -->
-        <ul class="absolute top-0">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+        @if ($errors->all())
+            <div class="fixed top-10 z-50 flex w-full justify-center">
+                <ul class="removeAfter text-xl bg-white rounded-2xl list-disc text-red" style="padding: 15px 25px; box-shadow: 0 3px 6px #00000029;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <!-- Content Grid -->
         <div class="pt-16 relative text-brown">
@@ -180,6 +184,10 @@
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout-wit.svg')},
                 function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
             );
+
+            setTimeout(function(){
+                $('.removeAfter').fadeOut();
+            }, 5000);
         });
 
         var loadFile1 = function(event) {

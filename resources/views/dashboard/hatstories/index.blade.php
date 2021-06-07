@@ -54,12 +54,16 @@
             <div class="md:pl-64 grid xl:grid-cols-3 xl:gap-x-24 lg:gap-x-10 gap-y-28 lg:grid-cols-2 gap-x-0 grid-cols-1 md:pb-20 pb-40">
                 @foreach ($hatstory as $hat)
                     <div class="w-64 h-64 relative justify-self-center relative z-0">
-                        <div class="hatStory-circle cursor-pointer border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 relative" style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px">
-                            <div class="hatStory-hidden hidden rounded-full absolute top-0 left-0 w-full h-full" style="background-color: rgba(0, 0, 0, 0.38);">
-                                <img class="absolute" src="../images/oog-wit.svg" alt="Button to make the hat hidden" style="left:50%; width: 200px; transform: translateX(-50%);">
-                                <p class="absolute text-lightbrown text-2xl" style="left: 50%; top: 68%; transform: translateX(-50%);">Hide</p>
+                        <form action="{{ route('hatstories.hide', $hat->hat_id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                            @csrf
+                            @method('PATCH')
+                            <div class="hatStory-circle cursor-pointer border-brown rounded-full bg-no-repeat bg-cover bg-center block w-64 h-64 mb-5 relative" style="background-image: url(/storage/hatimage/{{ $hat->hat_image }}); border-width: 12px">
+                                <div class="hatStory-hidden hidden rounded-full absolute top-0 left-0 w-full h-full" style="background-color: rgba(0, 0, 0, 0.38);">
+                                    <input type="image" class="absolute" src="../images/oog-wit.svg" alt="Button to make the hat hidden" style="left:50%; width: 200px; transform: translateX(-50%);">
+                                    <p class="absolute text-lightbrown text-2xl" style="left: 50%; top: 68%; transform: translateX(-50%);">Hide</p>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                         <p class="text-center text-3xl"> {{ $hat->hat_name }}</p>
                         <!-- Buttons -->
                         <div class="flex absolute left-14 mt-5" style="bottom: -10px">

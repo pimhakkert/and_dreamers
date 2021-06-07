@@ -46,22 +46,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['auth:sanctum', 'verified'], function () {
     Route::resource('hatstories', HatStoryController::class);
-    Route::get('hatstories-hidden', [HatStoryController::class, 'hidden'])
-        ->name('hidden');
 
-    Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])
-        ->name('password.email');
+    Route::get('hatstories-hidden', [HatStoryController::class, 'hidden'])->name('hidden');
 
-    Route::get('/reset-request-sent', [Controller::class, 'resetRequestSent'])
-        ->name('password.reset-request-sent');
+    Route::patch('hatstories/{id}/hide', [HatStoryController::class, 'hide'])->name('hatstories.hide');
+    Route::patch('hatstories/{id}/show', [HatStoryController::class, 'showing'])->name('hatstories.showing');
 
-    Route::get('/resend-resent-request', [Controller::class, 'resendRequest'])
-         ->name('password.resend-request');
+    Route::post('/forgot-password', [Controller::class, 'resetUserPassword'])->name('password.email');
 
-    Route::get('/reset-password/{token}', [Controller::class, 'createNewPassword'])
-        ->name('password.reset');
+    Route::get('/reset-request-sent', [Controller::class, 'resetRequestSent'])->name('password.reset-request-sent');
 
-    Route::post('/reset-password', [Controller::class, 'setNewPassword'])
-        ->name('password.update');
+    Route::get('/resend-resent-request', [Controller::class, 'resendRequest'])->name('password.resend-request');
+
+    Route::get('/reset-password/{token}', [Controller::class, 'createNewPassword'])->name('password.reset');
+
+    Route::post('/reset-password', [Controller::class, 'setNewPassword'])->name('password.update');
 });
-
