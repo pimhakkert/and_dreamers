@@ -4,13 +4,13 @@
 
 @section('content')
     <!-- Background images -->
-    <img src="../images/cirkel.svg" alt="Background Image" class="absolute top-80 z-20" style="left: -350px; width: 900px;">
+    <img src="{{ URL::asset('images/cirkel.svg') }}" alt="Background Image" class="absolute top-80 z-20" style="left: -350px; width: 900px;">
 
     <!-- Header -->
     <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url(../images/background.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="addText">
             <div class="bg-lightbrown rounded-full z-50 w-80 md:w-96 removeImage" style="animation: backInDown; animation-duration: 2s;">
-                <img src="../images/logo.svg" alt="and.dreamers Logo">
+                <img src="{{ URL::asset('images/logo.svg') }}" alt="and.dreamers Logo">
             </div>
         </div>
         <div class="hidden text pl-40 z-40">
@@ -36,7 +36,7 @@
     <div class="flex flex-col items-center pr-40">
         <!-- First Ball -->
        <div class="pb-10" style="padding-left: 40px;">
-           <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
+           <img src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle" style="width: 160px; min-width: 160px;">
            <div class="relative">
                <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.buy_a_hat1') }}</p>
                <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.buy_a_hat2') }}.</p>
@@ -45,7 +45,7 @@
 
         <!-- Second Ball -->
         <div class="pb-10" style="padding-left:260px;">
-            <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
+            <img src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle" style="width: 160px; min-width: 160px;">
             <div class="relative">
                 <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.lease_a_hat1') }}</p>
                 <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.lease_a_hat2') }}</p>
@@ -54,7 +54,7 @@
 
         <!-- Third Ball -->
         <div class="pb-10" style="padding-left: 480px;">
-            <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
+            <img src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle" style="width: 160px; min-width: 160px;">
             <div class="relative">
                 <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.rent_a_hat1') }}</p>
                 <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.rent_a_hat2') }}</p>
@@ -76,7 +76,7 @@
     <div class="flex justify-between px-60 bookTurn">
         @foreach ($hats as $hat)
             <a class="relative" href="/hatstory/{{ $hat->hat_id }}">
-                <img src="../images/book_front.png" alt="Front of the book" style="width: 220px; min-width: 220px;">
+                <img src="{{ URL::asset('images/book_front.png') }}" alt="Front of the book" style="width: 220px; min-width: 220px;">
                 <p class="text-xl italic absolute w-full text-center" style="top: 10%; transform: translateY(0%);">{{ $hat->hat_name }}</p>
                 <p class="font-thin absolute w-full text-center" style="top: 20%; transform: translateY(0%);">and.dreamers</p>
                 <p class="italic absolute w-full text-center" style="top: 88%; transform: translateY(-50%);">{{ __('pages/home.hat_story_shelf4') }}</p>
@@ -84,8 +84,10 @@
             </a>
         @endforeach
     </div>
-    <div class="pb-12 mb-20 w-full" style="box-shadow: 0 3px 6px #00000029; margin-left: 10%; margin-right: 10%; max-width: 1200px;"></div>
-    <a class="float-right text-brown text-2xl flex pb-10" style="padding-right: 7%;" href="/hats">
+    <div class="px-40">
+        <div class="pb-12 mb-20 w-full" style="box-shadow: 0 3px 6px #00000029;"></div>
+    </div>
+        <a class="float-right text-brown text-2xl flex pb-10" style="padding-right: 7%;" href="/hats">
         <p class="pr-2">{{ __('pages/home.more_hat_stories') }}</p>
         <i class="fas fa-arrow-right"></i>
     </a>

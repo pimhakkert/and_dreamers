@@ -3,35 +3,6 @@
 @section('title', 'Hat story')
 
 @section('content')
-    <div>
-        <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="Background Image">
-        <!-- Left Menu -->
-        <div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
-            <!-- Top Left Menu -->
-            <div class="pl-10 md:pl-0 z-50 md:pb-0 pb-10">
-            </div>
-
-            <!-- Bottom Left Menu -->
-            <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
-                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuOne" href="/">
-                    <img src="../images/home.svg" alt="Home" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
-                    <span class="tooltiptext hidden md:block">Go to our homepage!</span>
-                </a>
-                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHome menuTwo" href="/hats">
-                    <img src="../images/hoed-wit.svg" alt="All hats" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
-                    <span class="tooltiptext hidden md:block">View all of our hats!</span>
-                </a>
-                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/contact">
-                    <img src="../images/mail.svg" alt="Contact" class="mt-1 mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
-                    <span class="tooltiptext hidden md:block">Contact us!</span>
-                </a>
-                <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
-                    <img src="../images/insta.svg" alt="Instagram" class="mt-1 mb-2 menuFour-image md:w-12 md:h-12 w-10 h-10">
-                    <span class="tooltiptext hidden md:block">View our Instagram!</span>
-                </a>
-            </div>
-        </div>
-    </div>
     <div class="p-5 xl:p-20 h-full">
         <div class="max-w-5xl m-auto">
             <div class="w-full">
@@ -236,30 +207,10 @@
 @endsection
 
 @section('js')
-{{--    <script src="{{ mix('js/website/page-flip.js') }}"></script>--}}
 
     <script src="{{ mix('js/website/hatstory.js') }}"></script>
 
     <script>
-        $(document).ready(function(){
-            $('.menuOne').hover(
-                function(){$(this).children('.menuOne-image').attr('src', '../images/home-wit.svg')},
-                function(){$(this).children('.menuOne-image').attr('src', '../images/home.svg')}
-            );
-            $('.menuTwo').hover(
-                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed.svg')},
-                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed-wit.svg')}
-            );
-            $('.menuThree').hover(
-                function(){$(this).children('.menuThree-image').attr('src', '../images/mail-wit.svg')},
-                function(){$(this).children('.menuThree-image').attr('src', '../images/mail.svg')}
-            );
-            $('.menuFour').hover(
-                function(){$(this).children('.menuFour-image').attr('src', '../images/insta-wit.svg')},
-                function(){$(this).children('.menuFour-image').attr('src', '../images/insta.svg')}
-            );
-        });
-
         let canSend = true;
 
         window.addEventListener('load', () => {
