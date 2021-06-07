@@ -5,6 +5,7 @@ use App\Http\Controllers\HatStoryController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,20 +18,27 @@ use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('website.home');
-})->name('home');
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect']
+], function()
+{
+    Route::get('/', function () {
+        return view('website.home');
+    })->name('home');
 
-Route::get('/hatstory/{id}', [WebsiteController::class, 'hatstory'])->name('hatstory');
+    Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatoverview');
 
-Route::get('/hats', [WebsiteController::class, 'hatoverview'])->name('hatoverview');
+    Route::get('/hatstory/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
+    Route::post('/hatstory/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
 
-Route::get('/hat/{id}', [WebsiteController::class, 'hatStory'])->name('hatStory');
-Route::post('/hat/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
+    Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 
-Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
+    Route::get('/about', [WebsiteController::class, 'about'])->name('about');
+});
 
-Route::get('/about', [WebsiteController::class, 'about'])->name('about');
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');

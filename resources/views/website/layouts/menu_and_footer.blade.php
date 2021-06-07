@@ -31,7 +31,7 @@
 <body style="overflow-x: hidden; height: 100vh;" class="flex flex-col">
 <nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
     <div class="relative flex flex-col justify-evenly items-center h-full">
-        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">Hat stories</a>
+        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>
         <div id="desktop-menu" class="w-full">
             <div class="cursor-pointer w-full flex flex-col items-center">
                 <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
@@ -40,13 +40,13 @@
             </div>
         </div>
         <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9)">
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">Home</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">Hat stories</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">About</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">Contact</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">Privacy policy</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
+{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>--}}
         </div>
-        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">Contact</a>
+        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>
     </div>
 
 </nav>
@@ -66,10 +66,10 @@
         <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between  @if(Route::current()->getName() == 'contact') h-full flex-col pt-40 pb-16 @else items-center @endif">
             <div class="max-w-2xl @if(Route::current()->getName() == 'contact') -ml-24 @endif">
                 <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
-                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"I would like to get in contact to talk about your hats"</h5>
+                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"{{ __('pages/general.footer_contact') }}"</h5>
             </div>
             @if(Route::current()->getName() != 'contact')
-            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Link naar de contact pagina">
+            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">
             @else
             <div class="flex">
                 <form class="w-1/4 mr-32">
@@ -100,9 +100,9 @@
 
 
     <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
-        <p class="text-white font-light text-lg">All rights reserved 2021</p>
+        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>
         <span class="text-white font-light mx-5 text-lg">|</span>
-        <p class="text-white font-light text-lg">A website by Loudmouth</p>
+        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>
     </div>
 </footer>
 @yield('js')

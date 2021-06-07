@@ -45,7 +45,7 @@
                                 <img src="../images/book_front.png" alt="Front of the book">
                                 <p class="text-2xl italic absolute w-full text-center" style="left: 50%; top: 15%; transform: translate(-50%, 0%);">{{ $hat->hat_name }}</p>
                                 <p class="font-thin absolute" style="left: 50%; top: 22%; transform: translate(-50%, 0%);">and.dreamers</p>
-                                <p class="italic absolute w-full text-center" style="left: 50%; top: 75%; transform: translate(-50%, -50%);">Let's take a look inside</p>
+                                <p class="italic absolute w-full text-center" style="left: 50%; top: 75%; transform: translate(-50%, -50%);">{{ __('pages/hatstories.catch_phrase') }}</p>
                                 <div class="absolute hatStory-circle rounded-full bg-no-repeat bg-cover bg-center block w-32 h-32 top-0 left-0" style="background-image: url(../storage/hatimage/{{ $hat->hat_image }}); left: 50%; top: 45%; transform: translate(-50%, -45%);"></div>
                             </a>
                             <div class="hidden sm:block p-2"></div>

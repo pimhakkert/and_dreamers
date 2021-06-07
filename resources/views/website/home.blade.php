@@ -14,21 +14,21 @@
             </div>
         </div>
         <div class="hidden text pl-40 z-40">
-            <p class="text-xl pb-10">Welcome!</p>
-            <p class="text-10xl italic text-brown">and.dreamers</p>
+            <p class="text-xl pb-10">{{ __('pages/home.welcome') }}</p>
+            <h1 class="text-10xl italic text-brown">and.dreamers</h1>
         </div>
         <div class="hidden textTwo pl-40 pr-36 z-50">
             <p class="text-xl pb-10">and.dreamers</p>
-            <p class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-brown">Hat stories from a one-time millinery apprentice who came back to a forgotten dream.</p>
-            <p class="text-xl pt-10">Bespoke custom made and one-of-a-kind original designs from recycled and sustainable materials.</p>
+            <p class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-brown">{{ __('pages/home.intro1') }}</p>
+            <p class="text-xl pt-10">{{ __('pages/home.intro2') }}</p>
         </div>
     </div>
 
     <!-- Circularity -->
     <div class="inline-block flex justify-center py-20 z-40 relative">
         <div>
-            <h2 class="text-2xl md:text-4xl italic text-brown">How I want to promote circularity.</h2>
-            <p class="text-brown text-sm" style="text-align:right;">Read more about my this on my about me page</p>
+            <h2 class="text-2xl md:text-4xl italic text-brown">{{ __('pages/home.circularity1') }}</h2>
+            <p class="text-brown text-sm" style="text-align:right;">{{ __('pages/home.circularity2') }}</p>
         </div>
     </div>
 
@@ -38,10 +38,8 @@
        <div class="pb-10" style="padding-left: 40px;">
            <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
            <div class="relative">
-               <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">Buy a hat</p>
-               <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">Order a bespoke hat in your size or purchase an existing hat knowing that you will treasure it. When one
-               day you are done with your hat return it and get 10% off any new purchase, so the hat can be recycled
-               instead of ending up in landfills.</p>
+               <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.buy_a_hat1') }}</p>
+               <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.buy_a_hat2') }}.</p>
            </div>
        </div>
 
@@ -49,9 +47,8 @@
         <div class="pb-10" style="padding-left:260px;">
             <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
             <div class="relative">
-                <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">Lease a hat</p>
-                <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">For an annual amount you can lease a hat, you pay an annual fee to get a new hat after one year, after
-                    returning the old one to re-use or recycle.</p>
+                <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.lease_a_hat1') }}</p>
+                <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.lease_a_hat2') }}</p>
             </div>
         </div>
 
@@ -59,18 +56,17 @@
         <div class="pb-10" style="padding-left: 480px;">
             <img src="../images/solid_cirkel.svg" alt="Solid Circle" style="width: 160px; min-width: 160px;">
             <div class="relative">
-                <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">Rent a hat</p>
-                <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">For a set amount depending on the purchase value of the hat you can rent a hat for a day, return it in
-                    good condition or pay a cleaning/repair charge.</p>
+                <p class="absolute text-brown text-xl font-bold -top-24 left-24 whitespace-nowrap">{{ __('pages/home.rent_a_hat1') }}</p>
+                <p class="absolute text-brown -top-16 left-24" style="width: 35vw;">{{ __('pages/home.rent_a_hat2') }}</p>
             </div>
         </div>
     </div>
 
     <!-- Bookshelf Text -->
     <div class="text-brown pl-40 z-40">
-        <p class="text-4xl italic">My hat story shelf</p>
-        <p class="text-sm pt-2">Enjoy my hat stories!</p>
-        <p class="text-sm pb-16">Updated regularly so please check back in!</p>
+        <p class="text-4xl italic">{{ __('pages/home.hat_story_shelf1') }}</p>
+        <p class="text-sm pt-2">{{ __('pages/home.hat_story_shelf2') }}</p>
+        <p class="text-sm pb-16">{{ __('pages/home.hat_story_shelf3') }}</p>
     </div>
 
     <!-- Bookshelf -->
@@ -83,14 +79,14 @@
                 <img src="../images/book_front.png" alt="Front of the book" style="width: 220px; min-width: 220px;">
                 <p class="text-xl italic absolute w-full text-center" style="top: 10%; transform: translateY(0%);">{{ $hat->hat_name }}</p>
                 <p class="font-thin absolute w-full text-center" style="top: 20%; transform: translateY(0%);">and.dreamers</p>
-                <p class="italic absolute w-full text-center" style="top: 88%; transform: translateY(-50%);">Let's take a look inside</p>
+                <p class="italic absolute w-full text-center" style="top: 88%; transform: translateY(-50%);">{{ __('pages/home.hat_story_shelf4') }}</p>
                 <div class="absolute rounded-full bg-no-repeat bg-cover bg-center block w-32 h-32" style="background-image: url(../storage/hatimage/{{ $hat->hat_image }});top: 55%; left: 50%; transform: translate(-50%, -45%);"></div>
             </a>
         @endforeach
     </div>
     <div class="pb-12 mb-20 w-full" style="box-shadow: 0 3px 6px #00000029; margin-left: 10%; margin-right: 10%; max-width: 1200px;"></div>
     <a class="float-right text-brown text-2xl flex pb-10" style="padding-right: 7%;" href="/hats">
-        <p class="pr-2">More hat stories</p>
+        <p class="pr-2">{{ __('pages/home.more_hat_stories') }}</p>
         <i class="fas fa-arrow-right"></i>
     </a>
 @endsection

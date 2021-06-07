@@ -3,7 +3,7 @@
 @section('title', 'Hat story')
 
 @section('content')
-    <div class="pt-16">
+    <div>
         <!-- Left Menu -->
         <div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
@@ -41,8 +41,8 @@
                                 <h1 class="italic text-4xl text-center mt-20">{{ $hatStory->hat_name }}</h1>
                                 <h2 class="font-thin text-3xl text-center mt-2">And.dreamers</h2>
                                 <img class="w-60 h-60 object-cover rounded-full border-brown border-2 mt-10" src="/storage/hatimage/{{ $hatStory->hat_image }}" alt="Image of this hat">
-                                <h4 class="text-2xl italic text-center mt-10">Let's take a look inside</h4>
-                                <button class="text-3xl font-bold mt-6 group-hover:text-brown">OPEN BOOK</button>
+                                <h4 class="text-2xl italic text-center mt-10">{{ __('pages/hatstory.catch_phrase') }}</h4>
+                                <button class="text-3xl font-bold mt-6 group-hover:text-brown">{{ __('pages/hatstory.open_book') }}</button>
                             </div>
                         </div>
                     </div>
@@ -56,17 +56,17 @@
                                         <p class="text-brown mt-8 text-xl" style="max-width: 90%">"{{ $hatStory->hat_text }}"</p>
                                     </div>
                                     <div class="flex-1 flex flex-col justify-center">
-                                        <p class="text-brown">Specifications</p>
+                                        <p class="text-brown">{{ __('pages/hatstory.specifications') }}</p>
                                         <div class="specs-grid grid mt-3" style="grid-template-columns: auto 1fr; width: max-content">
-                                            <p class="text-brown mr-6">Size</p>
+                                            <p class="text-brown mr-6">{{ __('pages/hatstory.size') }}</p>
                                             <p class="text-brown mr-2">{{ $hatStory->hat_size }}</p>
                                             <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
                                             <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
-                                            <p class="text-brown mr-6">Color</p>
+                                            <p class="text-brown mr-6">{{ __('pages/hatstory.color') }}</p>
                                             <p class="text-brown mr-2">{{ $hatStory->hat_color }}</p>
                                             <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
                                             <div class="border-b-2 border-lightbrown mt-1 mb-2"></div>
-                                            <p class="text-brown mr-6">Material</p>
+                                            <p class="text-brown mr-6">{{ __('pages/hatstory.material') }}</p>
                                             <p class="text-brown mr-2">{{ $hatStory->hat_material }}</p>
                                         </div>
                                     </div>
@@ -115,23 +115,31 @@
                             <div class="relative bg-white h-full" style="box-shadow: -3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-previous hatstory-previous-desktop"><img style="" src="{{ asset('images/next.svg') }}" alt="Previous page"></button>
                                 <div class="px-14 pb-12 z-10 h-full flex flex-col justify-end" style="border-right: 1px solid #888;">
-                                    <p class="text-brown text-xl">"This hat is available for rent. You can rent the hat for an agreed period."</p>
+                                    <p class="text-brown text-xl">
+                                        "{{ __('pages/hatstory.contact_in_touch1') }}
+                                        <select name="type" id="type">
+                                            <option value="purchase">{{ __('pages/hatstory.contact_in_touch_purchase') }}</option>
+                                            <option value="lease">{{ __('pages/hatstory.contact_in_touch_lease') }}</option>
+                                            <option value="rent">{{ __('pages/hatstory.contact_in_touch_rent') }}</option>
+                                        </select>
+                                        {{ __('pages/hatstory.contact_in_touch2') }}"
+                                    </p>
                                     <form class="w-7/12 mt-5">
                                         <h3 class="text-brown text-2xl font-semibold -mb-10">CONTACT</h3>
                                         <div class="form-group -mb-10">
-                                            <input type="text" placeholder="NAME" name="name" style="border-bottom-width: 3px;">
+                                            <input type="text" placeholder="{{ __('pages/hatstory.contact_field_name') }}" name="name" style="border-bottom-width: 3px;">
                                         </div>
                                         <div class="form-group -mb-10">
-                                            <input type="text" placeholder="PHONE NUMBER" name="phone_number" style="border-bottom-width: 3px;">
+                                            <input type="text" placeholder="{{ __('pages/hatstory.contact_field_phone') }}" name="phone_number" style="border-bottom-width: 3px;">
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="message" placeholder="MESSAGE" style="border-bottom-width: 3px; height: 130px;"></textarea>
+                                            <textarea name="message" placeholder="{{ __('pages/hatstory.contact_field_message') }}" style="border-bottom-width: 3px; height: 130px;"></textarea>
                                         </div>
-                                        <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-5 p-2 lg:p-3 2xl:p-3 pb-1 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">SEND</button>
+                                        <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-5 p-2 lg:p-3 2xl:p-3 pb-1 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/hatstory.contact_button') }}</button>
                                     </form>
-                                    <p id="sending" class="hidden mt-2">Sending message...</p>
-                                    <p id="error" class="hidden text-red-light mt-2">Something went wrong! Try again.</p>
-                                    <p id="success" class="hidden text-green-light mt-2">Message has been sent!</p>
+                                    <p id="sending" class="hidden mt-2">{{ __('pages/hatstory.contact_sending') }}</p>
+                                    <p id="error" class="hidden text-red-light mt-2">{{ __('pages/hatstory.contact_error') }}</p>
+                                    <p id="success" class="hidden text-green-light mt-2">{{ __('pages/hatstory.contact_success') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -149,12 +157,12 @@
                             <button class="hatstory-previous hatstory-previous-desktop"><img style="" src="{{ asset('images/next.svg') }}" alt="Previous page"></button>
                             <div class="group h-full flex flex-col justify-between items-center back cursor-pointer pt-20 pb-28">
                                 <div>
-                                    <h3 class="font-thin text-3xl text-center">Handmade by</h3>
+                                    <h3 class="font-thin text-3xl text-center">{{ __('pages/hatstory.handmade_by') }}</h3>
                                     <h2 class="italic text-4xl text-center mt-2">And.dreamers</h2>
                                 </div>
                                 <div>
-                                    <h4 class="italic text-3xl text-center mb-8">End of story</h4>
-                                    <a href="#" class="text-brown text-3xl font-bold">GO TO LIBRARY</a>
+                                    <h4 class="italic text-3xl text-center mb-8">{{ __('pages/hatstory.story_end') }}</h4>
+                                    <a href="{{ route('hatoverview') }}" class="text-brown text-3xl font-bold">{{ __('pages/hatstory.go_to_library') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -191,6 +199,7 @@
     body {
         position: relative;
         height: 100vh;
+        background-repeat: no-repeat;
         background-image: url("{{ asset('images/background_hatstory.svg') }}");
     }
 
@@ -289,8 +298,6 @@
 
                 fetch(url,options)
                 .then(response => {
-                    console.log(response);
-
                     sendingText.classList.add('hidden');
 
                     if(response.ok)
