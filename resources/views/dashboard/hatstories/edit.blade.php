@@ -2,8 +2,8 @@
 
 @section('content')
     <!-- Background Images -->
-    <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}">
-    <img class="absolute w-small right-0 -mr-52 xl:mt-52 mt-500px" src=" {{ URL::asset('images/solid_cirkel.svg') }}">
+    <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="">
+    <img class="absolute w-small -right-52 xl:mt-52 mt-500px hidden lg:block" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="">
 
     <!-- Errors -->
     @if ($errors->all())
@@ -16,35 +16,34 @@
         </div>
     @endif
 
-
     <!-- Content Grid -->
     <div class="pt-16 relative text-brown">
         <!-- Left Menu -->
-        <div class="pl-10 md:fixed h-full grid md:w-auto w-full z-40" style="grid-template-columns: auto">
+        <div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
             <!-- Top Left Menu -->
-            <div class="pb-10 md:pb-0">
-                <p class="text-3xl italic pb-6">Edit hat</p>
+            <div class="pl-10 md:pl-0 z-50 md:pb-0 pb-10">
+                <p class="text-3xl italic pb-6">Edit stories</p>
                 <span class="pl-5">{{ $hatstory->hat_name }}</span>
             </div>
 
             <!-- Bottom Left Menu -->
             <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
                 <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipProfile menuOne" href="{{ route('profile.show') }}">
-                    <img src="../../images/profile.svg" alt="Profile" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
+                    <img src="{{ URL::asset('images/profile.svg') }}" alt="Profile" class="mb-2 ml-0.5 menuOne-image md:w-12 md:h-12 w-10 h-10">
                     <span class="tooltiptext hidden md:block">Change your username, password, 2fa or email</span>
                 </a>
                 <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown tooltipHat menuTwo" href="{{ route('hatstories.index') }}">
-                    <img src="../../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+                    <img src="{{ URL::asset('images/hoed-wit.svg') }}" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
                     <span class="tooltiptext hidden md:block">View your hats here. Add, remove or edit them</span>
                 </a>
                 <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuThree" href="/">
-                    <img src="../../images/home.svg" alt="Home" class="mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
+                    <img src="{{ URL::asset('images/home.svg') }}" alt="Home" class="mb-2 menuThree-image md:w-12 md:h-12 w-10 h-10">
                     <span class="tooltiptext hidden md:block">Go to the homepage</span>
                 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipLogout menuFour" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                        <img src="../../images/logout.svg" alt="Logout" class="menuFour-image md:w-12 md:h-12 w-10 h-10">
+                        <img src="{{ URL::asset('images/logout.svg') }}" alt="Logout" class="menuFour-image md:w-12 md:h-12 w-10 h-10">
                         <span class="tooltiptext hidden md:block">Click to logout</span>
                     </a>
                 </form>
@@ -57,10 +56,10 @@
             <form method="post" action="{{ route('hatstories.update', $hatstory->hat_id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 px-10" style="grid-auto-flow: row;">
+                <div class="grid xl:grid-cols-3 xl:grid-rows-3 gap-7 md:pr-10 justify-self-center m-4 md:m-0" style="grid-auto-flow: row;">
                     <!-- Hat Name & Text -->
-                    <div class="flex flex-col bg-lightbrown relative mb-20" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
+                    <div class="flex flex-col bg-lightbrown relative md:mb-20 mb-5 md:p-20 p-10" style="max-width: 526px; height: 100%; max-height: 500px;">
+                        <p class="text-4xl sm:text-5xl absolute" style="top: -18px; left: 30px;">BOOK</p>
                         <label class="text-2xl" for="hat_name">NAME</label>
                         <input type="text" name="hat_name" placeholder="Hat name" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_name }}" required>
                         <label class="text-2xl" for="hat_text">TEXT</label>
@@ -69,7 +68,7 @@
 
                     <!-- Hat Image -->
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
+                        <p class="text-4xl sm:text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile1').click();">
                             <img id="output1" src="/storage/hatimage/{{ $hatstory->hat_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -82,8 +81,8 @@
                     </div>
 
                     <!-- Hat Specifications -->
-                    <div class="flex flex-col bg-lightbrown relative" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
+                    <div class="flex flex-col bg-lightbrown relative md:mb-20 mb-5 md:p-20 p-10" style="max-width: 526px; height: 100%; max-height: 500px;">
+                        <p class="text-4xl sm:text-5xl absolute" style="top: -18px; left: 30px;">SPECS</p>
                         <label class="text-2xl" for="hat_size">SIZE</label>
                         <input type="text" name="hat_size" placeholder="Hat size" class="mb-6 bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown" value="{{ $hatstory->hat_size }}" required>
                         <label class="text-2xl" for="hat_color">COLOR</label>
@@ -93,15 +92,15 @@
                     </div>
 
                     <!-- Page 1 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center mb-20" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
+                    <div class="flex flex-col bg-lightbrown relative justify-center md:mb-20 mb-5 md:p-20 p-10" style="max-width: 526px; height: 100%; max-height: 500px;">
+                        <p class="text-4xl sm:text-5xl absolute" style="top: -18px; left: 30px;">PAGE ONE</p>
                         <label class="text-2xl" for="hat_pageone_text">TEXT</label>
                         <textarea name="hat_pageone_text" rows="5" placeholder="Page one text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pageone_text }}</textarea>
                     </div>
 
                     <!-- Page 1 Image -->
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
+                        <p class="text-4xl sm:text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile2').click();">
                             <img id="output2" src="/storage/hatimage/{{ $hatstory->hat_pageone_image }}" alt="" class="absolute z-20 h-full w-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -116,15 +115,15 @@
                     <div></div>
 
                     <!-- Page 2 Text -->
-                    <div class="flex flex-col bg-lightbrown relative justify-center" style="padding: 80px 80px; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
+                    <div class="flex flex-col bg-lightbrown relative justify-center md:mb-20 mb-5 md:p-20 p-10" style="max-width: 526px; height: 100%; max-height: 500px;">
+                        <p class="text-4xl sm:text-5xl absolute" style="top: -18px; left: 30px;">PAGE TWO</p>
                         <label class="text-2xl" for="hat_pagetwo_text">TEXT</label>
                         <textarea name="hat_pagetwo_text" rows="5" placeholder="Page two text" class="bg-lightbrown border-0 focus:ring-0 placeholder-brown-light border-b-2 border-brown focus:border-brown resize-none" required>{{ $hatstory->hat_pagetwo_text }}</textarea>
                     </div>
 
                     <!-- Page 2 Images -->
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
+                        <p class="text-4xl sm:text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick=" document.getElementById('upfile3').click();">
                             <img id="output3" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imageone }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -137,7 +136,7 @@
                     </div>
 
                     <div class="bg-white cursor-pointer relative" style="border: 11px solid #D5C1B8; max-width: 526px; height: 100%; max-height: 500px;">
-                        <p class="text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
+                        <p class="text-4xl sm:text-5xl absolute z-30" style="top: -29px; left: 30px;">IMAGE</p>
                         <div class="customFileInput h-full relative flex flex-col justify-center items-center" onclick="document.getElementById('upfile4').click();">
                             <img id="output4" src="/storage/hatimage/{{ $hatstory->hat_pagetwo_imagetwo }}" alt="" class="absolute z-20 w-full h-full object-cover overflow-hidden">
                             <i class="far fa-image text-10xl"></i>
@@ -170,20 +169,20 @@
     <script>
         $(document).ready(function(){
             $('.menuOne').hover(
-                function(){$(this).children('.menuOne-image').attr('src', '../../images/profile-wit.svg')},
-                function(){$(this).children('.menuOne-image').attr('src', '../../images/profile.svg')}
+                function(){$(this).children('.menuOne-image').attr('src', '{{ URL::asset('images/profile-wit.svg') }}')},
+                function(){$(this).children('.menuOne-image').attr('src', '{{ URL::asset('images/profile.svg') }}')}
             );
             $('.menuTwo').hover(
-                function(){$(this).children('.menuTwo-image').attr('src', '../../images/hoed.svg')},
-                function(){$(this).children('.menuTwo-image').attr('src', '../../images/hoed-wit.svg')}
+                function(){$(this).children('.menuTwo-image').attr('src', '{{ URL::asset('images/hoed.svg') }}')},
+                function(){$(this).children('.menuTwo-image').attr('src', '{{ URL::asset('images/hoed-wit.svg') }}')}
             );
             $('.menuThree').hover(
-                function(){$(this).children('.menuThree-image').attr('src', '../../images/home-wit.svg')},
-                function(){$(this).children('.menuThree-image').attr('src', '../../images/home.svg')}
+                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home-wit.svg') }}')},
+                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home.svg') }}')}
             );
             $('.menuFour').hover(
-                function(){$(this).children('.menuFour-image').attr('src', '../../images/logout-wit.svg')},
-                function(){$(this).children('.menuFour-image').attr('src', '../../images/logout.svg')}
+                function(){$(this).children('.menuFour-image').attr('src', '{{ URL::asset('images/logout-wit.svg') }}')},
+                function(){$(this).children('.menuFour-image').attr('src', '{{ URL::asset('images/logout.svg') }}')}
             );
 
             setTimeout(function(){

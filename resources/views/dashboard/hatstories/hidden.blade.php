@@ -72,13 +72,13 @@
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="mr-5 w-16 h-16 rounded-full bg-white text-center flex items-center justify-center hover:bg-red tooltipDelete deleteButton" style="box-shadow: 0 3px 6px #00000029">
-                                    <input type="image" src="../images/trash.svg" alt="Delete" width="50px" height="50px" class="ml-0.5 mb-1 deleteButton-image">
+                                    <input type="image" src="{{ URL::asset('images/trash.svg') }}" alt="Delete" width="50px" height="50px" class="ml-0.5 mb-1 deleteButton-image">
                                     <span class="tooltiptext hidden md:block">Are you sure you want to delete this hat?</span>
                                 </div>
                             </form>
                             <!-- Edit Button -->
                             <a href="{{ route('hatstories.edit', $hat->hat_id) }}" style="box-shadow: 0 3px 6px #00000029" class="w-16 h-16 rounded-full bg-white text-center flex items-center justify-center hover:bg-lightbrown">
-                                <img src="../images/edit.svg" alt="" width="50px" height="50px" class="ml-0.5 mb-0.5">
+                                <img src="{{ URL::asset('images/edit.svg') }}" alt="" width="50px" height="50px" class="ml-0.5 mb-0.5">
                             </a>
                         </div>
                     </div>
@@ -97,24 +97,24 @@
     <script>
         $(document).ready(function(){
             $('.deleteButton').hover(
-                function(){$(this).children('.deleteButton-image').attr('src', '../images/trash-wit.svg')},
-                function(){$(this).children('.deleteButton-image').attr('src', '../images/trash.svg')}
+                function(){$(this).children('.deleteButton-image').attr('src', '{{ URL::asset('images/trash-wit.svg') }}')},
+                function(){$(this).children('.deleteButton-image').attr('src', '{{ URL::asset('images/trash.svg') }}')}
             );
             $('.menuOne').hover(
-                function(){$(this).children('.menuOne-image').attr('src', '../images/profile-wit.svg')},
-                function(){$(this).children('.menuOne-image').attr('src', '../images/profile.svg')}
+                function(){$(this).children('.menuOne-image').attr('src', '{{ URL::asset('images/profile-wit.svg') }}')},
+                function(){$(this).children('.menuOne-image').attr('src', '{{ URL::asset('images/profile.svg') }}')}
             );
             $('.menuTwo').hover(
-                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed.svg')},
-                function(){$(this).children('.menuTwo-image').attr('src', '../images/hoed-wit.svg')}
+                function(){$(this).children('.menuTwo-image').attr('src', '{{ URL::asset('images/hoed.svg') }}')},
+                function(){$(this).children('.menuTwo-image').attr('src', '{{ URL::asset('images/hoed-wit.svg') }}')}
             );
             $('.menuThree').hover(
-                function(){$(this).children('.menuThree-image').attr('src', '../images/home-wit.svg')},
-                function(){$(this).children('.menuThree-image').attr('src', '../images/home.svg')}
+                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home-wit.svg') }}')},
+                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home.svg') }}')}
             );
             $('.menuFour').hover(
-                function(){$(this).children('.menuFour-image').attr('src', '../images/logout-wit.svg')},
-                function(){$(this).children('.menuFour-image').attr('src', '../images/logout.svg')}
+                function(){$(this).children('.menuFour-image').attr('src', '{{ URL::asset('images/logout-wit.svg') }}')},
+                function(){$(this).children('.menuFour-image').attr('src', '{{ URL::asset('images/logout.svg') }}')}
             );
             $('.hatStory-circle').hover(
                 function(){$(this).children('.hatStory-hidden').css('display', 'block')},
