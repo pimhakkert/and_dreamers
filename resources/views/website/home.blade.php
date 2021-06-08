@@ -7,7 +7,7 @@
 {{--    <img class="absolute -ml-44 mt-circle" src="{{ URL::asset('images/cirkel.svg') }}" alt="">--}}
 
     <!-- Header -->
-    <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url(../images/background.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="headerMain flex justify-center items-center bg-mainbg" style="height: 100vh; box-shadow: 0 3px 6px #00000029; background-image: url({{ URL::asset('images/background.jpg') }}); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="addText">
             <div class="bg-lightbrown rounded-full z-50 w-60 sm:w-80 md:w-96 removeImage" style="animation: backInDown; animation-duration: 2s;">
                 <img src="{{ URL::asset('images/logo.svg') }}" alt="and.dreamers Logo">
@@ -35,7 +35,7 @@
     <div class="flex flex-col items-center text-center px-12 md:px-20 xl:px-40 2xl:px-60">
         <!-- First Text Section -->
        <div data-aos="fade-right" class="pb-10 flex flex-col items-center relative pb-20 md:pb-30 lg:pb-40 lg:w-1/2">
-           <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-24" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle">
+           <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-32" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle">
            <div class="relative">
                <p class="text-brown text-xl font-bold">{{ __('pages/home.buy_a_hat1') }}</p>
                <p class="text-brown md:mx-20 mx-0 lg:mx-0">{{ __('pages/home.buy_a_hat2') }}.</p>
@@ -44,7 +44,7 @@
 
         <!-- Second Text Section -->
         <div data-aos="fade-right" class="pb-10 flex flex-col items-center relative pb-20 md:pb-30 lg:pb-40 lg:w-1/2 lg:ml-40">
-            <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-24" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle">
+            <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-32" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle">
             <div class="relative">
                 <p class="text-brown text-xl font-bold">{{ __('pages/home.lease_a_hat1') }}</p>
                 <p class="text-brown md:mx-20 mx-0 lg:mx-0">{{ __('pages/home.lease_a_hat2') }}</p>
@@ -53,7 +53,7 @@
 
         <!-- Third Text Section -->
         <div data-aos="fade-right"  class="pb-10 flex flex-col items-center relative pb-20 md:pb-30 lg:pb-40 lg:w-1/2 lg:ml-80">
-            <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-24" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle"> <!-- 160px -->
+            <img class="absolute w-20 h-20 lg:w-32 lg:h-32 -top-8 lg:-top-14 -ml-32" src="{{ URL::asset('images/solid_cirkel.svg') }}" alt="Solid Circle"> <!-- 160px -->
             <div class="relative">
                 <p class="text-brown text-xl font-bold">{{ __('pages/home.rent_a_hat1') }}</p>
                 <p class="text-brown md:mx-20 mx-0 lg:mx-0">{{ __('pages/home.rent_a_hat2') }}</p>
@@ -164,7 +164,7 @@
             transform: scale(1.1);
         }
 
-        .middleBook {
+        .middleBook, .bookTurn {
             margin: 0 auto;
         }
     </style>
