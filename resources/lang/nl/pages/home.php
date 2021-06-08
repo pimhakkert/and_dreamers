@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome' => 'Welkom!',
+    'welcome' => 'Welkom',
     'intro1' => 'Hoedenverhalen van een vroegere hoedenleerling die terugkwam op een vergeten droom.',
     'intro2' => 'Op maat gemaakte en one-of-a-kind originele ontwerpen van gerecycleerde en duurzame materialen.',
     'circularity1' => 'Hoe ik circulariteit wil bevorderen.',
