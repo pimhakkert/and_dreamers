@@ -51,13 +51,7 @@
     </div>
 </nav>
 
-<section class="fixed top-10 right-10">
-    <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown hatMenu" href="/hats">
-        <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
-    </a>
-</section>
-
-<section class="fixed top-10 right-10">
+<section class="fixed top-10 right-10" style="z-index: 999;">
     <div class="flex items-center">
         <div class="mr-14">
             <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('en')) border-b-4 @endif">EN</a>

@@ -7,7 +7,6 @@
         <!-- Background Images -->
         <img class="absolute lg:w-big lg:-ml-380px lg:-mt-750px md:-ml-96 -ml-52 mt-20" src="{{ URL::asset('images/cirkel.svg') }}" alt="Background Image">
 
-
         <!-- Content Grid -->
             <div class="container" style="width: 100vw; height: 800px;">
                 <div class="canvas absolute left-0 top-0 h-auto p-72" style="transform: translate(-50vw, -50vw); width: 200%; transition: 1.5s ease-out;">

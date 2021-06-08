@@ -22,7 +22,7 @@
 </head>
 <body style="overflow-x: hidden;">
 
-<div class="fixed top-10 md:left-0 md:right-10 flex items-center">
+<div class="fixed top-10 md:left-0 md:right-10 flex items-center" style="z-index: 999;">
     <div class="ml-5 md:ml-0 md:mr-14">
         <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('en')) border-b-4 @endif">EN</a>
         <span class="mx-2 text-brown">|</span>
