@@ -30,26 +30,25 @@
     @livewireStyles
 </head>
 <body style="overflow-x: hidden; height: 100vh;" class="flex flex-col">
-{{--<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">--}}
-{{--    <div class="relative flex flex-col justify-evenly items-center h-full">--}}
-{{--        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>--}}
-{{--        <div id="desktop-menu" class="w-full">--}}
-{{--            <div class="cursor-pointer w-full flex flex-col items-center">--}}
-{{--                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>--}}
-{{--                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>--}}
-{{--                <div class="rounded-full w-2 h-2 bg-white"></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">--}}
-{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>--}}
-{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>--}}
-{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>--}}
-{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>--}}
-{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>--}}
-{{--        </div>--}}
-{{--        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>--}}
-{{--    </div>--}}
-
+<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
+    <div class="relative flex flex-col justify-evenly items-center h-full">
+        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>
+        <div id="desktop-menu" class="w-full">
+            <div class="cursor-pointer w-full flex flex-col items-center">
+                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
+                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
+                <div class="rounded-full w-2 h-2 bg-white"></div>
+            </div>
+        </div>
+        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
+            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>
+        </div>
+        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>
+    </div>
 </nav>
 <section class="fixed top-10 right-10">
     <div class="flex items-center">
@@ -62,7 +61,6 @@
             <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
         </a>
     </div>
-
 </section>
 <main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @endif">
     @yield('content')
