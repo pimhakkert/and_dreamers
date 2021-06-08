@@ -76,76 +76,76 @@
     @yield('content')
 </main>
 
-{{--<footer class="@if(Route::current()->getName() != 'contact') flex-shrink-0 @else h-full flex flex-col @endif">--}}
-{{--    @if(Route::current()->getName() != 'contact')--}}
-{{--    <a href="{{ route('contact') }}">--}}
-{{--    @endif--}}
-{{--        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between  @if(Route::current()->getName() == 'contact') h-full flex-col pt-40 pb-16 @else items-center @endif">--}}
-{{--            <div class="max-w-2xl @if(Route::current()->getName() == 'contact') -ml-24 @endif">--}}
-{{--                <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>--}}
-{{--                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"{{ __('pages/general.footer_contact') }}"</h5>--}}
-{{--            </div>--}}
-{{--            @if(Route::current()->getName() != 'contact')--}}
-{{--            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">--}}
-{{--            @else--}}
-{{--            <div class="flex">--}}
-{{--                <form class="w-1/4 mr-32" method="POST" action="{{ route('contactSend') }}">--}}
-{{--                    @csrf--}}
-{{--                    <h3 class="text-brown text-3xl font-semibold -mb-10">{{ __('pages/general.contact_title') }}</h3>--}}
-{{--                    <div class="form-group -mb-10">--}}
-{{--                        @if ($errors->has('name'))--}}
-{{--                            <div class="text-red">--}}
-{{--                                {{ $errors->first('name') }}--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
-{{--                        <input type="text" placeholder="{{ __('pages/general.contact_field_name') }}" name="name" style="border-bottom-width: 3px;">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group -mb-10">--}}
-{{--                        @if ($errors->has('phone_number'))--}}
-{{--                            <div class="text-red">--}}
-{{--                                {{ $errors->first('phone_number') }}--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
-{{--                        <input type="text" placeholder="{{ __('pages/general.contact_field_phone') }}" name="phone_number" style="border-bottom-width: 3px;">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        @if ($errors->has('message'))--}}
-{{--                            <div class="text-red">--}}
-{{--                                {{ $errors->first('message') }}--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
-{{--                        <textarea name="message" placeholder="{{ __('pages/general.contact_field_message') }}" style="border-bottom-width: 3px; height: 130px;"></textarea>--}}
-{{--                    </div>--}}
-{{--                    <button class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/general.contact_button') }}</button>--}}
-{{--                    <!-- Success message -->--}}
-{{--                    @if(Session::has('success'))--}}
-{{--                        <p class="text-green-light mt-2">{{ __('pages/contact.success') }}</p>--}}
-{{--                    @endif--}}
+<footer class="@if(Route::current()->getName() != 'contact') flex-shrink-0 @else h-full flex flex-col @endif">
+    @if(Route::current()->getName() != 'contact')
+    <a href="{{ route('contact') }}">
+    @endif
+        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between  @if(Route::current()->getName() == 'contact') h-full flex-col pt-40 pb-16 @else items-center @endif">
+            <div class="max-w-2xl @if(Route::current()->getName() == 'contact') -ml-24 @endif">
+                <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
+                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"{{ __('pages/general.footer_contact') }}"</h5>
+            </div>
+            @if(Route::current()->getName() != 'contact')
+            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">
+            @else
+            <div class="flex">
+                <form class="w-1/4 mr-32" method="POST" action="{{ route('contactSend') }}">
+                    @csrf
+                    <h3 class="text-brown text-3xl font-semibold -mb-10">{{ __('pages/general.contact_title') }}</h3>
+                    <div class="form-group -mb-10">
+                        @if ($errors->has('name'))
+                            <div class="text-red">
+                                {{ $errors->first('name') }}
+                            </div>
+                        @endif
+                        <input type="text" placeholder="{{ __('pages/general.contact_field_name') }}" name="name" style="border-bottom-width: 3px;">
+                    </div>
+                    <div class="form-group -mb-10">
+                        @if ($errors->has('phone_number'))
+                            <div class="text-red">
+                                {{ $errors->first('phone_number') }}
+                            </div>
+                        @endif
+                        <input type="text" placeholder="{{ __('pages/general.contact_field_phone') }}" name="phone_number" style="border-bottom-width: 3px;">
+                    </div>
+                    <div class="form-group">
+                        @if ($errors->has('message'))
+                            <div class="text-red">
+                                {{ $errors->first('message') }}
+                            </div>
+                        @endif
+                        <textarea name="message" placeholder="{{ __('pages/general.contact_field_message') }}" style="border-bottom-width: 3px; height: 130px;"></textarea>
+                    </div>
+                    <button class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/general.contact_button') }}</button>
+                    <!-- Success message -->
+                    @if(Session::has('success'))
+                        <p class="text-green-light mt-2">{{ __('pages/contact.success') }}</p>
+                    @endif
 
-{{--                    @if(Session::has('fail'))--}}
-{{--                        <p class="text-red mt-2">{{ __('pages/contact.fail') }}</p>--}}
-{{--                    @endif--}}
-{{--                </form>--}}
-{{--                <div>--}}
-{{--                    <h3 class="text-brown text-3xl font-semibold">{{ __('pages/general.contact_end') }}</h3>--}}
-{{--                    <p class="mt-7 text-brown-light">Andrea Mengelberg</p>--}}
-{{--                    <p class="mt-5 -mb-1 text-brown-light">+31 6 149 285 01</p>--}}
-{{--                    <a class="text-brown-light" href="mailto:info@and-dreamers.com?subject=I%20would%20like%20to%20get%20in%20touch">info@and-dreamers.com</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            @endif--}}
-{{--        </div>--}}
-{{--    @if(Route::current()->getName() != 'contact')--}}
-{{--    </a>--}}
-{{--    @endif--}}
+                    @if(Session::has('fail'))
+                        <p class="text-red mt-2">{{ __('pages/contact.fail') }}</p>
+                    @endif
+                </form>
+                <div>
+                    <h3 class="text-brown text-3xl font-semibold">{{ __('pages/general.contact_end') }}</h3>
+                    <p class="mt-7 text-brown-light">Andrea Mengelberg</p>
+                    <p class="mt-5 -mb-1 text-brown-light">+31 6 149 285 01</p>
+                    <a class="text-brown-light" href="mailto:info@and-dreamers.com?subject=I%20would%20like%20to%20get%20in%20touch">info@and-dreamers.com</a>
+                </div>
+            </div>
+            @endif
+        </div>
+    @if(Route::current()->getName() != 'contact')
+    </a>
+    @endif
 
 
-{{--    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">--}}
-{{--        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>--}}
-{{--        <span class="text-white font-light mx-5 text-lg">|</span>--}}
-{{--        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>--}}
-{{--    </div>--}}
-{{--</footer>--}}
+    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
+        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>
+        <span class="text-white font-light mx-5 text-lg">|</span>
+        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>
+    </div>
+</footer>
 @yield('js')
 @stack('modals')
 @livewireScripts
