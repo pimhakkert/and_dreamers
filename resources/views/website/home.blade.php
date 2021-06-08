@@ -114,7 +114,7 @@
     </div>
 
     <!-- Shelf Link To Overview -->
-    <a class="float-right text-brown text-base md:text-2xl flex pb-10 px-12 md:px-20 xl:px-40 2xl:px-60" href="/hats">
+    <a class="float-right text-brown text-base md:text-2xl flex pb-28 px-12 md:px-20 xl:px-40 2xl:px-60" href="/hats">
         <p class="pr-2">{{ __('pages/home.more_hat_stories') }}</p>
         <i class="fas fa-arrow-right mt-1"></i>
     </a>

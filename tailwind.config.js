@@ -23,9 +23,11 @@ module.exports = {
                 '-380px': '-21rem',
                 '500px': '30rem',
                 '-750px': '-42rem',
-                'circle': '24rem'
+                'circle': '24rem',
+                '84': '19rem'
             },
             spacing: {
+                '18': '4.25rem',
                 'big': '68rem',
                 'small': '27rem',
                 'block': '26rem'
