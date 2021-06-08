@@ -6787,6 +6787,10 @@ select{
   line-height: 1;
 }
 
+.text-4\.5xl{
+  font-size: 2.65rem;
+}
+
 .text-10xl{
   font-size: 10rem;
 }
@@ -7189,6 +7193,10 @@ select{
 
 .-m-750px{
   margin: -42rem;
+}
+
+.m-circle{
+  margin: 24rem;
 }
 
 .my-0{
@@ -7999,6 +8007,16 @@ select{
 .-mx-750px{
   margin-left: -42rem;
   margin-right: -42rem;
+}
+
+.my-circle{
+  margin-top: 24rem;
+  margin-bottom: 24rem;
+}
+
+.mx-circle{
+  margin-left: 24rem;
+  margin-right: 24rem;
 }
 
 .mt-0{
@@ -9295,6 +9313,22 @@ select{
 
 .-ml-750px{
   margin-left: -42rem;
+}
+
+.mt-circle{
+  margin-top: 24rem;
+}
+
+.mr-circle{
+  margin-right: 24rem;
+}
+
+.mb-circle{
+  margin-bottom: 24rem;
+}
+
+.ml-circle{
+  margin-left: 24rem;
 }
 
 .max-h-0{
@@ -27922,6 +27956,10 @@ html {
     line-height: 1;
   }
 
+  .sm\:text-4\.5xl{
+    font-size: 2.65rem;
+  }
+
   .sm\:text-10xl{
     font-size: 10rem;
   }
@@ -28324,6 +28362,10 @@ html {
 
   .sm\:-m-750px{
     margin: -42rem;
+  }
+
+  .sm\:m-circle{
+    margin: 24rem;
   }
 
   .sm\:my-0{
@@ -29134,6 +29176,16 @@ html {
   .sm\:-mx-750px{
     margin-left: -42rem;
     margin-right: -42rem;
+  }
+
+  .sm\:my-circle{
+    margin-top: 24rem;
+    margin-bottom: 24rem;
+  }
+
+  .sm\:mx-circle{
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .sm\:mt-0{
@@ -30430,6 +30482,22 @@ html {
 
   .sm\:-ml-750px{
     margin-left: -42rem;
+  }
+
+  .sm\:mt-circle{
+    margin-top: 24rem;
+  }
+
+  .sm\:mr-circle{
+    margin-right: 24rem;
+  }
+
+  .sm\:mb-circle{
+    margin-bottom: 24rem;
+  }
+
+  .sm\:ml-circle{
+    margin-left: 24rem;
   }
 
   .sm\:max-h-0{
@@ -48816,6 +48884,10 @@ html {
     line-height: 1;
   }
 
+  .md\:text-4\.5xl{
+    font-size: 2.65rem;
+  }
+
   .md\:text-10xl{
     font-size: 10rem;
   }
@@ -49218,6 +49290,10 @@ html {
 
   .md\:-m-750px{
     margin: -42rem;
+  }
+
+  .md\:m-circle{
+    margin: 24rem;
   }
 
   .md\:my-0{
@@ -50028,6 +50104,16 @@ html {
   .md\:-mx-750px{
     margin-left: -42rem;
     margin-right: -42rem;
+  }
+
+  .md\:my-circle{
+    margin-top: 24rem;
+    margin-bottom: 24rem;
+  }
+
+  .md\:mx-circle{
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .md\:mt-0{
@@ -51324,6 +51410,22 @@ html {
 
   .md\:-ml-750px{
     margin-left: -42rem;
+  }
+
+  .md\:mt-circle{
+    margin-top: 24rem;
+  }
+
+  .md\:mr-circle{
+    margin-right: 24rem;
+  }
+
+  .md\:mb-circle{
+    margin-bottom: 24rem;
+  }
+
+  .md\:ml-circle{
+    margin-left: 24rem;
   }
 
   .md\:max-h-0{
@@ -69710,6 +69812,10 @@ html {
     line-height: 1;
   }
 
+  .lg\:text-4\.5xl{
+    font-size: 2.65rem;
+  }
+
   .lg\:text-10xl{
     font-size: 10rem;
   }
@@ -70112,6 +70218,10 @@ html {
 
   .lg\:-m-750px{
     margin: -42rem;
+  }
+
+  .lg\:m-circle{
+    margin: 24rem;
   }
 
   .lg\:my-0{
@@ -70922,6 +71032,16 @@ html {
   .lg\:-mx-750px{
     margin-left: -42rem;
     margin-right: -42rem;
+  }
+
+  .lg\:my-circle{
+    margin-top: 24rem;
+    margin-bottom: 24rem;
+  }
+
+  .lg\:mx-circle{
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .lg\:mt-0{
@@ -72218,6 +72338,22 @@ html {
 
   .lg\:-ml-750px{
     margin-left: -42rem;
+  }
+
+  .lg\:mt-circle{
+    margin-top: 24rem;
+  }
+
+  .lg\:mr-circle{
+    margin-right: 24rem;
+  }
+
+  .lg\:mb-circle{
+    margin-bottom: 24rem;
+  }
+
+  .lg\:ml-circle{
+    margin-left: 24rem;
   }
 
   .lg\:max-h-0{
@@ -90604,6 +90740,10 @@ html {
     line-height: 1;
   }
 
+  .xl\:text-4\.5xl{
+    font-size: 2.65rem;
+  }
+
   .xl\:text-10xl{
     font-size: 10rem;
   }
@@ -91006,6 +91146,10 @@ html {
 
   .xl\:-m-750px{
     margin: -42rem;
+  }
+
+  .xl\:m-circle{
+    margin: 24rem;
   }
 
   .xl\:my-0{
@@ -91816,6 +91960,16 @@ html {
   .xl\:-mx-750px{
     margin-left: -42rem;
     margin-right: -42rem;
+  }
+
+  .xl\:my-circle{
+    margin-top: 24rem;
+    margin-bottom: 24rem;
+  }
+
+  .xl\:mx-circle{
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .xl\:mt-0{
@@ -93112,6 +93266,22 @@ html {
 
   .xl\:-ml-750px{
     margin-left: -42rem;
+  }
+
+  .xl\:mt-circle{
+    margin-top: 24rem;
+  }
+
+  .xl\:mr-circle{
+    margin-right: 24rem;
+  }
+
+  .xl\:mb-circle{
+    margin-bottom: 24rem;
+  }
+
+  .xl\:ml-circle{
+    margin-left: 24rem;
   }
 
   .xl\:max-h-0{
@@ -111498,6 +111668,10 @@ html {
     line-height: 1;
   }
 
+  .\32xl\:text-4\.5xl{
+    font-size: 2.65rem;
+  }
+
   .\32xl\:text-10xl{
     font-size: 10rem;
   }
@@ -111900,6 +112074,10 @@ html {
 
   .\32xl\:-m-750px{
     margin: -42rem;
+  }
+
+  .\32xl\:m-circle{
+    margin: 24rem;
   }
 
   .\32xl\:my-0{
@@ -112710,6 +112888,16 @@ html {
   .\32xl\:-mx-750px{
     margin-left: -42rem;
     margin-right: -42rem;
+  }
+
+  .\32xl\:my-circle{
+    margin-top: 24rem;
+    margin-bottom: 24rem;
+  }
+
+  .\32xl\:mx-circle{
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 
   .\32xl\:mt-0{
@@ -114006,6 +114194,22 @@ html {
 
   .\32xl\:-ml-750px{
     margin-left: -42rem;
+  }
+
+  .\32xl\:mt-circle{
+    margin-top: 24rem;
+  }
+
+  .\32xl\:mr-circle{
+    margin-right: 24rem;
+  }
+
+  .\32xl\:mb-circle{
+    margin-bottom: 24rem;
+  }
+
+  .\32xl\:ml-circle{
+    margin-left: 24rem;
   }
 
   .\32xl\:max-h-0{

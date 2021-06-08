@@ -22,15 +22,17 @@ module.exports = {
                 '-6.5': '-1.625rem',
                 '-380px': '-21rem',
                 '500px': '30rem',
-                '-750px': '-42rem'
+                '-750px': '-42rem',
+                'circle': '24rem'
             },
             spacing: {
                 'big': '68rem',
                 'small': '27rem',
-                'block': '26rem',
+                'block': '26rem'
             },
             fontSize: {
-                '10xl': '10rem',
+                '4.5xl': '2.65rem',
+                '10xl': '10rem'
             }
         },
         /*Disable default colors*/

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ mix('css/tooltip.css') }}">
     <link rel="stylesheet" href="{{ mix('css/tailwind.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @yield('css')
     <style>
         #desktop-menu-nav {
@@ -29,25 +30,25 @@
     @livewireStyles
 </head>
 <body style="overflow-x: hidden; height: 100vh;" class="flex flex-col">
-<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
-    <div class="relative flex flex-col justify-evenly items-center h-full">
-        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>
-        <div id="desktop-menu" class="w-full">
-            <div class="cursor-pointer w-full flex flex-col items-center">
-                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
-                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
-                <div class="rounded-full w-2 h-2 bg-white"></div>
-            </div>
-        </div>
-        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
+{{--<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">--}}
+{{--    <div class="relative flex flex-col justify-evenly items-center h-full">--}}
+{{--        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>--}}
+{{--        <div id="desktop-menu" class="w-full">--}}
+{{--            <div class="cursor-pointer w-full flex flex-col items-center">--}}
+{{--                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>--}}
+{{--                <div class="rounded-full w-2 h-2 bg-white mb-1"></div>--}}
+{{--                <div class="rounded-full w-2 h-2 bg-white"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">--}}
+{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>--}}
+{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>--}}
+{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>--}}
+{{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>--}}
 {{--            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>--}}
-        </div>
-        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>
-    </div>
+{{--        </div>--}}
+{{--        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>--}}
+{{--    </div>--}}
 
 </nav>
 <section class="fixed top-10 right-10">
@@ -131,15 +132,19 @@
     @endif
 
 
-    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
-        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>
-        <span class="text-white font-light mx-5 text-lg">|</span>
-        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>
-    </div>
-</footer>
+{{--    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">--}}
+{{--        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>--}}
+{{--        <span class="text-white font-light mx-5 text-lg">|</span>--}}
+{{--        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>--}}
+{{--    </div>--}}
+{{--</footer>--}}
 @yield('js')
 @stack('modals')
 @livewireScripts
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script>
     window.addEventListener('load', () => {
 

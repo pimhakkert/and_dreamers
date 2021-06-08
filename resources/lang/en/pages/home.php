@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome' => 'Welcome!',
+    'welcome' => 'Welcome',
     'intro1' => 'Hat stories from a one-time millinery apprentice who came back to a forgotten dream.',
     'intro2' => 'Bespoke custom made and one-of-a-kind original designs from recycled and sustainable materials.',
     'circularity1' => 'How I want to promote circularity.',
