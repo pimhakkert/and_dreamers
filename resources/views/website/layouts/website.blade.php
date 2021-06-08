@@ -31,7 +31,7 @@
 </div>
 
 <!-- Left Menu -->
-<div class="text-brown md:pl-10 md:fixed h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
+<div class="text-brown md:pl-10 md:fixed md:h-full grid md:w-auto w-full z-50" style="grid-template-columns: auto">
     <!-- Bottom Left Menu -->
     <div class="flex md:flex-col flex-row md:justify-end md:items-start md:mb-20 md:static justify-center items-end md:pb-0 z-50 fixed bottom-0 w-full md:w-auto md:pt-0 pt-6 md:bg-transparent bg-white">
         <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-white-light text-center flex items-center justify-center mb-5 hover:bg-brown tooltipHome menuOne" href="/">
