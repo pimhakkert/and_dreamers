@@ -175,7 +175,8 @@
         position: relative;
         height: 100vh;
         background-repeat: no-repeat;
-        background-image: url("{{ asset('images/background_hatstory.svg') }}");
+        background-position: center;
+        background-image: url("{{ asset('images/background_hatstory.png') }}");
     }
 
     .mobile-nav img {

@@ -1,11 +1,11 @@
 @extends('website.layouts.email')
 
-@section('title', 'Hatstory contact')
+@section('title', 'Contact form')
 
 @section('content')
     <table width="100%" background="{{ asset('images/mail/mail_background.png') }}">
         <tr>
-            <td><p>Someone filled in the contact form for a hat story. The details are as follows:</p></td>
+            <td><p>Someone filled in the main contact form. The details are as follows:</p></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -13,7 +13,6 @@
         <tr>
             <td>
                 <ul>
-                    <li>Hat story name: {{ $hatStory->hat_name }}</li>
                     <li>Visitor name: {{ $request->request->get('name') }}</li>
                     <li>Visitor phone number: {{ $request->request->get('phone_number') }}</li>
                     <li>Visitor would like to {{ $request->request->get('type') }} the hat.</li>

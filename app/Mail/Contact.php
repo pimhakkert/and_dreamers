@@ -9,25 +9,21 @@ use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class HatStoryContact extends Mailable
+class Contact extends Mailable
 {
     use Queueable, SerializesModels;
 
     /** @var Request $to */
     protected $request;
 
-    /** @var HatStory $hatStory */
-    protected $hatStory;
-
     /**
      * Create a new message instance.
      *
      * @param Request $request
      */
-    public function __construct(Request $request, HatStory $hatStory)
+    public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->hatStory = $hatStory;
     }
 
     /**
@@ -38,7 +34,7 @@ class HatStoryContact extends Mailable
     public function build()
     {
 //        return $this->from('mail@and-dreamers.com')
-        return $this->from('p.t.hakkert@outlook.com', 'And Dreamers')
-        ->subject('Contact form filled in!')->view('website.emails.hatstory-contact', ['request' => $this->request, 'hatStory' => $this->hatStory]);
+        return $this->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME'])
+        ->subject('Contact form filled in!')->view('website.emails.contact', ['request' => $this->request]);
     }
 }

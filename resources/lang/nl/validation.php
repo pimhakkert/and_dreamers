@@ -157,6 +157,7 @@ return [
         'password'              => 'wachtwoord',
         'password_confirmation' => 'wachtwoordbevestiging',
         'phone'                 => 'telefoonnummer',
+        'phone_number'          => 'telefoon',
         'price'                 => 'prijs',
         'second'                => 'seconde',
         'sex'                   => 'geslacht',
