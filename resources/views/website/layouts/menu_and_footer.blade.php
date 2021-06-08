@@ -20,6 +20,14 @@
         #desktop-menu-nav.menu-open {
             opacity: 1 !important;
         }
+
+        @media (min-width: 768px) {
+            .navMenu {
+                left: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     </style>
 
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -30,24 +38,24 @@
     @livewireStyles
 </head>
 <body style="overflow-x: hidden; height: 100vh;" class="flex flex-col">
-<nav class="fixed top-0 left-0 bg-brown  h-full w-16" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
-    <div class="relative flex flex-col justify-evenly items-center h-full">
-        <a href="{{ route('hatoverview') }}" class="transform -rotate-90 whitespace-nowrap text-white font-bold text-lg">{{ __('pages/general.nav_hat_stories') }}</a>
-        <div id="desktop-menu" class="w-full">
-            <div class="cursor-pointer w-full flex flex-col items-center">
+<nav class="fixed bottom-0 md:top-0 md:left-0 bg-brown w-full h-18 md:w-18 md:h-full" style="z-index: 100; box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.2);">
+    <div class="relative flex md:flex-col justify-evenly items-center h-full">
+        <a href="{{ route('hatoverview') }}" class="transform md:-rotate-90 whitespace-nowrap text-white md:font-bold text-base md:text-lg">{{ __('pages/general.nav_hat_stories') }}</a>
+        <div id="desktop-menu" class="md:w-full">
+            <div class="cursor-pointer w-full flex flex-col transform rotate-90 md:rotate-0 items-center">
                 <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
                 <div class="rounded-full w-2 h-2 bg-white mb-1"></div>
                 <div class="rounded-full w-2 h-2 bg-white"></div>
             </div>
         </div>
-        <div id="desktop-menu-nav" class="absolute pl-36 px-32 py-52" style="opacity: 0; left: 100%; top: 50%; transform: translateY(-50%); background-color: rgba(241,241,241,0.9); display: none;">
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
-            <a class="mb-5 block text-brown text-lg font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>
+        <div id="desktop-menu-nav" class="navMenu absolute mb-96 md:mb-0 px-20 py-10 md:pl-36 md:px-32 md:py-52 text-center" style="opacity: 0; background-color: rgba(241,241,241,0.9); display: none;">
+            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('home') }}">{{ __('pages/general.nav_home') }}</a>
+            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
+            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
+            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
+            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>
         </div>
-        <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>
+        <a href="{{ route('contact') }}" class="transform md:-rotate-90 text-white md:font-bold text-base md:text-lg">{{ __('pages/general.nav_contact') }}</a>
     </div>
 </nav>
 
