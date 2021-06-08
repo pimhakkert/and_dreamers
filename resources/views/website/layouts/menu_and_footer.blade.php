@@ -49,13 +49,27 @@
         </div>
         <a href="{{ route('contact') }}" class="transform -rotate-90 text-white font-bold text-lg">{{ __('pages/general.nav_contact') }}</a>
     </div>
-
 </nav>
+
 <section class="fixed top-10 right-10">
     <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center mb-5 hover:bg-lightbrown hatMenu" href="/hats">
         <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
     </a>
 </section>
+
+<section class="fixed top-10 right-10">
+    <div class="flex items-center">
+        <div class="mr-14">
+            <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('en')) border-b-4 @endif">EN</a>
+            <span class="mx-2 text-brown">|</span>
+            <a href="{{ LaravelLocalization::getLocalizedURL('nl', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('nl')) border-b-4 @endif">NL</a>
+        </div>
+        <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center hover:bg-lightbrown hatMenu" href="{{ route('hatoverview') }}">
+            <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+        </a>
+    </div>
+</section>
+
 <main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @endif">
     @yield('content')
 </main>
@@ -73,18 +87,42 @@
             <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">
             @else
             <div class="flex">
-                <form class="w-1/4 mr-32">
+                <form class="w-1/4 mr-32" method="POST" action="{{ route('contactSend') }}">
+                    @csrf
                     <h3 class="text-brown text-3xl font-semibold -mb-10">{{ __('pages/general.contact_title') }}</h3>
                     <div class="form-group -mb-10">
+                        @if ($errors->has('name'))
+                            <div class="text-red">
+                                {{ $errors->first('name') }}
+                            </div>
+                        @endif
                         <input type="text" placeholder="{{ __('pages/general.contact_field_name') }}" name="name" style="border-bottom-width: 3px;">
                     </div>
                     <div class="form-group -mb-10">
+                        @if ($errors->has('phone_number'))
+                            <div class="text-red">
+                                {{ $errors->first('phone_number') }}
+                            </div>
+                        @endif
                         <input type="text" placeholder="{{ __('pages/general.contact_field_phone') }}" name="phone_number" style="border-bottom-width: 3px;">
                     </div>
                     <div class="form-group">
+                        @if ($errors->has('message'))
+                            <div class="text-red">
+                                {{ $errors->first('message') }}
+                            </div>
+                        @endif
                         <textarea name="message" placeholder="{{ __('pages/general.contact_field_message') }}" style="border-bottom-width: 3px; height: 130px;"></textarea>
                     </div>
-                    <button type="button" class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/general.contact_button') }}</button>
+                    <button class="border-4 border-brown leading-none text-brown w-full mt-12 p-3 lg:p-3 2xl:p-3 pb-2 lg:pb-2 2xl:pb-2 font-semibold hover:bg-brown hover:text-white">{{ __('pages/general.contact_button') }}</button>
+                    <!-- Success message -->
+                    @if(Session::has('success'))
+                        <p class="text-green-light mt-2">{{ __('pages/contact.success') }}</p>
+                    @endif
+
+                    @if(Session::has('fail'))
+                        <p class="text-red mt-2">{{ __('pages/contact.fail') }}</p>
+                    @endif
                 </form>
                 <div>
                     <h3 class="text-brown text-3xl font-semibold">{{ __('pages/general.contact_end') }}</h3>

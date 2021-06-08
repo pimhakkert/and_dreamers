@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HatStoryController;
 use App\Http\Controllers\WebsiteController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -33,12 +34,10 @@ Route::group([
     Route::post('/hatstory/{id}', [WebsiteController::class, 'hatStoryContact'])->name('hatStoryContact');
 
     Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
+    Route::post('/contact', [WebsiteController::class, 'contactSend'])->name('contactSend');
 
     Route::get('/about', [WebsiteController::class, 'about'])->name('about');
 });
-
-
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard.dashboard');

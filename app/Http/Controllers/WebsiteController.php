@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\Contact;
 use App\Mail\HatStoryContact;
 use App\Models\HatStory;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -10,6 +11,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class WebsiteController extends BaseController
 {
@@ -36,7 +39,7 @@ class WebsiteController extends BaseController
 
 
         try {
-            Mail::to('p.t.hakkert@outlook.com')->send(new HatStoryContact($request, $hatStory));
+            Mail::to($_ENV['MAIL_TO_ADDRESS'])->send(new HatStoryContact($request, $hatStory));
 
             return 200;
         } catch (\Exception $ex) {
@@ -47,6 +50,26 @@ class WebsiteController extends BaseController
     function contact()
     {
         return view('website.contact');
+    }
+
+    function contactSend(Request $request)
+    {
+        // Form validation
+        $this->validate($request, [
+            'name' => 'required',
+            'phone_number' => 'required',
+            'message' => 'required'
+        ]);
+
+        try {
+            Mail::to($_ENV['MAIL_TO_ADDRESS'])->send(new Contact($request));
+
+            Session::flash('success','');
+        } catch (\Exception $ex) {
+            Session::flash('fail','');
+        }
+
+        return Redirect::back();
     }
 
     function about()
