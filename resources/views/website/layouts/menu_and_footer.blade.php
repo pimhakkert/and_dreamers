@@ -53,7 +53,7 @@
             <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('hatoverview') }}">{{ __('pages/general.nav_hat_stories') }}</a>
             <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('about') }}">{{ __('pages/general.nav_about') }}</a>
             <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="{{ route('contact') }}">{{ __('pages/general.nav_contact') }}</a>
-            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>
+{{--            <a class="mb-5 block text-brown text-lg md:font-bold whitespace-nowrap" href="">{{ __('pages/general.nav_privacy_policy') }}</a>--}}
         </div>
         <a href="{{ route('contact') }}" class="transform md:-rotate-90 text-white md:font-bold text-base md:text-lg">{{ __('pages/general.nav_contact') }}</a>
     </div>

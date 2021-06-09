@@ -22,7 +22,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-7 md:pr-0" data-density="soft">
                             <div class="relative bg-white h-full" style="box-shadow: -3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-previous hatstory-previous-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Previous page"></button>
-                                <div class="pl-10 md:pl-14 pt-10 z-10 h-full flex flex-col" style="border-right: 1px solid #888;">
+                                <div class="pl-10 md:pl-14 pt-10 z-10 h-full flex flex-col border_right">
                                     <div>
                                         <h3 class="inline-block border-b-2 md:border-b-4 border-hoverbrown text-hoverbrown italic font-normal text-xl md:text-2xl mt-0 md:mt-10">{{ $hatStory->hat_name }}</h3>
                                         <p class="text-brown mt-8 md:text-xl" style="max-width: 90%">"{{ $hatStory->hat_text }}"</p>
@@ -48,7 +48,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-0 md:pr-7" data-density="soft">
                             <div class="relative bg-white h-full overflow-y-hidden" style="box-shadow: 3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-next hatstory-next-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Next page"></button>
-                                <div class="flex justify-center items-center h-full" style="border-left: 1px solid #888;">
+                                <div class="flex justify-center items-center h-full border_left">
                                     <img class="object-cover h-full" src="/storage/hatimage/{{ $hatStory->hat_image }}" alt="">
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-7 md:pr-0" data-density="soft">
                             <div class="relative bg-white h-full" style="box-shadow: -3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-previous hatstory-previous-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Previous page"></button>
-                                <div class="px-8 md:px-14 pt-14 md:pt-32 pb-10 md:pb-24 z-10 h-full flex flex-col justify-end" style="border-right: 1px solid #888;">
+                                <div class="px-8 md:px-14 pt-14 md:pt-32 pb-10 md:pb-24 z-10 h-full flex flex-col justify-end border_right">
                                     <div class="h-full flex flex-col justify-between">
                                         <p class="text-brown md:text-xl">"{{ $hatStory->hat_pageone_text }}"</p>
                                         <img class="max-h-36 md:max-h-60 object-cover" src="/storage/hatimage/{{ $hatStory->hat_pageone_image }}" alt="" style="box-shadow: 4px 1px 16px -2px rgba(0,0,0,0.42);">
@@ -70,7 +70,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-0 md:pr-7" data-density="soft">
                             <div class="relative bg-white h-full" style="box-shadow: 3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-next hatstory-next-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Next page"></button>
-                                <div class="pl-6 md:pl-14 pr-6 md:pr-14 pt-10 md:pt-32 pb-10 md:pb-24 z-10 h-full flex flex-col justify-end" style="border-left: 1px solid #888;">
+                                <div class="pl-6 md:pl-14 pr-6 md:pr-14 pt-10 md:pt-32 pb-10 md:pb-24 z-10 h-full flex flex-col justify-end border_left">
                                     <div class="h-full flex flex-col justify-between">
                                         <div class="grid grid-cols-2 gap-5 md:h-full">
                                             <img class="object-cover object-center h-36 md:h-full w-full" src="/storage/hatimage/{{ $hatStory->hat_pagetwo_imageone }}" alt="" style="box-shadow: 4px 1px 16px -2px rgba(0,0,0,0.42);">
@@ -86,7 +86,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-7 md:pr-0" data-density="soft">
                             <div class="relative bg-white h-full" style="box-shadow: -3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-previous hatstory-previous-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Previous page"></button>
-                                <div class="px-6 md:px-14 pb-6 md:pb-12 z-10 h-full flex flex-col justify-end" style="border-right: 1px solid #888;">
+                                <div class="px-6 md:px-14 pb-6 md:pb-12 z-10 h-full flex flex-col justify-end border_right">
                                     <form>
                                         <p class="text-brown md:text-xl">
                                             "{{ __('pages/hatstory.contact_in_touch1') }}
@@ -121,7 +121,7 @@
                         <div class="hatstory-page shadow-sm md:shadow-2xl bg-lightbrown py-4 px-3 md:py-7 md:pl-0 md:pr-7" data-density="soft">
                             <div class="relative bg-white h-full" style="box-shadow: 3px 0px 13px 1px rgba(0,0,0,0.41);">
                                 <button class="hatstory-next hatstory-next-desktop hidden sm:block"><img style="" src="{{ asset('images/next.svg') }}" alt="Next page"></button>
-                                <div class="w-full h-full py-12 p-5 flex-col flex h-full justify-center" style="border-left: 1px solid #888;">
+                                <div class="w-full h-full py-12 p-5 flex-col flex h-full justify-center border_left">
                                     <img class="h-full object-cover" src="/storage/hatimage/{{ $hatStory->hat_image }}" alt="" style="box-shadow: 4px 1px 16px -2px rgba(0,0,0,0.42);">
                                 </div>
                             </div>
@@ -204,6 +204,16 @@
 
     body.noscroll {
         overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+        .border_right {
+            border-right: 1px solid #888;
+        }
+
+        .border_left {
+            border-left: 1px solid #888;
+        }
     }
 </style>
 @endsection
