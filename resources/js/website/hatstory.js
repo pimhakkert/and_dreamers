@@ -51,7 +51,15 @@ window.addEventListener('load', () => {
     function flipPrev(pageFlip)
     {
         document.body.classList.add('noscroll');
-        pageFlip.flipPrev();
+
+        if(screen.width < 768)
+        {
+            pageFlip.turnToPrevPage();
+        }
+        else
+        {
+            pageFlip.flipPrev();
+        }
     }
 
     function flipNext(pageFlip)
