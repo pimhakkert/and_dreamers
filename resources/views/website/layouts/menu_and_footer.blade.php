@@ -59,15 +59,16 @@
     </div>
 </nav>
 
-<section class="fixed top-10 right-10" style="z-index: 999;">
-    <div class="flex items-center">
-        <div class="mr-14">
+<section class="fixed w-full top-10 md:right-10" style="z-index: 999;">
+    <div class="flex justify-evenly md:justify-end">
+        <img src="{{ asset('images/logo.svg') }}" alt="and.dreamers Logo" class="w-32 md:hidden relative -top-10">
+        <div class="md:mr-14">
             <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('en')) border-b-4 @endif">EN</a>
             <span class="mx-2 text-brown">|</span>
             <a href="{{ LaravelLocalization::getLocalizedURL('nl', null, [], true) }}" class="text-brown border-brown @if(App::isLocale('nl')) border-b-4 @endif">NL</a>
         </div>
-        <a class="mr-5 md:w-16 w-12 md:h-16 h-12 rounded-full bg-brown text-center flex items-center justify-center hover:bg-lightbrown hatMenu" href="{{ route('hatoverview') }}">
-            <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image md:w-12 md:h-12 w-10 h-10">
+        <a class="relative -top-4 mr-5 w-16 h-16 rounded-full bg-brown text-center flex items-center justify-center hover:bg-lightbrown hatMenu" href="{{ route('hatoverview') }}">
+            <img src="../images/hoed-wit.svg" alt="Hat stories" class="menuTwo-image w-12 h-12">
         </a>
     </div>
 </section>
