@@ -76,25 +76,26 @@
     @yield('content')
 </main>
 
-<footer class="flex-shrink-0">
+<footer class="flex-shrink-0 pb-18 md:pb-0">
     @if(Route::current()->getName() != 'contact')
     <a href="{{ route('contact') }}">
-        <div class="bg-lightbrown py-28 px-40 pl-72 flex justify-between items-center">
+        <div class="bg-lightbrown flex justify-between items-center py-16 md:py-20 lg:py-24 xl:py-28 px-7 sm:px-12 md:pl-40 md:px-20 xl:px-40 2xl:px-60"> <!--  -->
             <div class="max-w-2xl">
-                <h4 class="font-bold text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
-                <h5 class="text-4xl italic text-brown -mt-12 ml-20">"{{ __('pages/general.footer_contact') }}"</h5>
+                <h4 class="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl" style="color: rgba(255,255,255,0.48)">CONTACT</h4>
+                <h5 class="text-base md:text-2xl lg:text-3xl xl:text-4xl italic text-brown -mt-12 ml-14 md:ml-16 lg:ml-18 xl:ml-20">"{{ __('pages/general.footer_contact') }}"</h5> <!--  -->
             </div>
-            <img class="w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">
+            <img class="w-12 sm:w-18 md:w-24 lg:w-36 xl:w-44" src="{{ asset('images/next.svg') }}" alt="Contact page">
         </div>
     </a>
     @endif
 
-    <div class="flex justify-center p-8 pb-7" style="background-color: #C5B9AF;">
-        <p class="text-white font-light text-lg">{{ __('pages/general.footer_rights') }} 2021</p>
-        <span class="text-white font-light mx-5 text-lg">|</span>
-        <p class="text-white font-light text-lg">{{ __('pages/general.footer_made_by') }}</p>
+    <div class="flex justify-center p-4 pb-2 md:p-8 md:pb-7" style="background-color: #C5B9AF;">
+        <p class="text-white font-light text-xs sm:text-lg">{{ __('pages/general.footer_rights') }} 2021</p>
+        <span class="text-white font-light mx-2 md:mx-5 text-base sm:text-lg">|</span>
+        <p class="text-white font-light text-xs sm:text-lg">{{ __('pages/general.footer_made_by') }}</p>
     </div>
 </footer>
+
 @yield('js')
 @stack('modals')
 @livewireScripts
