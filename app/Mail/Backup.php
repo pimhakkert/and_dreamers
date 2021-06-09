@@ -9,21 +9,21 @@ use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Contact extends Mailable
+class Backup extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /** @var Request $request */
-    protected $request;
+    /** @var string $backupPath */
+    protected $backupPath;
 
     /**
      * Create a new message instance.
      *
-     * @param Request $request
+     * @param string $backupPath
      */
-    public function __construct(Request $request)
+    public function __construct(string $backupPath)
     {
-        $this->request = $request;
+        $this->backupPath = $backupPath;
     }
 
     /**
@@ -34,6 +34,7 @@ class Contact extends Mailable
     public function build()
     {
         return $this->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME'])
-        ->subject('Contact form filled in!')->view('website.emails.contact', ['request' => $this->request]);
+        ->subject('Weekly and.dreamers backup')->view('website.emails.backup')
+            ->attach($this->backupPath);
     }
 }
