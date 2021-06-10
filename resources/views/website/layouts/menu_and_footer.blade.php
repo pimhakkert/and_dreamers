@@ -73,7 +73,7 @@
     </div>
 </section>
 
-<main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @endif">
+<main style="@if(Route::current()->getName() != 'contact') flex: 1 0 auto; @else height: 100%; @endif">
     @yield('content')
 </main>
 
