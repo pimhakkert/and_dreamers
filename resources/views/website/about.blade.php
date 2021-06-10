@@ -32,7 +32,7 @@
         </section>
         <section class="section_grid mt-10 mb-10 md:mb-28 grid gap-20">
             <div class="side_image_container  h-80 relative overflow-hidden" style="box-shadow: 0px 3px 6px #00000029;">
-                <img class="h-full object-cover" src="{{ asset('images/about-hoed.jpeg') }}" alt="" >
+                <img class="h-full w-full object-cover" src="{{ asset('images/about-hoed.jpeg') }}" alt="" >
                 <div class="absolute left-0 top-0 right-0 bottom-0" style="background-color: rgba(255,255,255,0.3)">
                     <div class="absolute top-7 left-8 bg-lightbrown rounded-full w-24 md:w-40">
                         <img src="{{ asset('images/logo.svg') }}" alt="And Dreamers logo">
