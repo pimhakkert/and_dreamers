@@ -13,7 +13,7 @@ class HatStoryContact extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /** @var Request $to */
+    /** @var Request $request */
     protected $request;
 
     /** @var HatStory $hatStory */
@@ -23,6 +23,7 @@ class HatStoryContact extends Mailable
      * Create a new message instance.
      *
      * @param Request $request
+     * @param HatStory $hatStory
      */
     public function __construct(Request $request, HatStory $hatStory)
     {
@@ -37,8 +38,7 @@ class HatStoryContact extends Mailable
      */
     public function build()
     {
-//        return $this->from('mail@and-dreamers.com')
-        return $this->from('p.t.hakkert@outlook.com', 'And Dreamers')
+        return $this->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME'])
         ->subject('Contact form filled in!')->view('website.emails.hatstory-contact', ['request' => $this->request, 'hatStory' => $this->hatStory]);
     }
 }

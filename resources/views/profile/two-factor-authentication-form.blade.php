@@ -81,6 +81,9 @@
                             <div class="mt-16">
                                 @foreach (json_decode(decrypt($this->user->two_factor_recovery_codes), true) as $code)
                                     <div>{{ $code }}</div>
+                                    @if(!$loop->last)
+                                        <hr>
+                                    @endif
                                 @endforeach
                             </div>
 

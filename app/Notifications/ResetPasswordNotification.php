@@ -49,10 +49,10 @@ class ResetPasswordNotification extends ResetPassword
             return call_user_func(static::$toMailCallback, $notifiable, $this->token);
         }
 
-        $url = url(config('app.url') . route('password.reset', [
+        $url = route('password.reset', [
                 'token' => $this->token,
                 'email' => $notifiable->getEmailForPasswordReset(),
-            ], false));
+            ], true);
 
         DB::table('password_resets')->insert(['email'=>$notifiable->getEmailForPasswordReset(), 'token'=> $this->token, 'created_at'=>new \DateTime()]);
 
