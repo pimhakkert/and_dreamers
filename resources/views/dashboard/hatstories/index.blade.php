@@ -110,7 +110,7 @@
             );
             $('.menuThree').hover(
                 function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home-wit.svg') }}')},
-                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home-wit.svg') }}')}
+                function(){$(this).children('.menuThree-image').attr('src', '{{ URL::asset('images/home.svg') }}')}
             );
             $('.menuFour').hover(
                 function(){$(this).children('.menuFour-image').attr('src', '{{ URL::asset('images/logout-wit.svg') }}')},
