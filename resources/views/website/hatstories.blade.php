@@ -12,7 +12,7 @@
                 <div class="canvas absolute left-0 top-0 h-auto p-72" style="transform: translate(-50vw, -50vw); width: 200%; transition: 1.5s ease-out;">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     @foreach ($hatStory as $hat)
-                            <a class="relative layer flex flex-col align-middle m-8 justify-self-center" data-speed="2" href="/hatstory/{{ $hat->hat_id }}" style="width: 250px;">
+                            <a class="relative layer flex flex-col align-middle m-8 justify-self-center" data-speed="2" href="/hatstory/{{ $hat->hat_id }}" style="width: 300px;">
                                 <img src="{{ URL::asset('images/book_front.png') }}" alt="Front of the book" style="">
                                 <p class="text-2xl italic absolute w-full text-center top-10">{{ $hat->hat_name }}</p>
                                 <p class="font-thin absolute w-full text-center top-20">and.dreamers</p>
